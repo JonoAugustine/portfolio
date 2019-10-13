@@ -22,3 +22,22 @@
     color: white;
     background-color: #4aaaa5;
 }
+
+.project .banner:hover {
+    background-color: transparent;
+    color: transparent;
+}
+
+#am_img {
+    border-radius: 10%
+}
+
+#strife {
+    border: .1em solid #777777; 
+    border-radius: 1.5em;
+}
+
+#evoemu {
+    border: .1em solid #777777;
+    border-radius: 1.5em;
+}
