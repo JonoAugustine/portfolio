@@ -1,3 +1,3 @@
-# HW 1: Portfolio
+# Portfolio
 
-https://jonoaugustine.github.io/hw1/
+https://jonoaugustine.github.io/portfolio/
