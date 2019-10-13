@@ -7,8 +7,8 @@ input {
 input.input-button {
     width: 8em;
     height: 3em;
-    background-color: #4aaaa5;
     color: white;
+    background-color: #4aaaa5;
 }
 
 input.input-button:hover {

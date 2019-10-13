@@ -15,7 +15,6 @@
     width: 100%;
     position: absolute;
     bottom: 5%;
-    z-index: 99;
     text-align: center;
     padding: 10px 0 10px 0;
     font-size: 1.4em;
@@ -24,20 +23,19 @@
 }
 
 .project .banner:hover {
-    background-color: transparent;
-    color: transparent;
+    color: black;
+    background-color: aquamarine;
+}
+
+.project.card {
+    border: .1em solid #777777;
+    border-radius: 1.5em;
+}
+
+.project.card:hover {
+    border-color: #4aaaa5;
 }
 
 #am_img {
     border-radius: 10%
-}
-
-#strife {
-    border: .1em solid #777777; 
-    border-radius: 1.5em;
-}
-
-#evoemu {
-    border: .1em solid #777777;
-    border-radius: 1.5em;
 }
