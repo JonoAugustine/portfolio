@@ -11,37 +11,41 @@ body {
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #4aaaa5;
 }
+
+.navbar {
+    width: 100%;
+}
+
+.navbar h1 {
+    color: white;
+}
+
+@media(max-width: 767) {
+    .navbar {
+
+    }
+}
+
 
 #content {
     background-color: white;
 }
 
-#content h1 {
-    color: #4aaaa5;
+@media(max-width: 767) {
+    #content {
+        width: 100%;
+    }
 }
 
-#content > .container img {
-    width: 200px;
-    height: 200px;
+@media(min-width: 768) {
+    #content {
+        width: 100%;
+        margin: 0 2% 0 2%;
+    }
 }
 
-.navbar {
-    height: 100px;
-    padding: 0;
-}
-
-.navbar > .container {
-    height: 100%;
-    /* width: 960px; /* TODO Media qry */
-}
-
-.navbar h1 {
-    font-size: 2em;
-}
-
-.navbar .navbar-brand {
-    height: 100%;
-    color: white;
-    background-color: #4aaaa5;
+.page-header {
+    font-size: 1em;
 }
