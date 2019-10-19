@@ -1,9 +1,9 @@
 .project {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
     margin: .7em;
     position: relative;
-    float: left;
+    display: inline-block;
 }
 
 .project img {
@@ -38,4 +38,11 @@
 
 #am_img {
     border-radius: 10%
+}
+
+@media only screen and (max-width: 768px) {
+    .project {
+        width: 150px;
+        height: 150px;
+    }
 }
