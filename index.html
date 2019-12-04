@@ -1,63 +1,179 @@
-<!DOCTYPE html>
-<html lang="html">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Jonathan Augustine</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-</head>
-
-<body>
-
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header d-none d-md-block">
-                <a class="navbar-brand" href="./index.html">Jonathan Augustine</a>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="description" content='Portfolio of Jonathan "Jono" Augustine' />
+    <title>Jono Augustine</title>
+    <link href="./assets/css/reset.css" rel="stylesheet" />
+    <link href="./assets/css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="app">
+        <nav class="navbar ">
+          <div class="container center row fluid">
+            <h1 class="brand">Jono Augustine</h1>
+            <div class="info">
+              <h5>240-423-6950</h5>
+              <h5>me@JonoAugustine.com</h5>
             </div>
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="./portfolio.html">Portfolio</a>
-                <a class="nav-item nav-link" href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <div class="page">
+          <img
+            class="banner fixed "
+            src="./assets/images/logo_banner.jpg"
+            alt="AMPro Logo"
+          />
+          <div class="page-content-wrapper up">
+            <div class="container">
+              <div class="container center fluid" id="page_content">
+                <h2>My Projects</h2>
+                <div class="container center row fluid">
+                  <div class="card">
+                    <img
+                      class=""
+                      src="https://jonoaugustine.com/static/media/strife-logo.9ef77d7b.png"
+                      alt="Strife"
+                    />
+                    <div class="container">
+                      <h3>Strife</h3>
+                      <a href="https://gitlab.com/serebit/strife"
+                        ><h5>View Source</h5></a
+                      >
+                    </div>
+                    <p>
+                      An idiomatic Kotlin implementation of the Discord API.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <img
+                      class="invert"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAACXBIWXMAAAsSAAALEgHS3X78AAAQXUlEQVR4nO3dP49b15nA4ffsqllgAUufwAN5e8lQeo9huV8YUNq4Utp0dpeUFuBCrVV5W7vZXgIy7mNA7tfC+AtENpDSxtmCZEJRl3/uOyQvz+HzAERGmiHnvVcOf+Q9l2SptQYAjPVvUw8AQJsEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEg5damb5ZS7kfE0yPNAqfqXkT8MPUQMLE/1VpfLv/FxoBExO2I+OBw88Dpury8jPv378fTp08j/P8Abq/+hUNYAKQICAApAgJAioAAkCIgAKQICAApAgJAioAAkCIgAKQICAApAgJAioAAkCIgAKQICAApAgJAioAAkCIgAKQICAApAgJAioAAkCIgAKQICAApAgJAioAAkCIgAKQICAAptzZ9s9Z6VUr5cP7H2xFxf/71/fmfF1+/c5jxADiCXyLi5fzrn5e+fjn/c9Rar1avtDEgA1f6300/W0pZDstycBYul76+iIh3t/1+AHb2U0RcL/35auX7/wxCRPxca30ZN7A1IGMMDLMxOAtL4bmYXz4NcQEY8lNEfB2zUFzHHkKQtdeAZK1ufCnlMk43IKuF57g+mHqAI/pu6gHO2EWc7n3Qda31L1MPEXEiAWnM16fyj3eOSilXcR4R+a7Wejn1EOeqlPKXiPjz1HOcOmdh0Zqft/9IF85lO2mYgNCaSY71TuBctpOGCQitOZdH5ueynTRMQGjNuTwyP5ftpGECQmuupx7gSK6nHgC2ERCaUmu9nnqGYziX7aRtAkKLfph6gAPrffvohIDQot4XmHvfPjohILToauoBDuxq6gFgFwICQIqA0KKrqQc4sKupB4BdCAgt6n2NoPftoxMCQnOmeuvqY+l9++iHgNCqn6Ye4EB63S46JCC06nrqAQ7keuoBYFcCQquupx7gQK6nHgB2JSC06nrqAQ7keuoBYFcCQqt6XWjudbvokIDQql5Pde11u+iQgNCkWuvV1DMcQq/bRZ8EhJb9MvUAe9bb9tA5AaFlva0X9LY9dE5AaFlv6wW9bQ+dExBa1tsj9t62h84JCC27nnqAPbueegAYQ0Bo2fXUA+zZ9dQDwBgCQst6O+TT2/bQOQGhWbXWrhade9se+icgtO6HqQfYk162gzMiILSul0ftvWwHZ0RAaN3V1APsydXUA8BYAkLrennk3st2cEYEhNb1cuZSL9vBGREQWnc99QB7cj31ADCWgNC0Wuv11DPsQy/bwXm5NfUAsAcfHuJGP/nkk/v37t37r6dPn/5fOMQEbxEQmnfoD2GqtT495O1DqxzCAiBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASBFQABIERAAUgQEgBQBASDl1tQDNOiilHI59RCnrNZ6NfUMbOa/4a0uph6gBQIy3h/mF9YrUw/AVn+degDa5xAWACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApAgIACkCAkCKgACQIiAApNyaeoAG/U9EfD31EHBDH049wIn7NCL+MPUQp05AxruutV5NPQTchP+GNyulXE49QwscwgIgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBIAUAQEgRUAASBEQAFIEBICUW1MPAPtUSnkaEfdveDP/GRHvffTRR7fef//9f//yyy//vPL9HyPiHzf8HS9rrX+64W3ApASE3vx3RLy7jxv67bff4tdff42I+I+V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"
+                      alt="Evolution Emulator"
+                    />
+                    <div class="container">
+                      <h3>Evolution Emulator</h3>
+                      <a
+                        href="https://github.com/JonoAugustine/Evolution-Emulator"
+                        ><h5>View Source</h5></a
+                      >
+                    </div>
+                    <p>
+                      A basic attempt at emulating Earthen evolution with OOP.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <img
+                      class=""
+                      src="https://jonoaugustine.com/static/media/logo.1ee7af00.jpg"
+                      alt="Aquatic Mastery"
+                    />
+                    <div class="container">
+                      <h3>Aquatic Mastery</h3>
+                      <a href="https://youtube.com/aquaticmaster"
+                        ><h5>View Live</h5></a
+                      >
+                    </div>
+                    <p>
+                      A YouTube channel centered around sharing my experiences
+                      as an aquarist and showing others how to achieve success
+                      in their own aquariums.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <img
+                      class=""
+                      src="https://jonoaugustine.com/static/media/psyduck_purple.eeb1313f.png"
+                      alt="Team Magma PRO"
+                    />
+                    <div class="container">
+                      <h3>Team Magma PRO</h3>
+                      <a href="https://gitlab.com/JonoAugustine/teammagma"
+                        ><h5>View Source</h5></a
+                      ><a href="https://teammagmapro.web.app"
+                        ><h5>View Live</h5></a
+                      >
+                    </div>
+                    <p>
+                      This project aims to simplify &amp; organize the selling,
+                      buying, &amp; trading process of Pokemon Revolution Online
+                      by providing users with a clean and intuitive web app to
+                      find the items and pokemon they need.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <img
+                      class=""
+                      src="https://jonoaugustine.com/static/media/ouch.9251ee8b.png"
+                      alt="Ouch"
+                    />
+                    <div class="container">
+                      <h3>Ouch</h3>
+                      <a href="https://github.com/anthnyd/Ouch"
+                        ><h5>View Source</h5></a
+                      ><a href="https://anthnyd.github.io/Ouch/"
+                        ><h5>View Live</h5></a
+                      >
+                    </div>
+                    <p>
+                      A web app built like a simulation where you and your
+                      friends can exist in an Existence together. In an
+                      Existence you can chat to each other and perform fun
+                      commands.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <img
+                      class="invert"
+                      src="https://jonoaugustine.com/static/media/otm_logo.4fa53679.png"
+                      alt="Off The Menu"
+                    />
+                    <div class="container">
+                      <h3>Off The Menu</h3>
+                      <a href="https://github.com/JonoAugustine/AllergicToThat"
+                        ><h5>View Source</h5></a
+                      ><a href="https://JonoAugustine.github.io/AllergicToThat"
+                        ><h5>View Live</h5></a
+                      >
+                    </div>
+                    <p>
+                      A web app aiming to make eating out simpler for allergy
+                      sufferers and picky eaters. It provides the ability to
+                      search items on restaurant menus to determine if they
+                      contain potential allergens which the user defines.
+                    </p>
+                  </div>
+                  <div class="card">
+                    <h1 class="placeholder">S</h1>
+                    <div class="container">
+                      <h3>ScoreBorda</h3>
+                      <a href="https://github.com/JonoAugustine/ScoreBorda"
+                        ><h5>View Source</h5></a
+                      >
+                    </div>
+                    <p>
+                      A system which utilizes the simplicity of binary choices
+                      to score and rank "Features" and "Candidates". By
+                      presenting only two options in each comparison, the Borda
+                      is able to remove much of the overwhelming aspect of
+                      comparing and several choices at once.
+                    </p>
+                  </div>
+                </div>
+                <button id="resume_btn">View Resume</button>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
-
-    <div id="content" class="container">
-        <div class="page-header">
-            <h1>About Jonathan</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="./assets/images/jono.jpg" alt="JonathanAugustine">
-            </div>
-            <div class="col-sm">
-                Founder of Aquatic Mastery Productions, co-founder of Numberless Liquidators and HouseFire, and a member
-                of bndts.
-                Jonathan is constantly investigating new creative and scientific ideas through his passion for aquatic
-                art, programming,
-                and videography.
-            </div>
-        </div>
+      </div>
     </div>
-
-    <footer class="container-fluid">
-        <div> Copyright 2019, Jonathan Augustine </div>
-    </footer>
-
-    <!--Import Bootstrap JS libs-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>

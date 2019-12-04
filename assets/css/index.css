@@ -1,0 +1,204 @@
+html,
+body,
+#root,
+#app {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  color: white;
+  background-color: #161616;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html,
+body,
+#root {
+  overflow: hidden;
+}
+
+nav.navbar {
+  padding: 0.6em;
+  background-color: #292929;
+  border-bottom: 3px solid green;
+}
+
+nav.navabr.scrolled {
+  background-color: transparent;
+}
+
+nav.navbar h1.brand {
+  font-size: xx-large;
+  cursor: pointer;
+  width: 100%;
+}
+
+nav.navbar div.info {
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+}
+
+nav.navbar div.info h5 {
+  font-size: 1em;
+  margin-right: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  nav.navbar h1.brand {
+    width: 50%;
+  }
+
+  nav.navbar div.info {
+    width: 50%;
+  }
+
+  nav.navbar div.info h5 {
+    display: inline;
+  }
+}
+
+div.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+div.container.fluid {
+  max-width: 100%;
+}
+
+div.container.center {
+  text-align: center;
+  align-content: center;
+}
+
+div.container.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+  div.container {
+    max-width: 80%;
+  }
+
+  div.container.row {
+    align-content: unset;
+    justify-content: unset;
+  }
+}
+
+div.page {
+  overflow: auto;
+}
+
+div.page div.page-content-wrapper {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+div.page div.page-content {
+  padding: 1em 0.5em;
+}
+
+div.page h2 {
+  padding: 10px;
+  font-size: 2em;
+}
+
+div.page img.banner {
+  width: 150%;
+}
+
+div.page img.banner.fixed {
+  left: -25%;
+  position: relative;
+}
+
+@media only screen and (min-width: 450px) {
+  div.page img.banner {
+    width: 100%;
+  }
+
+  div.page img.banner.fixed {
+    left: 0;
+  }
+}
+
+div.page button {
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid darkgreen;
+  color: white;
+  background-color: transparent;
+}
+
+div.card {
+  margin: 10px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+div.card.overflow {
+  overflow: auto;
+}
+
+div.card img {
+  max-width: 150px;
+}
+
+div.card img.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+div.card h1.placeholder {
+  font-size: 10em;
+}
+
+div.card h3 {
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+div.card h5 {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+div.card a {
+  color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  div.card {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+
+  div.card img,
+  div.card h1.placeholder {
+    float: left;
+  }
+
+  div.card img {
+    margin-right: 2em;
+  }
+
+  div.card h1.placeholder {
+    padding: 0 45px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  div.card {
+    width: 45%;
+  }
+}
