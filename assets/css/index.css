@@ -1,7 +1,6 @@
 html,
 body,
-#root,
-#app {
+#root {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -11,11 +10,43 @@ body,
   overflow-x: hidden;
 }
 
-html,
-body,
-#root {
-  overflow: hidden;
+div.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
+
+div.container.fluid {
+  max-width: 100%;
+}
+
+div.container.center {
+  text-align: center;
+  align-content: center;
+}
+
+div.container.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+  div.container {
+    max-width: 80%;
+  }
+
+  div.container.row {
+    align-content: unset;
+    justify-content: unset;
+  }
+}
+
+/************
+ * NAV *
+ ************/
 
 nav.navbar {
   padding: 0.6em;
@@ -58,79 +89,41 @@ nav.navbar div.info h5 {
   }
 }
 
-div.container {
-  width: 95%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-div.container.fluid {
-  max-width: 100%;
-}
-
-div.container.center {
-  text-align: center;
-  align-content: center;
-}
-
-div.container.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-between;
-}
-
-@media only screen and (min-width: 600px) {
-  div.container {
-    max-width: 80%;
-  }
-
-  div.container.row {
-    align-content: unset;
-    justify-content: unset;
-  }
-}
-
-div.page {
-  overflow: auto;
-}
-
-div.page div.page-content-wrapper {
+div#page div.page-content-wrapper {
   width: 100%;
   margin-top: 25px;
   margin-bottom: 50px;
 }
 
-div.page div.page-content {
+div#page div.page-content {
   padding: 1em 0.5em;
 }
 
-div.page h2 {
+div#page h2 {
   padding: 10px;
   font-size: 2em;
 }
 
-div.page img.banner {
+div#page img.banner {
   width: 150%;
 }
 
-div.page img.banner.fixed {
+div#page img.banner.fixed {
   left: -25%;
   position: relative;
 }
 
 @media only screen and (min-width: 450px) {
-  div.page img.banner {
+  div#page img.banner {
     width: 100%;
   }
 
-  div.page img.banner.fixed {
+  div#page img.banner.fixed {
     left: 0;
   }
 }
 
-div.page button {
+div#page button {
   padding: 10px;
   margin: 10px 10px 0 10px;
   border: 1px solid darkgreen;
