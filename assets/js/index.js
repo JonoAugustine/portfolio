@@ -50,6 +50,18 @@ const projects = [
     "psyduck_purple.png"
   ),
   new Project(
+    "Off The Menu",
+    "https://JonoAugustine.github.io/AllergicToThat",
+    "https://github.com/JonoAugustine/AllergicToThat",
+    `
+    A web app aiming to make eating out simpler for allergy sufferers and picky eaters.
+    It provides the ability to search items on restaurant menus to determine if they contain
+    potential allergens which the user defines. 
+    `,
+    "otm_logo.png",
+    true
+  ),
+  new Project(
     "Ouch",
     "https://anthnyd.github.io/Ouch/",
     "https://github.com/anthnyd/Ouch",
