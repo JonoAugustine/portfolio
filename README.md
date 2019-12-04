@@ -1,4 +1,4 @@
-This is an old version of my portfolio. An up-to-date repository can be found [here](https://gitlab.com/JonoAugustine/high-friction-site)
+This is an old version of my portfolio. An up-to-date repository can be found [here](https://gitlab.com/JonoAugustine/portfolio)
 
 ---------------------------------------------------------------------------------------------
 ## [Portfolio of Jonathan Augustine](https://jonoaugustine.github.io/portfolio/index.html)
