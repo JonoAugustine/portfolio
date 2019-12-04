@@ -129,6 +129,12 @@ div#page button {
   border: 1px solid darkgreen;
   color: white;
   background-color: transparent;
+  cursor: pointer;
+}
+
+div#page button:hover {
+  cursor: pointer;
+  border-color: lightgreen;
 }
 
 div.card {
