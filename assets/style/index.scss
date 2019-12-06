@@ -107,6 +107,7 @@ div.page {
 
     .badge {
       margin: 0 auto;
+      cursor: pointer;
     }
   }
 
@@ -134,11 +135,22 @@ div.page {
 
       img.thumbnail {
         max-width: 150px !important;
+        border-radius: $radius;
+
+        @include tablet() {
+          float: left;
+          margin: auto $margin * 2 auto 0;
+        }
       }
 
       h1.placeholder {
         font-size: 10em;
         margin: 0;
+
+        @include tablet() {
+          float: left;
+          margin: auto $margin * 5 auto $margin * 5;
+        }
       }
 
       h3 {

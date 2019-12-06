@@ -82,6 +82,7 @@ div.page div#badges {
 
 div.page div#badges .badge {
   margin: 0 auto;
+  cursor: pointer;
 }
 
 div.page div#cards div.card {
@@ -112,11 +113,26 @@ div.page div#cards div.card {
 
 div.page div#cards div.card img.thumbnail {
   max-width: 150px !important;
+  border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+  div.page div#cards div.card img.thumbnail {
+    float: left;
+    margin: auto 20px auto 0;
+  }
 }
 
 div.page div#cards div.card h1.placeholder {
   font-size: 10em;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  div.page div#cards div.card h1.placeholder {
+    float: left;
+    margin: auto 50px auto 50px;
+  }
 }
 
 div.page div#cards div.card h3 {

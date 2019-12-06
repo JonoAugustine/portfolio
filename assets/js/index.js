@@ -21,14 +21,7 @@ const projects = [
     "An idiomatic Kotlin implementation of the Discord API.",
     "strife-logo.png"
   ),
-  new Project(
-    "Evolution Emulator",
-    null,
-    "https://github.com/JonoAugustine/Evolution-Emulator",
-    "A basic attempt at emulating Earthen evolution with OOP.",
-    "EvoEmuSub.png",
-    true
-  ),
+
   new Project(
     "Aquatic Mastery",
     "https://youtube.com/aquaticmaster",
@@ -36,18 +29,6 @@ const projects = [
     `A YouTube channel centered around sharing my experiences as an
     aquarist and showing others how to achieve success in their own aquariums.`,
     "logo.jpg"
-  ),
-  new Project(
-    "Team Magma PRO",
-    "https://teammagmapro.web.app",
-    "https://gitlab.com/JonoAugustine/teammagma",
-    `
-      This project aims to simplify & organize the selling, buying, 
-      & trading process of Pokemon Revolution Online by providing
-      users with a clean and intuitive web app to find the items 
-      and pokemon they need.
-    `,
-    "psyduck_purple.png"
   ),
   new Project(
     "Off The Menu",
@@ -62,6 +43,18 @@ const projects = [
     true
   ),
   new Project(
+    "Team Magma PRO",
+    "https://teammagmapro.web.app",
+    "https://gitlab.com/JonoAugustine/teammagma",
+    `
+      This project aims to simplify & organize the selling, buying, 
+      & trading process of Pokemon Revolution Online by providing
+      users with a clean and intuitive web app to find the items 
+      and pokemon they need.
+    `,
+    "psyduck_purple.png"
+  ),
+  new Project(
     "Ouch",
     "https://anthnyd.github.io/Ouch/",
     "https://github.com/anthnyd/Ouch",
@@ -70,6 +63,14 @@ const projects = [
     In an Existence you can chat to each other and perform fun commands.
     `,
     "ouch.png"
+  ),
+  new Project(
+    "Evolution Emulator",
+    null,
+    "https://github.com/JonoAugustine/Evolution-Emulator",
+    "A basic attempt at emulating Earthen evolution with OOP.",
+    "EvoEmuSub.png",
+    true
   ),
   new Project(
     "ScoreBorda",
