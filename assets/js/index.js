@@ -21,15 +21,6 @@ const projects = [
     "An idiomatic Kotlin implementation of the Discord API.",
     "strife-logo.png"
   ),
-
-  new Project(
-    "Aquatic Mastery",
-    "https://youtube.com/aquaticmaster",
-    null,
-    `A YouTube channel centered around sharing my experiences as an
-    aquarist and showing others how to achieve success in their own aquariums.`,
-    "logo.jpg"
-  ),
   new Project(
     "Off The Menu",
     "https://JonoAugustine.github.io/AllergicToThat",
@@ -53,6 +44,14 @@ const projects = [
       and pokemon they need.
     `,
     "psyduck_purple.png"
+  ),
+  new Project(
+    "Aquatic Mastery",
+    "https://youtube.com/aquaticmaster",
+    null,
+    `A YouTube channel centered around sharing my experiences as an
+    aquarist and showing others how to achieve success in their own aquariums.`,
+    "logo.jpg"
   ),
   new Project(
     "Ouch",

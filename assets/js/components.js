@@ -26,7 +26,7 @@ const H = (size, text) => {
 const A = (link, ...children) => {
   const e = E("a");
   e.setAttribute("href", link);
-  e.setAttribute('target', '_blank')
+  e.setAttribute("target", "_blank");
   children.forEach(c => e.appendChild(c));
   return e;
 };
@@ -86,15 +86,14 @@ const ProjectCard = project => {
     img.setAttribute("alt", project.name);
     img.className += `thumbnail ${project.invert ? "invert" : ""}`;
     base.appendChild(img);
+  } else {
+    const ph = H(1, project.name[0]);
+    ph.className = "placeholder";
+    base.appendChild(ph);
   }
-  //else {
-  //  const ph = H(1, project.name[0]);
-  //  ph.className = "placeholder";
-  //  base.appendChild(ph);
-  //}
 
   const container = E("div");
-  container.className = "container";
+  container.className = "content container";
   base.appendChild(container);
 
   container.appendChild(H(3, project.name));
@@ -107,7 +106,7 @@ const ProjectCard = project => {
 
   const description = E("p");
   description.textContent = project.description;
-  base.appendChild(description);
+  container.appendChild(description);
 
   return base;
 };
