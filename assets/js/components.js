@@ -26,6 +26,7 @@ const H = (size, text) => {
 const A = (link, ...children) => {
   const e = E("a");
   e.setAttribute("href", link);
+  e.setAttribute('target', '_blank')
   children.forEach(c => e.appendChild(c));
   return e;
 };
