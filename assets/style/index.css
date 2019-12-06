@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  color: #eaebed;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background-color: #111111;
+}
+
+div.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+div.container.fluid {
+  max-width: 100%;
+}
+
+div.container.center {
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+div.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+img.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+header {
+  padding: 0.6em;
+  background-color: #292929;
+  border-bottom: 3px solid #28965a;
+}
+
+header a {
+  text-decoration: none;
+  color: #28965a;
+}
+
+header h1 {
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+header h4 {
+  margin: 5px 0;
+}
+
+div.page div#badges {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+div.page div#badges .badge {
+  margin: 0 auto;
+}
+
+div.page div#cards div.card {
+  background-color: #191919;
+  margin: 10px;
+  padding: 10px;
+  max-width: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 3px #2b2b2b;
+          box-shadow: 5px 5px 3px #2b2b2b;
+}
+
+div.page div#cards div.card img.thumbnail {
+  max-width: 150px !important;
+}
+
+div.page div#cards div.card h3 {
+  font-size: xx-large;
+  margin: 10px auto;
+}
+
+div.page div#cards div.card a {
+  color: #008dd5;
+}
+
+div.page div#cards div.card a h5 {
+  margin: 10px 0;
+}
+
+div.page div#cards div.card:hover {
+  -webkit-box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+          box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+}
+/*# sourceMappingURL=index.css.map */

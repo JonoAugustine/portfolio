@@ -6,45 +6,30 @@
     <meta name="description" content='Portfolio of Jonathan "Jono" Augustine' />
     <title>Jono Augustine</title>
 
-    <link href="./assets/css/reset.css" rel="stylesheet" />
+    <link href="./assets/style/normalize.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
-    <link href="./assets/css/index.css" rel="stylesheet" />
+    <link href="./assets/style/index.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root">
-      <nav class="navbar ">
+      <header>
         <div class="container center row fluid">
-          <h1 class="brand">Jono Augustine</h1>
+          <a href="#">
+            <h1>Jono Augustine</h1>
+          </a>
           <div class="info">
-            <h5>240-423-6950</h5>
-            <h5>me@JonoAugustine.com</h5>
+            <h4>240-423-6950</h5>
+            <h4>me@JonoAugustine.com</h4>
           </div>
         </div>
-      </nav>
-      <div id="page" class="container">
+      </header>
+      <div class="page container">
         <div class="container center fluid" id="page_content">
+          <div id="badges" class="row"></div>
           <h2>My Projects</h2>
-          <a href="https://gitlab.com/JonoAugustine">
-            <img
-              src="https://img.shields.io/badge/GitLab- -orange?logo=gitlab&style=for-the-badge"
-              alt=""
-            />
-          </a>
-          <a href="https://github.com/JonoAugustine">
-            <img
-              src="https://img.shields.io/badge/GitHub- -black?logo=github&style=for-the-badge"
-              alt=""
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/jonathan-augustine-14678b124/">
-            <img
-              src="https://img.shields.io/badge/LinkIn- -blue?logo=linkedin&style=for-the-badge"
-              alt=""
-            />
-          </a>
           <div id="cards" class="container center row fluid"></div>
           <button id="resume_btn">View Resume</button>
         </div>

@@ -30,7 +30,40 @@ const A = (link, ...children) => {
   return e;
 };
 
+/**
+ *
+ * @param {string} src
+ * @param {string} alt
+ * @returns {HTMLImageElement}
+ */
+const Img = (src, alt) => {
+  const e = E("img");
+  e.setAttribute("src", src);
+  e.setAttribute("alt", alt);
+  return e;
+};
+
 const root = document.getElementById("root");
+
+/**
+ *
+ * @param {string} link
+ * @param {string} name
+ * @param {string} color
+ * @param {string} logo
+ * @returns {HTMLAnchorElement}
+ */
+const Badge = (link, name, color) => {
+  const e = A(
+    link,
+    Img(
+      `https://img.shields.io/badge/${name}-${" "}-${color}?logo=${name.toLowerCase()}&style=for-the-badge`,
+      name
+    )
+  );
+  e.className = "badge";
+  return e;
+};
 
 /**
  *
@@ -42,15 +75,15 @@ const ProjectCard = project => {
   base.className = `card animated slideIn${[
     "Left",
     "Right",
-    "Up",
-    "Down"
+    "Up"
+    //"Down"
   ].random()}`;
 
   if (typeof project.imageSrc === "string") {
     const img = E("img");
     img.setAttribute("src", project.imageSrc);
     img.setAttribute("alt", project.name);
-    if (project.invert) img.setAttribute("class", "invert");
+    img.className += `thumbnail ${project.invert ? "invert" : ""}`;
     base.appendChild(img);
   } else {
     const ph = H(1, project.name[0]);
@@ -80,3 +113,18 @@ const ProjectCard = project => {
 projects.forEach(p => {
   document.getElementById("cards").appendChild(ProjectCard(p));
 });
+
+const badges = document.getElementById("badges");
+badges.appendChild(
+  Badge("https://github.com/JonoAugustine", "GitHub", "white")
+);
+badges.appendChild(
+  Badge("https://gitlab.com/JonoAugustine", "GitLab", "orange")
+);
+badges.appendChild(
+  Badge(
+    "https://www.linkedin.com/in/jonathan-augustine-14678b124/",
+    "LinkedIn",
+    "blue"
+  )
+);

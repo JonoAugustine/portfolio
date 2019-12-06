@@ -25,7 +25,7 @@ div.container.center {
   align-content: center;
 }
 
-div.container.row {
+div.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -60,8 +60,7 @@ nav.navabr.scrolled {
 
 nav.navbar h1.brand {
   font-size: xx-large;
-  cursor: pointer;
-  width: 100%;
+  
 }
 
 nav.navbar div.info {

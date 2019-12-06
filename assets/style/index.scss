@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+
+$colors: (
+  primary: rgba(40, 150, 90, 1),
+  accent: rgba(0, 141, 213, 1),
+  primary-dark: rgba(42, 96, 65, 1),
+  base: rgba(17, 17, 17, 1),
+  text-: rgba(234, 235, 237, 1)
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$radius: 15px;
+$margin: 10px;
+$padding: 10px;
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+  color: color(text-);
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background-color: color(base);
+}
+
+div.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+div.container.fluid {
+  max-width: 100%;
+}
+
+div.container.center {
+  text-align: center;
+  align-content: center;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+img.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+header {
+  padding: 0.6em;
+  background-color: #292929;
+  border-bottom: 3px solid color(primary);
+
+  a {
+    text-decoration: none;
+    color: color(primary);
+  }
+
+  h1 {
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  h4 {
+    margin: 5px 0;
+  }
+}
+
+div.page {
+  div#badges {
+    max-width: 400px;
+    margin: $padding * 2 auto;
+
+    .badge {
+      margin: 0 auto;
+    }
+  }
+
+  div#cards {
+    div.card {
+      background-color: lighten(color(base), 3%);
+      margin: $margin;
+      padding: $padding;
+      max-width: 200px;
+      overflow: hidden;
+
+      border-radius: $radius;
+      box-shadow: 5px 5px 3px lighten($color: color(base), $amount: 10%);
+
+      img.thumbnail {
+        max-width: 150px !important;
+      }
+
+      h3 {
+        font-size: xx-large;
+        margin: $margin auto;
+      }
+
+      a {
+        color: color(accent);
+        h5 {
+          margin: $margin 0;
+        }
+      }
+    }
+
+    div.card:hover {
+      box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+    }
+  }
+}
