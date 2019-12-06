@@ -95,8 +95,28 @@ div.page div#cards div.card {
           box-shadow: 5px 5px 3px #2b2b2b;
 }
 
+@media (min-width: 768px) {
+  div.page div#cards div.card {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  div.page div#cards div.card {
+    width: 45%;
+  }
+}
+
 div.page div#cards div.card img.thumbnail {
   max-width: 150px !important;
+}
+
+div.page div#cards div.card h1.placeholder {
+  font-size: 10em;
+  margin: 0;
 }
 
 div.page div#cards div.card h3 {
