@@ -85,11 +85,12 @@ const ProjectCard = project => {
     img.setAttribute("alt", project.name);
     img.className += `thumbnail ${project.invert ? "invert" : ""}`;
     base.appendChild(img);
-  } else {
-    const ph = H(1, project.name[0]);
-    ph.className = "placeholder";
-    base.appendChild(ph);
   }
+  //else {
+  //  const ph = H(1, project.name[0]);
+  //  ph.className = "placeholder";
+  //  base.appendChild(ph);
+  //}
 
   const container = E("div");
   container.className = "container";

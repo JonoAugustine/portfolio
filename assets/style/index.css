@@ -16,6 +16,10 @@ body {
   background-color: #111111;
 }
 
+#root {
+  margin-bottom: 20px;
+}
+
 div.container {
   width: 95%;
   margin-left: auto !important;
@@ -49,6 +53,20 @@ div.row {
       align-content: space-between;
 }
 
+button {
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid #28965a;
+  color: #eaebed;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+  border-color: #33be72;
+}
+
 img.invert {
   -webkit-filter: invert(1);
   filter: invert(1);
@@ -63,16 +81,33 @@ header {
 header a {
   text-decoration: none;
   color: #28965a;
-}
-
-header h1 {
-  margin: 0;
   width: 100%;
-  cursor: pointer;
 }
 
-header h4 {
-  margin: 5px 0;
+@media (min-width: 768px) {
+  header a {
+    width: 50%;
+  }
+}
+
+header a h1 {
+  margin: auto 0;
+}
+
+@media (min-width: 768px) {
+  header div#info {
+    margin: auto 0;
+  }
+}
+
+header div#info h4 {
+  margin: 5px 10px;
+}
+
+@media (min-width: 768px) {
+  header div#info h4 {
+    display: inline;
+  }
 }
 
 div.page div#badges {

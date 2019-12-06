@@ -51,6 +51,10 @@ body {
   background-color: color(base);
 }
 
+#root {
+  margin-bottom: 20px;
+}
+
 div.container {
   width: 95%;
   margin-left: auto !important;
@@ -74,6 +78,20 @@ div.row {
   align-content: space-between;
 }
 
+button {
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid color(primary);
+  color: color(text-);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+  border-color: lighten($color: color(primary), $amount: 10%);
+}
+
 img.invert {
   -webkit-filter: invert(1);
   filter: invert(1);
@@ -87,16 +105,29 @@ header {
   a {
     text-decoration: none;
     color: color(primary);
-  }
-
-  h1 {
-    margin: 0;
     width: 100%;
-    cursor: pointer;
+
+    @include tablet() {
+      width: 50%;
+    }
+
+    h1 {
+      margin: auto 0;
+    }
   }
 
-  h4 {
-    margin: 5px 0;
+  div#info {
+    @include tablet() {
+      margin: auto 0;
+    }
+
+    h4 {
+      margin: 5px 10px;
+
+      @include tablet() {
+        display: inline;
+      }
+    }
   }
 }
 
