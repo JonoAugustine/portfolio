@@ -137,4 +137,4 @@ badges.append(
   )
 );
 
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "Resume"));
+badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "Résumé"));
