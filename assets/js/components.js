@@ -1,50 +1,45 @@
+const root = $("#root");
+
 /**
  * Creates a new element of the given tag.
  * @param {string} tag Element tag
- * @returns {HTMLElement}
  */
-const E = tag => document.createElement(tag);
+const E = tag => $(`<${tag}>`);
 
 /**
  * Creates a new Heading element of the given size with the given text.
  * @param {number} size
  * @param {string} text
- * @returns {HTMLHeadingElement}
  */
-const H = (size, text) => {
-  const e = E(`h${size}`);
-  e.textContent = text;
-  return e;
-};
+const H = (size, text) => E(`h${size}`).text(text);
 
 /**
  *
  * @param {string} link
  * @param  {...any} children
- * @returns {HTMLAnchorElement}
  */
-const A = (link, ...children) => {
-  const e = E("a");
-  e.setAttribute("href", link);
-  e.setAttribute("target", "_blank");
-  children.forEach(c => e.appendChild(c));
-  return e;
+const A = link => {
+  return E("a")
+    .attr("href", link)
+    .attr("target", "_blank");
+};
+
+const Button = (link, text) => {
+  return E("button")
+    .text(text)
+    .click(() => window.open(link, "_blank"));
 };
 
 /**
  *
  * @param {string} src
  * @param {string} alt
- * @returns {HTMLImageElement}
  */
 const Img = (src, alt) => {
-  const e = E("img");
-  e.setAttribute("src", src);
-  e.setAttribute("alt", alt);
-  return e;
+  return E("img")
+    .attr("src", src)
+    .attr("alt", alt);
 };
-
-const root = document.getElementById("root");
 
 /**
  *
@@ -55,74 +50,80 @@ const root = document.getElementById("root");
  * @returns {HTMLAnchorElement}
  */
 const Badge = (link, name, color) => {
-  const e = A(
-    link,
-    Img(
-      `https://img.shields.io/badge/${name}-${" "}-${color}?logo=${name.toLowerCase()}&style=for-the-badge`,
-      name
+  return A(link)
+    .append(
+      Img(
+        `https://img.shields.io/badge/${name}-${" "}-${color}?logo=${name.toLowerCase()}&style=for-the-badge`,
+        name
+      )
     )
-  );
-  e.className = "badge";
-  return e;
+    .addClass("badge");
 };
 
 /**
- *
  * @param {Project} project
- * @returns {HTMLElement}
  */
 const ProjectCard = project => {
-  const base = E("div");
-  base.className = `card animated slideIn${[
-    "Left",
-    "Right",
-    "Up"
-    //"Down"
-  ].random()}`;
+  let open = false;
 
-  if (typeof project.imageSrc === "string") {
-    const img = E("img");
-    img.setAttribute("src", project.imageSrc);
-    img.setAttribute("alt", project.name);
-    img.className += `thumbnail ${project.invert ? "invert" : ""}`;
-    base.appendChild(img);
-  } else {
-    const ph = H(1, project.name[0]);
-    ph.className = "placeholder";
-    base.appendChild(ph);
-  }
+  const base = E("div").addClass(
+    `card animated slideIn${["Left", "Right", "Up"].random()}`
+  );
 
-  const container = E("div");
-  container.className = "content container";
-  base.appendChild(container);
+  base.append(
+    typeof project.imageSrc === "string"
+      ? Img(project.imageSrc, project.name).addClass(
+          `thumbnail ${project.invert ? "invert" : ""}`
+        )
+      : base.append(H(1, project.name[0]).addClass("placeholder"))
+  );
 
-  container.appendChild(H(3, project.name));
+  // Details
+  const container = E("div").addClass("content container");
+  base.append(container);
+
+  container.append(H(1, project.name));
+
+  const view = E("div").addClass("row links");
+  container.append(view);
+
   if (project.live) {
-    container.appendChild(A(project.live, H(5, "View Live")));
+    view.append(Button(project.live, "View Live"));
   }
   if (project.source) {
-    container.appendChild(A(project.source, H(5, "View Source")));
+    view.append(Button(project.source, "View Source"));
   }
 
-  const description = E("p");
-  description.textContent = project.description;
-  container.appendChild(description);
+  // Descripption
+  const description = E("p").text(project.description);
+  container.append(description);
+
+  // Extra details & screenshots
+  const extra = E("div").addClass("extra");
+
+  base.click(() => {
+    if (!open) {
+      $(".card.open").each(function() {
+        $(this).removeClass("open");
+      });
+      open = !open;
+      base.addClass("open");
+      base.parent().prepend(base);
+    } else {
+      open = !open;
+      base.removeClass("open");
+    }
+  });
 
   return base;
 };
 
-projects.forEach(p => {
-  document.getElementById("cards").appendChild(ProjectCard(p));
-});
+$("#cards").append(...projects.map(p => ProjectCard(p)));
 
-const badges = document.getElementById("badges");
-badges.appendChild(
-  Badge("https://github.com/JonoAugustine", "GitHub", "white")
-);
-badges.appendChild(
-  Badge("https://gitlab.com/JonoAugustine", "GitLab", "orange")
-);
-badges.appendChild(
+const badges = $("#badges");
+badges.append(Badge("https://github.com/JonoAugustine", "GitHub", "white"));
+badges.append(Badge("https://gitlab.com/JonoAugustine", "GitLab", "orange"));
+badges.append(
   Badge(
     "https://www.linkedin.com/in/jonathan-augustine-14678b124/",
     "LinkedIn",

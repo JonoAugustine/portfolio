@@ -16,8 +16,15 @@ $radius: 15px;
 $margin: 10px;
 $padding: 10px;
 
+$mobile: 425px;
 $tablet: 768px;
 $desktop: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
 
 @mixin tablet {
   @media (min-width: #{$tablet}) {
@@ -28,6 +35,18 @@ $desktop: 1024px;
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
+  }
+}
+
+@keyframes ButtonUpAnim {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(0) scale(1.1) translateY(-5px);
+  }
+  100% {
+    transform: rotate(0) scale(1.1) translateY(-5px);
   }
 }
 
@@ -116,7 +135,7 @@ header {
 
       @include tablet() {
         grid-area: brand;
-        align-self: center;
+        text-align: left;
       }
 
       h1 {
@@ -147,8 +166,11 @@ div.page {
     margin: $padding * 2 auto;
 
     .badge {
-      margin: 0 auto;
       cursor: pointer;
+
+      @include tablet() {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -159,9 +181,17 @@ div.page {
       padding: $padding;
       max-width: 300px;
       overflow: hidden;
+      cursor: pointer;
+      border: 1px solid transparent;
 
       border-radius: $radius;
       box-shadow: 5px 5px 3px lighten($color: color(base), $amount: 10%);
+
+      &:hover {
+        border: 1px solid color(accent);
+        box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+        transition: all 0.3s ease-in;
+      }
 
       @include tablet() {
         width: 100%;
@@ -201,22 +231,40 @@ div.page {
           grid-area: content;
         }
 
-        h3 {
-          font-size: xx-large;
+        h1 {
           margin: $margin auto;
+          width: auto;
         }
 
-        a {
-          color: color(accent);
-          h5 {
-            margin: $margin 0;
+        div.links {
+          @include tablet() {
+            justify-content: flex-start;
+          }
+          button {
+            margin: 0;
+            margin-right: $margin;
+            padding: $padding / 2;
+
+            text-align: left;
+
+            &:hover {
+              color: lighten(color(accent), 10%);
+              animation: ButtonUpAnim 2s ease-in;
+            }
           }
         }
       }
-    }
 
-    div.card:hover {
-      box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+      div.extra {
+        display: none;
+      }
+
+      &.open {
+        width: 100%;
+        div.extra {
+          display: unset;
+        }
+      }
     }
   }
 }

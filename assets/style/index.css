@@ -1,4 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@-webkit-keyframes ButtonUpAnim {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20% {
+    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
+            transform: rotate(0) scale(1.1) translateY(-5px);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
+            transform: rotate(0) scale(1.1) translateY(-5px);
+  }
+}
+@keyframes ButtonUpAnim {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20% {
+    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
+            transform: rotate(0) scale(1.1) translateY(-5px);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
+            transform: rotate(0) scale(1.1) translateY(-5px);
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }
@@ -97,9 +126,7 @@ header div.container a.brand {
 @media (min-width: 768px) {
   header div.container a.brand {
     grid-area: brand;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    text-align: left;
   }
 }
 
@@ -130,8 +157,13 @@ div.page div#badges {
 }
 
 div.page div#badges .badge {
-  margin: 0 auto;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  div.page div#badges .badge {
+    margin: 0 auto;
+  }
 }
 
 div.page div#cards div.card {
@@ -140,9 +172,19 @@ div.page div#cards div.card {
   padding: 10px;
   max-width: 300px;
   overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent;
   border-radius: 15px;
   -webkit-box-shadow: 5px 5px 3px #2b2b2b;
           box-shadow: 5px 5px 3px #2b2b2b;
+}
+
+div.page div#cards div.card:hover {
+  border: 1px solid #008dd5;
+  -webkit-box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+          box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 @media (min-width: 768px) {
@@ -189,21 +231,33 @@ div.page div#cards div.card h1.placeholder {
   }
 }
 
-div.page div#cards div.card div.content h3 {
-  font-size: xx-large;
+div.page div#cards div.card div.content h1 {
   margin: 10px auto;
+  width: auto;
 }
 
-div.page div#cards div.card div.content a {
-  color: #008dd5;
+@media (min-width: 768px) {
+  div.page div#cards div.card div.content div.links {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
-div.page div#cards div.card div.content a h5 {
-  margin: 10px 0;
+div.page div#cards div.card div.content div.links button {
+  margin: 0;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: left;
 }
 
-div.page div#cards div.card:hover {
-  -webkit-box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
-          box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+div.page div#cards div.card div.content div.links button:hover {
+  color: #09acff;
+  -webkit-animation: ButtonUpAnim 2s ease-in;
+          animation: ButtonUpAnim 2s ease-in;
+}
+
+div.page div#cards div.card.open {
+  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */
