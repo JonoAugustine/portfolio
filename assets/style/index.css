@@ -152,17 +152,22 @@ header div.container div#info h4 {
 }
 
 div.page div#badges {
-  max-width: 400px;
+  max-width: 600px;
   margin: 20px auto;
 }
 
 div.page div#badges .badge {
+  width: 100%;
+  margin-top: 10px;
+  text-align: right;
   cursor: pointer;
 }
 
 @media (min-width: 768px) {
   div.page div#badges .badge {
     margin: 0 auto;
+    width: unset;
+    text-align: unset;
   }
 }
 
@@ -262,7 +267,7 @@ div.page div#cards div.card div.extra {
 }
 
 div.page div#cards div.card.open {
-  width: 90%;
+  width: 100%;
 }
 
 div.page div#cards div.card.open div.extra {

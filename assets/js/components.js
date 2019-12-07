@@ -117,6 +117,7 @@ const ProjectCard = project => {
     } else {
       open = !open;
       base.removeClass("open");
+      document.querySelector("header").scrollIntoView();
     }
   });
 
@@ -135,3 +136,5 @@ badges.append(
     "blue"
   )
 );
+
+badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "Resume"));

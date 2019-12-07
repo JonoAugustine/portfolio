@@ -162,14 +162,21 @@ header {
 
 div.page {
   div#badges {
-    max-width: 400px;
+    max-width: 600px;
+
     margin: $padding * 2 auto;
 
     .badge {
+      width: 100%;
+      margin-top: $margin;
+      text-align: right;
+
       cursor: pointer;
 
       @include tablet() {
         margin: 0 auto;
+        width: unset;
+        text-align: unset;
       }
     }
   }
@@ -260,7 +267,7 @@ div.page {
       }
 
       &.open {
-        width: 90%;
+        width: 100%;
 
         div.extra {
           width: 100%;
