@@ -100,6 +100,11 @@ const ProjectCard = project => {
 
   // Extra details & screenshots
   const extra = E("div").addClass("extra");
+  base.append(extra);
+
+  if (project.screenshotSrc) {
+    extra.append(Img(project.screenshotSrc, "screenshot"));
+  }
 
   base.click(() => {
     if (!open) {
@@ -108,7 +113,7 @@ const ProjectCard = project => {
       });
       open = !open;
       base.addClass("open");
-      base.parent().prepend(base);
+      document.querySelector(".open").scrollIntoView();
     } else {
       open = !open;
       base.removeClass("open");

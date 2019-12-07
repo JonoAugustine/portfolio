@@ -260,9 +260,20 @@ div.page {
       }
 
       &.open {
-        width: 100%;
+        width: 90%;
+
         div.extra {
+          width: 100%;
           display: unset;
+          grid-column-start: span 2;
+
+          img {
+            width: 100%;
+            border-radius: $radius;
+            @include mobile() {
+              max-width: 100%;
+            }
+          }
         }
       }
     }

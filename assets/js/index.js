@@ -3,13 +3,14 @@ document.getElementById("resume_btn").onclick = () => {
 };
 
 class Project {
-  constructor(name, live, source, description, imageName, invert) {
+  constructor(name, live, source, description, imageName, invert, screenshot) {
     this.name = name;
     this.live = live;
     this.source = source;
     this.description = description;
     this.imageSrc = imageName ? "./assets/images/" + imageName : null;
     this.invert = invert;
+    this.screenshotSrc = screenshot ? "./assets/images/" + screenshot : null;
   }
 }
 
@@ -31,7 +32,8 @@ const projects = [
     potential allergens which the user defines. 
     `,
     "otm_logo.png",
-    true
+    true,
+    "otm.gif"
   ),
   new Project(
     "Team Magma PRO",
@@ -61,7 +63,9 @@ const projects = [
     A web app built like a simulation where you and your friends can exist in an Existence together.
     In an Existence you can chat to each other and perform fun commands.
     `,
-    "ouch.png"
+    "ouch.png",
+    false,
+    "ouch.gif"
   ),
   new Project(
     "Evolution Emulator",

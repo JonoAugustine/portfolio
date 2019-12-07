@@ -257,7 +257,29 @@ div.page div#cards div.card div.content div.links button:hover {
           animation: ButtonUpAnim 2s ease-in;
 }
 
+div.page div#cards div.card div.extra {
+  display: none;
+}
+
 div.page div#cards div.card.open {
+  width: 90%;
+}
+
+div.page div#cards div.card.open div.extra {
   width: 100%;
+  display: unset;
+  -ms-grid-column: span 2;
+      grid-column-start: span 2;
+}
+
+div.page div#cards div.card.open div.extra img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 425px) {
+  div.page div#cards div.card.open div.extra img {
+    max-width: 100%;
+  }
 }
 /*# sourceMappingURL=index.css.map */
