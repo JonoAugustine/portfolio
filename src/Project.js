@@ -1,12 +1,12 @@
 class Project {
-  constructor(name, live, source, description, imageName, invert, screenshot) {
+  constructor(name, live, source, description, image, invert, screenshot) {
     this.name = name;
     this.live = live;
     this.source = source;
     this.description = description;
-    this.imageSrc = imageName ? "./assets/images/" + imageName : null;
+    this.imageSrc = image;
     this.invert = invert;
-    this.screenshotSrc = screenshot ? "./assets/images/" + screenshot : null;
+    this.screenshotSrc = screenshot;
   }
 }
 
@@ -16,7 +16,7 @@ const projects = [
     null,
     "https://gitlab.com/serebit/strife",
     "An idiomatic Kotlin implementation of the Discord API.",
-    "strife-logo.png"
+    require("./images/strife-logo.png")
   ),
   new Project(
     "Off The Menu",
@@ -27,9 +27,9 @@ const projects = [
     It provides the ability to search items on restaurant menus to determine if they contain
     potential allergens which the user defines. 
     `,
-    "otm_logo.png",
+    require("./images/otm_logo.png"),
     true,
-    "otm.gif"
+    require("./images/otm.gif")
   ),
   new Project(
     "Team Magma PRO",
@@ -41,7 +41,7 @@ const projects = [
       users with a clean and intuitive web app to find the items 
       and pokemon they need.
     `,
-    "psyduck_purple.png"
+    require("./images/psyduck_purple.png")
   ),
   new Project(
     "Aquatic Mastery",
@@ -49,7 +49,7 @@ const projects = [
     null,
     `A YouTube channel centered around sharing my experiences as an
     aquarist and showing others how to achieve success in their own aquariums.`,
-    "logo.jpg"
+    require("./images/logo.jpg")
   ),
   new Project(
     "Ouch",
@@ -59,16 +59,16 @@ const projects = [
     A web app built like a simulation where you and your friends can exist in an Existence together.
     In an Existence you can chat to each other and perform fun commands.
     `,
-    "ouch.png",
+    require("./images/ouch.png"),
     false,
-    "ouch.gif"
+    require("./images/ouch.gif")
   ),
   new Project(
     "Evolution Emulator",
     null,
     "https://github.com/JonoAugustine/Evolution-Emulator",
     "A basic attempt at emulating Earthen evolution with OOP.",
-    "EvoEmuSub.png",
+    require("./images/EvoEmuSub.png"),
     true
   ),
   new Project(
@@ -87,3 +87,5 @@ const projects = [
 Object.prototype.random = function() {
   return this[Math.floor(Math.random() * this.length)];
 };
+
+export { projects, Project };

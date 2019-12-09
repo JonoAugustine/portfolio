@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 document.getElementById("header_scroll").onclick = () =>
   document.querySelector("nav").scrollIntoView();
 
@@ -96,7 +98,7 @@ const ProjectCard = project => {
   if (project.source) {
     view.append(Button(project.source, "View Source"));
   }
-  if (!(project.live && project.source)) {
+  if (!project.screenshotSrc) {
     base.addClass("no-info");
   }
 
@@ -132,17 +134,4 @@ const ProjectCard = project => {
   return base;
 };
 
-$("#cards").append(...projects.map(p => ProjectCard(p)));
-
-const badges = $("#badges");
-badges.append(Badge("https://github.com/JonoAugustine", "GitHub", "white"));
-badges.append(Badge("https://gitlab.com/JonoAugustine", "GitLab", "orange"));
-badges.append(
-  Badge(
-    "https://www.linkedin.com/in/jonathan-augustine-14678b124/",
-    "LinkedIn",
-    "blue"
-  )
-);
-
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "Résumé"));
+export { E, H, A, Button, Img, Badge, ProjectCard };

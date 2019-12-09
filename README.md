@@ -1,4 +1,4 @@
-## [Portfolio of Jonathan Augustine](https://jonoaugustine.github.io/portfolio/index.html)
+# [Portfolio of Jonathan Augustine](https://jonoaugustine.com)
 
 This repo contains the source for 
 [my portfolio](https://jonoaugustine.github.io/portfolio/) to showcase my

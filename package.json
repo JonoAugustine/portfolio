@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "5.0.0",
+  "description": "This repo contains the source for [my portfolio](https://jonoaugustine.github.io/portfolio/) to showcase my competence as a software developer and language flexibility.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "publish": "rm -rf ./dist && npm run build && firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonoAugustine/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "jono",
+    "jonathan",
+    "augustine",
+    "parcel"
+  ],
+  "author": "Jonathan Augustine",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/JonoAugustine/portfolio/issues"
+  },
+  "homepage": "https://JonoAugustine.com",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.7",
+    "uncss": "^0.17.2"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "jquery": "^3.4.1"
+  }
+}
