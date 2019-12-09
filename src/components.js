@@ -131,7 +131,10 @@ const ProjectCard = project => {
         });
         open = !open;
         base.addClass("open");
-        setTimeout(() => $(".cards").scrollTop(), 1500);
+        setTimeout(
+          () => document.querySelector(".open").scrollIntoView(),
+          1500
+        );
       } else {
         open = !open;
         base.removeClass("open");
