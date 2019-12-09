@@ -1,3 +1,6 @@
+document.getElementById("header_scroll").onclick = () =>
+  document.querySelector("nav").scrollIntoView();
+
 const root = $("#root");
 
 /**
@@ -93,6 +96,9 @@ const ProjectCard = project => {
   if (project.source) {
     view.append(Button(project.source, "View Source"));
   }
+  if (!(project.live && project.source)) {
+    base.addClass("no-info");
+  }
 
   // Descripption
   const description = E("p").text(project.description);
@@ -107,17 +113,19 @@ const ProjectCard = project => {
   }
 
   base.click(() => {
-    if (!open) {
-      $(".card.open").each(function() {
-        $(this).removeClass("open");
-      });
-      open = !open;
-      base.addClass("open");
-      document.querySelector(".open").scrollIntoView();
-    } else {
-      open = !open;
-      base.removeClass("open");
-      document.querySelector("header").scrollIntoView();
+    if (project.screenshotSrc) {
+      if (!open) {
+        $(".card.open").each(function() {
+          $(this).removeClass("open");
+        });
+        open = !open;
+        base.addClass("open");
+        document.querySelector(".open").scrollIntoView();
+      } else {
+        open = !open;
+        base.removeClass("open");
+        //document.querySelector("header").scrollIntoView();
+      }
     }
   });
 

@@ -50,6 +50,18 @@ $desktop: 1024px;
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(-40%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }
@@ -59,6 +71,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  scrollbar-width: none;
 
   color: color(text-);
 
@@ -116,72 +129,116 @@ img.invert {
   filter: invert(1);
 }
 
-header {
-  padding: 0.6em;
-  background-color: #292929;
-  border-bottom: 3px solid color(primary);
+header.banner {
+  height: 100%;
+  position: relative;
 
-  div.container {
-    @include tablet() {
-      display: grid;
-      grid-template-columns: 50% auto;
-      grid-template-areas: "brand info";
+  display: flex;
+  flex-direction: column;
+
+  @include tablet() {
+    text-align: center;
+  }
+
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .head {
+    height: 100%;
+    background-color: rgbs(color(base), 0.8);
+
+    section.intro {
+      height: 50%;
+      margin: 10% auto 0 auto;
+      padding: $padding;
+
+      .brand {
+        color: color(text-);
+        font-size: 4rem;
+
+        @include desktop() {
+          font-size: 7rem;
+        }
+      }
+
+      .tagline {
+        font-size: 2em;
+      }
     }
 
-    a.brand {
-      text-decoration: none;
-      color: color(primary);
-      width: 100%;
+    .container#badges {
+      max-width: 600px;
+      margin: auto;
 
-      @include tablet() {
-        grid-area: brand;
-        text-align: left;
+      @include mobile() {
+        flex-direction: column;
       }
 
-      h1 {
-        margin: auto 0;
-      }
-    }
+      .badge {
+        text-align: right;
 
-    div#info {
-      @include tablet() {
-        margin: auto 0;
-        grid-area: info;
-      }
+        cursor: pointer;
 
-      h4 {
-        margin: 5px 10px;
+        @include mobile() {
+          margin: $margin auto;
+        }
 
         @include tablet() {
-          display: inline;
+          margin: 0 auto;
+          width: unset;
+          align-self: flex-end;
         }
+
+        &:hover {
+          transform: translateY(-10%);
+          transition: all 1s;
+          animation: float 2s ease-in-out infinite;
+          animation-delay: 0.1s;
+        }
+      }
+    }
+
+    button.scroller {
+      margin-top: 10%;
+      background-color: rgba(color(primary-dark), 0.3);
+      border-color: color(text-);
+      transition: all 1s;
+
+      @include mobile() {
+        width: 90%;
+      }
+
+      &:hover {
+        background-color: rgba(color(primary), 0.4);
+
+        transform: translateY(-10%);
+        transition: all 1s;
+        animation: float 2s ease-in-out infinite;
+        animation-delay: 0.1s;
       }
     }
   }
 }
 
-div.page {
-  div#badges {
-    max-width: 600px;
+nav {
+  padding: $padding * 3 auto;
+  display: flex;
 
-    margin: $padding * 2 auto;
+  background-color: lighten(color(base), 10%);
+  border-bottom: 2px solid color(primary);
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
 
-    .badge {
-      width: 100%;
-      margin-top: $margin;
-      text-align: right;
-
-      cursor: pointer;
-
-      @include tablet() {
-        margin: 0 auto;
-        width: unset;
-        text-align: unset;
-      }
-    }
+  & > div > * {
+    margin: $margin;
   }
+}
 
+div.page {
   div#cards {
+    scrollbar-width: none;
     div.card {
       background-color: lighten(color(base), 3%);
       margin: $margin;
@@ -196,8 +253,17 @@ div.page {
 
       &:hover {
         border: 1px solid color(accent);
-        box-shadow: 10px 10px 5px rgba(95, 95, 95, 0.2);
+        box-shadow: 10px 10px 5px rgba(color(primary), 0.2);
         transition: all 0.3s ease-in;
+      }
+
+      &.no-info {
+        cursor: auto;
+
+        &:hover {
+          border: 1px solid red;
+          box-shadow: 10px 10px 5px rgba(red, 0.2);
+        }
       }
 
       @include tablet() {

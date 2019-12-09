@@ -11,24 +11,36 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
     <link href="./assets/style/index.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root">
-      <header>
-        <div class="container center row fluid">
-          <a href="#" class="brand">
-            <h1>Jono Augustine</h1>
-          </a>
-          <div id="info">
-            <h4>240-423-6950</h5>
-            <h4>me@JonoAugustine.com</h4>
+      <header class="banner">
+        <div class="head">
+          <section class="intro">
+            <h1 class="brand">Jono Augustine</h1>
+            <h3 class="tagline">Creating solutions to unsolved problems</h3>
+          </section>
+          <div id="badges" class="container fluid row"></div>
+          <div class="container fluid">
+            <button id="header_scroll" class="scroller">My Projects</button>
           </div>
         </div>
       </header>
+      <nav>
+        <div class="container fluid row">
+          <h4>240-423-6950</h4>
+          <h4>me@JonoAugustine.com</h4>
+        </div>
+      </nav>
       <div class="page container">
         <div class="container center fluid" id="page_content">
-          <div id="badges" class="container fluid row"></div>
           <div id="cards" class="container center row fluid"></div>
         </div>
       </div>
