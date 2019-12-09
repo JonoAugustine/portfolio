@@ -238,8 +238,9 @@ nav {
 }
 
 div.page {
-  div#cards {
-    scrollbar-width: none;
+  #cards {
+    position: relative;
+
     div.card {
       background-color: lighten(color(base), 3%);
       margin: $margin;
@@ -251,6 +252,8 @@ div.page {
 
       border-radius: $radius;
       box-shadow: 5px 5px 3px lighten($color: color(base), $amount: 10%);
+
+      transition: all 1s;
 
       &:hover {
         border: 1px solid color(accent);
@@ -334,7 +337,14 @@ div.page {
       }
 
       &.open {
-        width: 100%;
+        transition: all 1s;
+
+        @include desktop() {
+          width: 100%;
+          position: absolute;
+          z-index: 99999;
+          top: 0;
+        }
 
         div.extra {
           width: 100%;
