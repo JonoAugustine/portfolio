@@ -71,9 +71,9 @@ const Badge = (link, name, color) => {
 const ProjectCard = project => {
   let open = false;
 
-  const base = E("div").addClass(
-    `card animated slideIn${["Left", "Right", "Up"].random()}`
-  );
+  const base = E("div")
+    .addClass(`card animated slideIn${["Left", "Right", "Up"].random()}`)
+    .attr("data-name", project.name);
 
   base.append(
     typeof project.imageSrc === "string"
@@ -98,35 +98,44 @@ const ProjectCard = project => {
   if (project.source) {
     view.append(Button(project.source, "View Source"));
   }
-  if (!project.screenshotSrc) {
-    base.addClass("no-info");
-  }
 
   // Descripption
   const description = E("p").text(project.description);
   container.append(description);
 
   // Extra details & screenshots
-  const extra = E("div").addClass("extra");
-  base.append(extra);
+  let extra = null;
 
-  if (project.screenshotSrc) {
-    extra.append(Img(project.screenshotSrc, "screenshot"));
+  if (project.live) {
+    extra = E("div").addClass("extra");
+    extra.append(
+      E("iframe")
+        .addClass("showcase")
+        .attr("src", project.live)
+    );
+  } else if (project.screenshotSrc) {
+    extra = E("div").addClass("extra");
+    extra.append(Img(project.screenshotSrc, "screenshot").addClass("showcase"));
+  }
+
+  if (extra === null) {
+    base.addClass("no-info");
   }
 
   base.click(() => {
-    if (project.screenshotSrc) {
+    if (extra !== null) {
       if (!open) {
+        base.append(extra);
         $(".card.open").each(function() {
           $(this).removeClass("open");
         });
         open = !open;
         base.addClass("open");
-        document.querySelector(".open").scrollIntoView();
+        setTimeout(() => $(".cards").scrollTop(), 1500);
       } else {
         open = !open;
         base.removeClass("open");
-        //document.querySelector("header").scrollIntoView();
+        extra.remove();
       }
     }
   });

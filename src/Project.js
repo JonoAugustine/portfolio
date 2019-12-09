@@ -73,8 +73,8 @@ const projects = [
   ),
   new Project(
     "ScoreBorda",
-    "https://github.com/JonoAugustine/ScoreBorda",
     null,
+    "https://github.com/JonoAugustine/ScoreBorda",
     `
     A system which utilizes the simplicity of binary choices to score and rank 
     "Features" and "Candidates". By presenting only two options in each comparison,
