@@ -139,9 +139,15 @@ header.banner {
       margin: 10% auto 0 auto;
       padding: $padding;
 
+      * {
+        animation: float 2s infinite forwards ease-in-out;
+      }
+
       .brand {
         color: color(text-);
         font-size: 4rem;
+
+        animation-delay: (random(10) + 10) + 1s;
 
         @include desktop() {
           font-size: 7rem;
@@ -150,6 +156,7 @@ header.banner {
 
       .tagline {
         font-size: 2em;
+        animation-delay: (random(10) + 10) + 1s;
       }
     }
 
@@ -167,6 +174,11 @@ header.banner {
         cursor: pointer;
         margin: $margin 0 $margin auto;
 
+        border: 1px solid transparent;
+        transform: translateY(-10%);
+        transition: all 1s;
+        animation: float 2s ease-in-out infinite;
+
         @include tablet() {
           flex-direction: row;
           margin: 0 auto;
@@ -175,6 +187,7 @@ header.banner {
         }
 
         &:hover {
+          border-color: color(accent);
           transform: translateY(-10%);
           transition: all 1s;
           animation: float 2s ease-in-out infinite;
@@ -189,14 +202,14 @@ header.banner {
       left: 0;
       right: 0;
       margin: 0 auto;
-      transform: translateX(-50%);
 
       width: 50%;
+      max-width: 150px;
       border-color: color(text-);
       background-color: rgba(color(primary), 0.4);
 
       animation: float 2s ease-in-out infinite;
-      animation-delay: 0.1s;
+      transition: 0.5s;
 
       &:hover {
         border-color: color(accent);

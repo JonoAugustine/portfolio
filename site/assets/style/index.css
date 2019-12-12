@@ -139,9 +139,16 @@ header.banner .head section.intro {
   padding: 10px;
 }
 
+header.banner .head section.intro * {
+  -webkit-animation: float 2s infinite forwards ease-in-out;
+          animation: float 2s infinite forwards ease-in-out;
+}
+
 header.banner .head section.intro .brand {
   color: #eaebed;
   font-size: 4rem;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
 }
 
 @media (min-width: 1024px) {
@@ -152,6 +159,8 @@ header.banner .head section.intro .brand {
 
 header.banner .head section.intro .tagline {
   font-size: 2em;
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
 }
 
 header.banner .head .container#badges {
@@ -176,6 +185,13 @@ header.banner .head .container#badges {
 header.banner .head .container#badges .badge {
   cursor: pointer;
   margin: 10px 0 10px auto;
+  border: 1px solid transparent;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-animation: float 2s ease-in-out infinite;
+          animation: float 2s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
@@ -192,6 +208,7 @@ header.banner .head .container#badges .badge {
 }
 
 header.banner .head .container#badges .badge:hover {
+  border-color: #008dd5;
   -webkit-transform: translateY(-10%);
           transform: translateY(-10%);
   -webkit-transition: all 1s;
@@ -208,15 +225,14 @@ header.banner .head button.scroller {
   left: 0;
   right: 0;
   margin: 0 auto;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 50%;
+  max-width: 150px;
   border-color: #eaebed;
   background-color: rgba(40, 150, 90, 0.4);
   -webkit-animation: float 2s ease-in-out infinite;
           animation: float 2s ease-in-out infinite;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 header.banner .head button.scroller:hover {

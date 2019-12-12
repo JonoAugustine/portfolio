@@ -55,7 +55,9 @@ const Img = (src, alt) => {
 const Badge = (link, name) => {
   return A(link)
     .append(Img(`./assets/images/badge_${name}.svg`, name))
-    .addClass("badge");
+    .addClass("badge")
+    .css("animation-delay", `${Math.random() * 10 + 10}s`)
+    .css("animation-duration", `${Math.random() * 3 + 2}s`)
 };
 
 /**
