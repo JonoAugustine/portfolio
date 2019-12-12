@@ -7,6 +7,7 @@ server.use(express.urlencoded({ extended: true }));
 const mailer = require("nodemailer");
 const email = process.env.EMAIL;
 const pass = process.env.PASS;
+console.log(email, pass);
 const transporter = mailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
