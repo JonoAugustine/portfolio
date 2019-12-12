@@ -6,7 +6,7 @@
 Object.prototype.validateString = function(propName, regex) {
   return (
     typeof this[propName] === "string" &&
-    regex.test(this[propName].split(/\s+/))
+    regex.test(this[propName].replace(/\s+/gi, ""))
   );
 };
 
