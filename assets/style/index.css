@@ -156,7 +156,7 @@ header.banner {
 
 header.banner .head {
   height: 100%;
-  background-color: rgbs(#111111, 0.8);
+  background-color: rgba(17, 17, 17, 0.3);
 }
 
 header.banner .head section.intro {
