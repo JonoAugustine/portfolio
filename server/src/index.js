@@ -4,7 +4,10 @@
  * @returns {boolean}
  */
 Object.prototype.validateString = function(propName, regex) {
-  return typeof this[propName] === "string" && regex.test(this[propName]);
+  return (
+    typeof this[propName] === "string" &&
+    regex.test(this[propName].split(/\s+/))
+  );
 };
 
 const express = require("express");
