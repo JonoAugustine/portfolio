@@ -8,7 +8,9 @@ const mailer = require("nodemailer");
 const email = process.env.EMAIL;
 const pass = process.env.PASS;
 const transporter = mailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: { user: email, pass: pass }
 });
 
