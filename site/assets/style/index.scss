@@ -224,8 +224,6 @@ nav.navbar {
 
   background-color: lighten(color(base), 10%);
   border-bottom: 2px solid color(primary);
-  border-bottom-left-radius: $radius;
-  border-bottom-right-radius: $radius;
 
   &.sticky {
     position: fixed;
@@ -237,8 +235,21 @@ nav.navbar {
   }
 
   > div {
+    flex-direction: column;
+    align-content: center;
+    max-width: 500px !important;
+    text-align: center;
+
     > * {
-      margin: auto;
+      margin: $margin auto;
+    }
+
+    @include tablet() {
+      flex-direction: row;
+
+      > * {
+        margin: auto;
+      }
     }
   }
 }
