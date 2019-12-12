@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index",
-    "publish": "cd .. && git subtree push --prefix server heroku master"
+    "publish": "cd .. && git subtree push --prefix server heroku master && heroku logs -t"
   },
   "author": "",
   "license": "ISC",

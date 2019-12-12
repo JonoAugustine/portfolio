@@ -15,7 +15,7 @@ const transporter = mailer.createTransport({
 server.post("/", (req, res) => {
   const mailOptions = {
     from: email,
-    to: "me@jonoaugustine.com",
+    to: "me@JonoAugustine.com",
     subject: req.body.subject ? req.body.subject : "NO SUBJECT",
     text: req.body.text
   };
