@@ -9,16 +9,22 @@ const email = process.env.EMAIL;
 const pass = process.env.PASS;
 console.log(email, pass);
 const transporter = mailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "mail.hover.com",
+  secureConnection: true,
   port: 465,
-  secure: true,
-  auth: { user: email, pass: pass }
+  auth: {
+    user: email,
+    pass: pass
+  },
+  tls: {
+    secureProtocol: "TLSv1_method"
+  }
 });
 
 server.post("/", (req, res) => {
   const mailOptions = {
     from: email,
-    to: "me@JonoAugustine.com",
+    to: "swordmaster9@gmail.com",
     subject: req.body.subject ? req.body.subject : "NO SUBJECT",
     text: req.body.text
   };
