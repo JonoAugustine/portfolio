@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
+@import url("./normalize.css");
 
 $colors: (
   primary: rgba(40, 150, 90, 1),
@@ -16,15 +18,8 @@ $radius: 15px;
 $margin: 10px;
 $padding: 10px;
 
-$mobile: 425px;
 $tablet: 768px;
 $desktop: 1024px;
-
-@mixin mobile {
-  @media (max-width: #{$mobile}) {
-    @content;
-  }
-}
 
 @mixin tablet {
   @media (min-width: #{$tablet}) {
@@ -35,18 +30,6 @@ $desktop: 1024px;
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
-  }
-}
-
-@keyframes ButtonUpAnim {
-  0% {
-    transform: rotate(0);
-  }
-  20% {
-    transform: rotate(0) scale(1.1) translateY(-5px);
-  }
-  100% {
-    transform: rotate(0) scale(1.1) translateY(-5px);
   }
 }
 
@@ -64,6 +47,7 @@ $desktop: 1024px;
 
 * {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 html,
@@ -85,6 +69,7 @@ body {
 
 #root {
   margin-bottom: 20px;
+  position: relative;
 }
 
 div.container {
@@ -131,7 +116,6 @@ img.invert {
 
 header.banner {
   height: 100%;
-  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -146,6 +130,7 @@ header.banner {
   background-repeat: no-repeat;
 
   .head {
+    position: relative;
     height: 100%;
     background-color: rgba(color(base), 0.3);
 
@@ -170,22 +155,20 @@ header.banner {
 
     .container#badges {
       max-width: 600px;
-      margin: auto;
 
-      @include mobile() {
-        flex-direction: column;
+      flex-direction: column;
+      align-content: flex-end;
+
+      @include tablet() {
+        flex-direction: row;
       }
 
       .badge {
-        text-align: right;
-
         cursor: pointer;
-
-        @include mobile() {
-          margin: $margin auto;
-        }
+        margin: $margin 0 $margin auto;
 
         @include tablet() {
+          flex-direction: row;
           margin: 0 auto;
           width: unset;
           align-self: flex-end;
@@ -201,36 +184,49 @@ header.banner {
     }
 
     button.scroller {
-      margin-top: 10%;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transform: translateX(-50%);
+
+      width: 50%;
       border-color: color(text-);
       background-color: rgba(color(primary), 0.4);
 
-      transform: translateY(-10%);
       animation: float 2s ease-in-out infinite;
       animation-delay: 0.1s;
 
       &:hover {
         border-color: color(accent);
       }
-
-      @include mobile() {
-        width: 90%;
-      }
     }
   }
 }
 
-nav {
-  padding: $padding * 3 auto;
-  display: flex;
+nav.navbar {
+  padding: $padding * 1;
+  width: 100%;
 
   background-color: lighten(color(base), 10%);
   border-bottom: 2px solid color(primary);
   border-bottom-left-radius: $radius;
   border-bottom-right-radius: $radius;
 
-  & > div > * {
-    margin: $margin;
+  &.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+  }
+
+  > div {
+    > * {
+      margin: auto;
+    }
   }
 }
 
@@ -320,7 +316,6 @@ div.page {
 
             &:hover {
               color: lighten(color(accent), 10%);
-              animation: ButtonUpAnim 2s ease-in;
             }
           }
         }
@@ -341,9 +336,6 @@ div.page {
           img {
             width: 100%;
             border-radius: $radius;
-            @include mobile() {
-              max-width: 100%;
-            }
           }
         }
       }

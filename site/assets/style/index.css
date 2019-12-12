@@ -1,33 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-@-webkit-keyframes ButtonUpAnim {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  20% {
-    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
-            transform: rotate(0) scale(1.1) translateY(-5px);
-  }
-  100% {
-    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
-            transform: rotate(0) scale(1.1) translateY(-5px);
-  }
-}
-@keyframes ButtonUpAnim {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  20% {
-    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
-            transform: rotate(0) scale(1.1) translateY(-5px);
-  }
-  100% {
-    -webkit-transform: rotate(0) scale(1.1) translateY(-5px);
-            transform: rotate(0) scale(1.1) translateY(-5px);
-  }
-}
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
+@import url("./normalize.css");
 @-webkit-keyframes float {
   0% {
     -webkit-transform: translateY(-10%);
@@ -42,7 +15,6 @@
             transform: translateY(-10%);
   }
 }
-
 @keyframes float {
   0% {
     -webkit-transform: translateY(-10%);
@@ -60,6 +32,7 @@
 
 * {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 html,
@@ -78,6 +51,7 @@ body {
 
 #root {
   margin-bottom: 20px;
+  position: relative;
 }
 
 div.container {
@@ -134,7 +108,6 @@ img.invert {
 
 header.banner {
   height: 100%;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,6 +128,7 @@ header.banner {
 }
 
 header.banner .head {
+  position: relative;
   height: 100%;
   background-color: rgba(17, 17, 17, 0.3);
 }
@@ -182,31 +156,34 @@ header.banner .head section.intro .tagline {
 
 header.banner .head .container#badges {
   max-width: 600px;
-  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
 }
 
-@media (max-width: 425px) {
+@media (min-width: 768px) {
   header.banner .head .container#badges {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 header.banner .head .container#badges .badge {
-  text-align: right;
   cursor: pointer;
-}
-
-@media (max-width: 425px) {
-  header.banner .head .container#badges .badge {
-    margin: 10px auto;
-  }
+  margin: 10px 0 10px auto;
 }
 
 @media (min-width: 768px) {
   header.banner .head .container#badges .badge {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 0 auto;
     width: unset;
     -ms-flex-item-align: end;
@@ -226,11 +203,16 @@ header.banner .head .container#badges .badge:hover {
 }
 
 header.banner .head button.scroller {
-  margin-top: 10%;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50%;
   border-color: #eaebed;
   background-color: rgba(40, 150, 90, 0.4);
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
   -webkit-animation: float 2s ease-in-out infinite;
           animation: float 2s ease-in-out infinite;
   -webkit-animation-delay: 0.1s;
@@ -241,25 +223,26 @@ header.banner .head button.scroller:hover {
   border-color: #008dd5;
 }
 
-@media (max-width: 425px) {
-  header.banner .head button.scroller {
-    width: 90%;
-  }
-}
-
-nav {
-  padding: 30px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+nav.navbar {
+  padding: 10px;
+  width: 100%;
   background-color: #2b2b2b;
   border-bottom: 2px solid #28965a;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-nav > div > * {
-  margin: 10px;
+nav.navbar.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-top: 0;
+}
+
+nav.navbar > div > * {
+  margin: auto;
 }
 
 div.page div#cards {
@@ -363,8 +346,6 @@ div.page div#cards div.card div.content div.links button {
 
 div.page div#cards div.card div.content div.links button:hover {
   color: #09acff;
-  -webkit-animation: ButtonUpAnim 2s ease-in;
-          animation: ButtonUpAnim 2s ease-in;
 }
 
 div.page div#cards div.card div.extra {
@@ -385,11 +366,5 @@ div.page div#cards div.card.open div.extra {
 div.page div#cards div.card.open div.extra img {
   width: 100%;
   border-radius: 15px;
-}
-
-@media (max-width: 425px) {
-  div.page div#cards div.card.open div.extra img {
-    max-width: 100%;
-  }
 }
 /*# sourceMappingURL=index.css.map */

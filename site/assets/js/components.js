@@ -52,14 +52,9 @@ const Img = (src, alt) => {
  * @param {string} logo
  * @returns {HTMLAnchorElement}
  */
-const Badge = (link, name, color) => {
+const Badge = (link, name) => {
   return A(link)
-    .append(
-      Img(
-        `https://img.shields.io/badge/${name}-${" "}-${color}?logo=${name.toLowerCase()}&style=for-the-badge`,
-        name
-      )
-    )
+    .append(Img(`./assets/images/badge_${name}.svg`, name))
     .addClass("badge");
 };
 
@@ -133,14 +128,10 @@ const ProjectCard = project => {
 $("#cards").append(...projects.map(p => ProjectCard(p)));
 
 const badges = $("#badges");
-badges.append(Badge("https://github.com/JonoAugustine", "GitHub", "white"));
-badges.append(Badge("https://gitlab.com/JonoAugustine", "GitLab", "orange"));
+badges.append(Badge("https://github.com/JonoAugustine", "gitHub"));
+badges.append(Badge("https://gitlab.com/JonoAugustine", "gitLab"));
 badges.append(
-  Badge(
-    "https://www.linkedin.com/in/jonathan-augustine-14678b124/",
-    "LinkedIn",
-    "blue"
-  )
+  Badge("https://www.linkedin.com/in/jonathan-augustine-14678b124/", "linkedin")
 );
 
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "Résumé"));
+badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));

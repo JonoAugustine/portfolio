@@ -20,8 +20,8 @@ const projects = [
   ),
   new Project(
     "Off The Menu",
-    "https://JonoAugustine.github.io/AllergicToThat",
-    "https://github.com/JonoAugustine/AllergicToThat",
+    "https://JonoAugustine.github.io/off-the-menu",
+    "https://github.com/JonoAugustine/off-the-menu",
     `
     A web app aiming to make eating out simpler for allergy sufferers and picky eaters.
     It provides the ability to search items on restaurant menus to determine if they contain
