@@ -1,3 +1,12 @@
+/**
+ * @param {string} propName
+ * @param {RegExp} regex
+ * @returns {boolean}
+ */
+Object.prototype.validateString = function(propName, regex) {
+  return typeof this[propName] === "string" && regex.test(this[propName]);
+};
+
 const express = require("express");
 const port = process.env.PORT ? process.env.PORT : 6920;
 const server = express();
@@ -21,13 +30,13 @@ const transporter = mailer.createTransport({
 });
 
 server.post("/", (req, res) => {
-  if (!/.{2,}/gi.test(req.body.name)) {
+  if (!req.body.validateString("name", /.{2,}/gi)) {
     return res.send({ message: "missing name" });
-  } else if (!/.{3,}/gi.test(req.body.subject)) {
+  } else if (!req.body.validateString("subject", /.{3,}/gi)) {
     return res.send({ message: "missing subject" });
-  } else if (!/.{5,}/gi.test(req.body.text)) {
+  } else if (!req.body.validateString("text", /.{5,}/gi)) {
     return res.send({ message: "missing text" });
-  } else if (!/.+@.+\..+/gi.test(req.body.email)) {
+  } else if (!req.body.validateString("email", /.+@.+\..+/gi)) {
     return res.send({ message: "missing email" });
   }
 
