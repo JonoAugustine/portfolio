@@ -22,11 +22,11 @@ const transporter = mailer.createTransport({
 });
 
 server.post("/", (req, res) => {
-  if (req.body.name <= "") {
+  if (!/.{2,}/gi.test(req.body.name)) {
     return res.send({ message: "missing name" });
-  } else if (req.body.subject <= "") {
+  } else if (!/.{3,}/gi.test(req.body.subject)) {
     return res.send({ message: "missing subject" });
-  } else if (req.body.text <= "") {
+  } else if (!/.{5,}/gi.test(req.body.text)) {
     return res.send({ message: "missing text" });
   } else if (!/.+@.+\..+/gi.test(req.body.email)) {
     return res.send({ message: "missing email" });
