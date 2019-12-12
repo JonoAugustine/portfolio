@@ -22,20 +22,30 @@ const transporter = mailer.createTransport({
 });
 
 server.post("/", (req, res) => {
+  if (req.body.name <= "") {
+    return res.send({ message: "missing name" });
+  } else if (req.body.subject <= "") {
+    return res.send({ message: "missing subject" });
+  } else if (req.body.text <= "") {
+    return res.send({ message: "missing text" });
+  } else if (!/.+@.+\..+/gi.test(req.body.email)) {
+    return res.send({ message: "missing email" });
+  }
+
   const mailOptions = {
     from: email,
     to: "swordmaster9@gmail.com",
-    subject: req.body.subject ? req.body.subject : "NO SUBJECT",
-    text: req.body.text
+    subject: `${req.body.name}:${req.body.subject}`,
+    text: `${req.body.name}:\n${req.body.text}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send(JSON.stringify({ message: "failed" }));
+      res.send({ message: "failed" });
     } else {
-      console.log("Email sent: " + info);
-      res.send(JSON.stringify({ message: "sent" }));
+      console.log("Email sent", info);
+      res.send({ message: "sent" });
     }
   });
 });
