@@ -96,7 +96,7 @@ const ProjectCard = project => {
   if (project.source) {
     view.append(Button(project.source, "View Source"));
   }
-  if (!(project.live && project.source)) {
+  if (!project.live) {
     base.addClass("no-info");
   }
 

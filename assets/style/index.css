@@ -69,7 +69,7 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   color: #eaebed;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -227,28 +227,24 @@ header.banner .head .container#badges .badge:hover {
 
 header.banner .head button.scroller {
   margin-top: 10%;
-  background-color: rgba(42, 96, 65, 0.3);
   border-color: #eaebed;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  background-color: rgba(40, 150, 90, 0.4);
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  -webkit-animation: float 2s ease-in-out infinite;
+          animation: float 2s ease-in-out infinite;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+header.banner .head button.scroller:hover {
+  border-color: #008dd5;
 }
 
 @media (max-width: 425px) {
   header.banner .head button.scroller {
     width: 90%;
   }
-}
-
-header.banner .head button.scroller:hover {
-  background-color: rgba(40, 150, 90, 0.4);
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  -webkit-animation: float 2s ease-in-out infinite;
-          animation: float 2s ease-in-out infinite;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
 }
 
 nav {
