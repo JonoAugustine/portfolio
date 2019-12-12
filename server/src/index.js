@@ -43,6 +43,10 @@ server.post("/", (req, res) => {
     return res.send({ message: "missing email" });
   }
 
+  if (process.argv[2] == "local") {
+    return res.send({ message: "sent" });
+  }
+
   const mailOptions = {
     from: email,
     to: "swordmaster9@gmail.com",

@@ -70,7 +70,7 @@ const ProjectCard = project => {
   let open = false;
 
   const base = E("div").addClass(
-    `card animated slideIn${["Left", "Right", "Up"].random()}`
+    `card animated slideIn${random(["Left", "Right", "Up"])}`
   );
 
   base.append(

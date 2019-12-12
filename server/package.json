@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index",
+    "local": "node ./src/index.js local",
+    "test": "jest --watch ./spec/",
+    "start": "node ./src/index.js",
     "publish": "cd .. && git subtree push --prefix server heroku master && heroku logs -t"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "nodemailer": "^6.4.2"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

@@ -86,9 +86,7 @@ const projects = [
   )
 ];
 
-Object.prototype.random = function() {
-  return this[Math.floor(Math.random() * this.length)];
-};
+const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
 /**
  *
@@ -97,18 +95,14 @@ Object.prototype.random = function() {
  * @param {*} text
  * @returns {Promise<*>}
  */
-const sendEmail = (subject, name, text) => {
+const sendEmail = (email, name, subject, text) => {
   return $.ajax({
     type: "POST",
     url: "https://salty-garden-80295.herokuapp.com/",
-    dataType: "application/json",
-    data: JSON.stringify({
-      subject: `${name}: ${subject}`,
-      text: `${name}\n\n${text}`
-    })
+    data: JSON.stringify({ email, name, subject, text })
   });
 };
 
-sendEmail()
+sendEmail("test@test.test", "Test Test", "This Is a Test", "This is a Test")
   .then(r => console.log(r))
   .catch(e => console.log(e));
