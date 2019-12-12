@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index"
+    "start": "node ./src/index",
+    "publish": "cd .. && git subtree push --prefix server heroku master"
   },
   "author": "",
   "license": "ISC",
