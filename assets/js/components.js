@@ -96,9 +96,7 @@ const ProjectCard = project => {
   if (project.source) {
     view.append(Button(project.source, "View Source"));
   }
-  if (!project.live) {
-    base.addClass("no-info");
-  }
+  if (!project.screenshotSrc) base.addClass("no-info");
 
   // Descripption
   const description = E("p").text(project.description);
