@@ -38,6 +38,7 @@ server.use(function(req, res, next) {
 });
 
 server.post("/", (req, res) => {
+  console.log(req.body);
   /**
    * @param {string} propName
    * @param {RegExp} regex
