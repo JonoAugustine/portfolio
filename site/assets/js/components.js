@@ -1,5 +1,7 @@
 document.getElementById("header_scroll").onclick = () =>
   document.querySelector("nav").scrollIntoView();
+document.getElementById("btn_contact").onclick = () =>
+  document.querySelector("form").scrollIntoView();
 
 const root = $("#root");
 
@@ -57,7 +59,7 @@ const Badge = (link, name) => {
     .append(Img(`./assets/images/badge_${name}.svg`, name))
     .addClass("badge")
     .css("animation-delay", `${Math.random() * 10 + 10}s`)
-    .css("animation-duration", `${Math.random() * 3 + 2}s`)
+    .css("animation-duration", `${Math.random() * 3 + 2}s`);
 };
 
 /**
@@ -137,3 +139,7 @@ badges.append(
 );
 
 badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
+
+
+// TODO! Testing
+document.getElementById("btn_contact").click()

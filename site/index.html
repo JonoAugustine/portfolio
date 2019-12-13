@@ -24,17 +24,51 @@
         <div class="container fluid row">
           <h4>240-423-6950</h4>
           <h4>me@JonoAugustine.com</h4>
-          <button id="contact">Contact Me</button>
+          <button id="btn_contact">Contact Me</button>
         </div>
       </nav>
       <div class="page container">
         <div class="container center fluid" id="page_content">
           <div id="cards" class="container center row fluid"></div>
+          <section id="contact">
+            <form action="javascript:submit()">
+              <h2 class="title">Let's Make Something!</h2>
+              <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="in_email" />
+              </div>
+              <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="in_name" />
+              </div>
+              <div class="input-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="in_subject"
+                  value="I Have a Job For You!"
+                />
+              </div>
+              <div class="input-group">
+                <label for="text">Message</label>
+                <textarea type="textarea" name="text" id="in_text"></textarea>
+              </div>
+              <button type="submit">
+                See You Soon!
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </section>
         </div>
       </div>
     </div>
 
     <script src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b8caab6188.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/components.js"></script>
   </body>

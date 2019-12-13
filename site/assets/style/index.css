@@ -147,8 +147,8 @@ header.banner .head section.intro * {
 header.banner .head section.intro .brand {
   color: #eaebed;
   font-size: 4rem;
-  -webkit-animation-delay: 14s;
-          animation-delay: 14s;
+  -webkit-animation-delay: 17s;
+          animation-delay: 17s;
 }
 
 @media (min-width: 1024px) {
@@ -159,8 +159,8 @@ header.banner .head section.intro .brand {
 
 header.banner .head section.intro .tagline {
   font-size: 2em;
-  -webkit-animation-delay: 14s;
-          animation-delay: 14s;
+  -webkit-animation-delay: 16s;
+          animation-delay: 16s;
 }
 
 header.banner .head .container#badges {
@@ -403,5 +403,81 @@ div.page div#cards div.card.open div.extra {
 div.page div#cards div.card.open div.extra img {
   width: 100%;
   border-radius: 15px;
+}
+
+#contact > form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  #contact > form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+#contact > form .title {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#contact > form div.input-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  #contact > form div.input-group {
+    max-width: 45%;
+  }
+}
+
+#contact > form div.input-group label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#contact > form div.input-group input,
+#contact > form div.input-group textarea {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #2a6041;
+  border-radius: 7.5px;
+  background-color: transparent;
+  color: #eaebed;
+}
+
+#contact > form div.input-group input:active {
+  border-color: #008dd5;
+}
+
+#contact > form div.input-group input[type="textarea"] {
+  resize: vertical;
+}
+
+#contact > form button {
+  margin: 10px auto;
 }
 /*# sourceMappingURL=index.css.map */

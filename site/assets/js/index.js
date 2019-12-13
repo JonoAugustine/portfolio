@@ -103,6 +103,17 @@ const sendEmail = (email, name, subject, text) => {
   });
 };
 
-sendEmail("test@test.test", "Test Test", "This Is a Test", "This is a Test")
-  .then(r => console.log(r))
-  .catch(e => console.log(e));
+const submit = () => {
+  const formValues = {};
+  $.each($("form").serializeArray(), (_, field) => {
+    formValues[field.name] = field.value;
+  });
+  sendEmail(
+    formValues.email,
+    formValues.name,
+    formValues.subject,
+    formValues.text
+  ).then(res => {
+    console.log(res); // TODO
+  });
+};
