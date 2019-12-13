@@ -62,7 +62,7 @@ const Badge = (link, name) => {
     .css("animation-duration", `${Math.random() * 3 + 2}s`);
 };
 
-const Modal = (parent, showTimeout) => {
+const Modal = (parent, autoClose, showTimeout) => {
   const modal = E("div").addClass("modal center closed");
   const icon = E("i")
     .addClass("fas fa-times exit")
@@ -74,7 +74,20 @@ const Modal = (parent, showTimeout) => {
 
   parent.append(modal);
 
-  setTimeout(() => modal.removeClass("closed"), showTimeout);
+  setTimeout(
+    () => {
+      modal.removeClass("closed");
+      if (autoClose) {
+        let inter = setInterval(() => {
+          if (modal.hasClass("closed")) {
+            modal.remove();
+            clearInterval(inter);
+          } else modal.addClass("closed");
+        }, 5000);
+      }
+    },
+    showTimeout ? showTimeout : 100
+  );
 
   return modal;
 };
@@ -149,3 +162,5 @@ const ProjectCard = project => {
 const cards = $("#cards");
 
 const badges = $("#badges");
+
+const form = $("form");

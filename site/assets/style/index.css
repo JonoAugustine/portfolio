@@ -516,7 +516,7 @@ div.page div#cards div.card.open div.extra img {
 }
 
 .modal.closed {
-  top: -9999 !important;
+  top: 9999 !important;
   -webkit-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
 }

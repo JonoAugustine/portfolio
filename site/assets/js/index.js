@@ -117,13 +117,33 @@ const sendEmail = (email, name, subject, text) => {
 
 const submit = () => {
   const formValues = {};
-  $.each($("form").serializeArray(), (_, field) => {
+  $.each(form.serializeArray(), (_, field) => {
     formValues[field.name] = field.value;
   });
-  sendEmail(
-    formValues.email,
-    formValues.name,
-    formValues.subject,
-    formValues.text
-  ).then(() => Modal($("form"), 1000).append("See You Soon"));
+
+  if (!/.+@.+\..+/gi.test(formValues.email)) {
+    Modal(form, true)
+      .addClass("danger")
+      .append("Please use a valid email");
+  } else if (!/.{2,}\s+.{2,}/gi.test(formValues.name)) {
+    Modal(form, true)
+      .addClass("danger")
+      .append("Please use your full name");
+  } else if (!/.{3,}/gi.test(formValues.subject)) {
+    Modal(form, true)
+      .addClass("danger")
+      .append("Please use a descriptive subject");
+  } else if (!/.{5}/gi.test(formValues.text)) {
+    Modal(form, true)
+      .addClass("danger")
+      .append("Make you message count");
+  } else {
+    sendEmail(
+      formValues.email,
+      formValues.name,
+      formValues.subject,
+      formValues.text
+    );
+    Modal(form, false, 1000).append("See You Soon");
+  }
 };
