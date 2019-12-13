@@ -124,5 +124,5 @@ const submit = () => {
     formValues.name,
     formValues.subject,
     formValues.text
-  ).finally(() => Modal($("form"), 1000).append("See You Soon"));
+  ).then(() => Modal($("form"), 1000).append("See You Soon"));
 };
