@@ -107,10 +107,11 @@ badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
  */
 const sendEmail = (email, name, subject, text) => {
   console.log({ email, name, subject, text });
-  return $.ajax({
-    type: "POST",
-    url: "https://salty-garden-80295.herokuapp.com/",
-    data: { email, name, subject, text }
+  return $.post("https://salty-garden-80295.herokuapp.com/", {
+    email,
+    name,
+    subject,
+    text
   });
 };
 
