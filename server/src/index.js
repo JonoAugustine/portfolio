@@ -30,8 +30,8 @@ server.post("/", (req, res) => {
     return typeof this[propName] === "string" && regex.test(this[propName]);
   };
 
+  console.log(req.body);
   if (!req.body.validateString("name", /.{2,}/gi)) {
-    console.log(req.body.validateString);
     console.log(req.body.validateString("name", /.{2,}/gi));
     return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {
