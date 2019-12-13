@@ -118,12 +118,21 @@ const submit = () => {
   $.each($("form").serializeArray(), (_, field) => {
     formValues[field.name] = field.value;
   });
+  console.log("Attempting Email", formValues);
   sendEmail(
     formValues.email,
     formValues.name,
     formValues.subject,
     formValues.text
-  ).then(res => {
-    console.log(res); // TODO
-  });
+  )
+    .then(res => {
+      Modal($("form"), 1000)
+        .addClass(res.message !== "sent" ? "danger" : "")
+        .append(res.message);
+    })
+    .catch(e =>
+      Modal($("form"), 1000)
+        .addClass("danger")
+        .append(e)
+    );
 };

@@ -4,10 +4,7 @@
  * @returns {boolean}
  */
 Object.prototype.validateString = function(propName, regex) {
-  return (
-    typeof this[propName] === "string" &&
-    regex.test(this[propName].replace(/\s+/gi, ""))
-  );
+  return typeof this[propName] === "string" && regex.test(this[propName]);
 };
 
 const express = require("express");
@@ -34,13 +31,13 @@ const transporter = mailer.createTransport({
 
 server.post("/", (req, res) => {
   if (!req.body.validateString("name", /.{2,}/gi)) {
-    return res.send({ message: "missing name" });
+    return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {
-    return res.send({ message: "missing subject" });
+    return res.status(400).send({ message: "missing subject" });
   } else if (!req.body.validateString("text", /.{5,}/gi)) {
-    return res.send({ message: "missing text" });
+    return res.status(400).send({ message: "missing text" });
   } else if (!req.body.validateString("email", /.+@.+\..+/gi)) {
-    return res.send({ message: "missing email" });
+    return res.status(400).send({ message: "missing email" });
   }
 
   if (process.argv[2] == "local") {

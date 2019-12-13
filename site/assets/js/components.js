@@ -63,9 +63,14 @@ const Badge = (link, name) => {
 };
 
 const Modal = (parent, showTimeout) => {
-  const modal = E("div")
-    .addClass("modal center closed")
-    .append(E("i").addClass("fas fa-times exit"));
+  const modal = E("div").addClass("modal center closed");
+  const icon = E("i")
+    .addClass("fas fa-times exit")
+    .click(() => {
+      modal.addClass("closed");
+      setTimeout(() => modal.remove(), showTimeout);
+    });
+  modal.append(icon);
 
   parent.append(modal);
 
