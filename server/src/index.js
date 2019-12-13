@@ -20,6 +20,23 @@ const transporter = mailer.createTransport({
   }
 });
 
+server.use(function(req, res, next) {
+  // Website you wish to allow to connect
+  res.setHeader("Access-Control-Allow-Origin", "http://JonoAugustine.com");
+
+  // Request methods you wish to allow
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+
+  // Request headers you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+
+  // Pass to next layer of middleware
+  next();
+});
+
 server.post("/", (req, res) => {
   /**
    * @param {string} propName
@@ -52,10 +69,10 @@ server.post("/", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send({ message: "failed" });
+      res.status(500).send({ message: "failed" });
     } else {
       console.log("Email sent", info);
-      res.send({ message: "sent" });
+      res.status(200);
     }
   });
 });

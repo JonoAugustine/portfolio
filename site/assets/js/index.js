@@ -109,6 +109,7 @@ const sendEmail = (email, name, subject, text) => {
   return $.ajax({
     type: "POST",
     url: "https://salty-garden-80295.herokuapp.com/",
+    contentType: "application/json",
     data: { email, name, subject, text }
   });
 };
@@ -123,15 +124,5 @@ const submit = () => {
     formValues.name,
     formValues.subject,
     formValues.text
-  )
-    .then(res => {
-      Modal($("form"), 1000)
-        .addClass(res.message !== "sent" ? "danger" : "")
-        .append(res.message);
-    })
-    .catch(e =>
-      Modal($("form"), 1000)
-        .addClass("danger")
-        .append("Could not send email.")
-    );
+  ).finally(() => Modal($("form"), 1000).append("See You Soon"));
 };
