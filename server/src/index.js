@@ -1,12 +1,3 @@
-/**
- * @param {string} propName
- * @param {RegExp} regex
- * @returns {boolean}
- */
-Object.prototype.validateString = function(propName, regex) {
-  return typeof this[propName] === "string" && regex.test(this[propName]);
-};
-
 const express = require("express");
 const port = process.env.PORT ? process.env.PORT : 6920;
 const server = express();
@@ -30,6 +21,15 @@ const transporter = mailer.createTransport({
 });
 
 server.post("/", (req, res) => {
+  /**
+   * @param {string} propName
+   * @param {RegExp} regex
+   * @returns {boolean}
+   */
+  Object.prototype.validateString = function(propName, regex) {
+    return typeof this[propName] === "string" && regex.test(this[propName]);
+  };
+  
   if (!req.body.validateString("name", /.{2,}/gi)) {
     return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {

@@ -1,7 +1,8 @@
 const axios = require("axios").default;
 
 const uri = "http://localhost:6920";
-const request = data => axios.post(uri, data).catch(e => console.log(e));
+//const uri = "https://salty-garden-80295.herokuapp.com/";
+const request = data => axios.post(uri, data);
 
 const mock = {
   valid: function() {
@@ -16,23 +17,19 @@ const mock = {
 
 describe("Server Request Validation", () => {
   test("Reject empty request", async () => {
-    const r = await request({});
-    return expect(r.data.message).toBe("missing name");
+    await expect(request({})).rejects;
   });
 
   test("Reject missing subject", async () => {
-    const r = await request({ ...mock.valid(), subject: null });
-    expect(r.data.message).toBe("missing subject");
+    await expect(request({ ...mock.valid(), subject: null })).rejects;
   });
 
   test("Reject missing email", async () => {
-    const r = await request({ ...mock.valid(), email: null });
-    expect(r.data.message).toBe("missing email");
+    await expect(request({ ...mock.valid(), email: null })).rejects;
   });
 
   test("Reject missing body text", async () => {
-    const r = await request({ ...mock.valid(), text: null });
-    expect(r.data.message).toBe("missing text");
+    await expect(request({ ...mock.valid(), text: null })).rejects;
   });
 
   test("Accept valid request", async () => {
