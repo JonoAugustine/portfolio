@@ -10,8 +10,8 @@ $colors: (
   text-: rgba(234, 235, 237, 1)
 );
 
-@function color($color-name) {
-  @return map-get($colors, $color-name);
+@function color($color-name, $alpha: 1) {
+  @return rgba(map-get($colors, $color-name), $alpha);
 }
 
 $radius: 15px;
@@ -116,18 +116,19 @@ img.invert {
 
 header.banner {
   height: 100%;
+  position: relative;
 
   display: flex;
   flex-direction: column;
-
-  @include tablet() {
-    text-align: center;
-  }
 
   background-image: url("../images/banner.JPG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include tablet() {
+    text-align: center;
+  }
 
   .head {
     position: relative;
@@ -139,15 +140,9 @@ header.banner {
       margin: 10% auto 0 auto;
       padding: $padding;
 
-      * {
-        animation: float 2s infinite forwards ease-in-out;
-      }
-
       .brand {
         color: color(text-);
         font-size: 4rem;
-
-        animation-delay: (random(10) + 10) + 1s;
 
         @include desktop() {
           font-size: 7rem;
@@ -156,7 +151,6 @@ header.banner {
 
       .tagline {
         font-size: 2em;
-        animation-delay: (random(10) + 10) + 1s;
       }
     }
 
@@ -367,64 +361,127 @@ div.page {
   }
 }
 
-#contact > form {
+#contact {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
 
-  @include desktop() {
-    flex-direction: row;
-    flex-wrap: wrap;
+  margin-top: $margin;
+
+  // remove outline
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
   }
 
-  .title {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-  }
-
-  div.input-group {
-    width: 100%;
+  > form {
+    margin: 0 auto;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-content: center;
 
     @include desktop() {
-      max-width: 45%;
+      max-width: 50%;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
 
-    label {
-      text-align: left;
-      margin-bottom: $margin / 2;
-    }
-
-    input,
-    textarea {
+    .title {
       width: 100%;
       margin: $margin auto;
-      padding: $padding;
-
-      border: 1px solid color(primary-dark);
-      border-radius: $radius / 2;
-      background-color: transparent;
-      color: color("text-");
+      text-align: center;
     }
 
-    input {
-      &:active {
-        border-color: color(accent);
+    div.input-group {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+
+      &.full-width {
+        max-width: 95% !important;
       }
 
-      &[name="subject"] {
+      @include desktop() {
+        max-width: 45%;
       }
 
-      &[type="textarea"] {
+      label {
+        text-align: left;
+        margin-bottom: $margin / 2;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        margin: $margin auto;
+        padding: $padding;
+
+        border: 1px solid color(primary-dark);
+        border-radius: $radius / 2;
+        background-color: transparent;
+        color: color("text-");
+        &:focus {
+          border-color: color(accent);
+        }
+      }
+
+      textarea {
         resize: vertical;
       }
     }
+
+    button {
+      margin: $margin auto;
+    }
+  }
+}
+
+.modal {
+  width: 80%;
+  max-width: 400px;
+  position: absolute;
+  z-index: 99999;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  padding: $padding;
+  border-radius: $radius;
+  color: white;
+  background-color: color(primary, 0.9);
+  transition: all 2s ease-in-out;
+
+  &.closed {
+    top: -9999 !important;
+    transition: all 2s ease-in-out;
   }
 
-  button {
-    margin: $margin auto;
+  &.accent {
+    background-color: color(accent, 0.8);
+  }
+
+  &.danger {
+    background-color: rgba(red, 0.9);
+
+    .exit:hover {
+      color: white;
+    }
+  }
+
+  .exit {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
   }
 }

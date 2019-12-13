@@ -62,6 +62,18 @@ const Badge = (link, name) => {
     .css("animation-duration", `${Math.random() * 3 + 2}s`);
 };
 
+const Modal = (parent, showTimeout) => {
+  const modal = E("div")
+    .addClass("modal center closed")
+    .append(E("i").addClass("fas fa-times exit"));
+
+  parent.append(modal);
+
+  setTimeout(() => modal.removeClass("closed"), showTimeout);
+
+  return modal;
+};
+
 /**
  * @param {Project} project
  */
@@ -129,17 +141,6 @@ const ProjectCard = project => {
   return base;
 };
 
-$("#cards").append(...projects.map(p => ProjectCard(p)));
+const cards = $("#cards");
 
 const badges = $("#badges");
-badges.append(Badge("https://github.com/JonoAugustine", "gitHub"));
-badges.append(Badge("https://gitlab.com/JonoAugustine", "gitLab"));
-badges.append(
-  Badge("https://www.linkedin.com/in/jonathan-augustine-14678b124/", "linkedin")
-);
-
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
-
-
-// TODO! Testing
-document.getElementById("btn_contact").click()

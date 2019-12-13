@@ -88,6 +88,16 @@ const projects = [
 
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
+cards.append(...projects.map(p => ProjectCard(p)));
+
+badges.append(Badge("https://github.com/JonoAugustine", "gitHub"));
+badges.append(Badge("https://gitlab.com/JonoAugustine", "gitLab"));
+badges.append(
+  Badge("https://www.linkedin.com/in/jonathan-augustine-14678b124/", "linkedin")
+);
+
+badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
+
 /**
  *
  * @param {*} subject
