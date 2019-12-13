@@ -30,9 +30,7 @@ server.post("/", (req, res) => {
     return typeof this[propName] === "string" && regex.test(this[propName]);
   };
 
-  console.log(req.body);
   if (!req.body.validateString("name", /.{2,}/gi)) {
-    console.log(req.body.validateString("name", /.{2,}/gi));
     return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {
     return res.status(400).send({ message: "missing subject" });
@@ -42,9 +40,7 @@ server.post("/", (req, res) => {
     return res.status(400).send({ message: "missing email" });
   }
 
-  if (process.argv[2] == "local") {
-    return res.send({ message: "sent" });
-  }
+  if (process.argv[2] == "local") return res.send({ message: "sent" });
 
   const mailOptions = {
     from: email,

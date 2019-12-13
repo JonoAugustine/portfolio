@@ -1,7 +1,7 @@
 const axios = require("axios").default;
 
-const uri = "http://localhost:6920";
-//const uri = "https://salty-garden-80295.herokuapp.com/";
+//const uri = "http://localhost:6920";
+const uri = "https://salty-garden-80295.herokuapp.com/";
 const request = data => axios.post(uri, data);
 
 const mock = {
