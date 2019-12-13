@@ -110,8 +110,6 @@ const sendEmail = (email, name, subject, text) => {
   return $.ajax({
     type: "POST",
     url: "https://salty-garden-80295.herokuapp.com/",
-    contentType: "application/json",
-    dataType: "json",
     data: { email, name, subject, text }
   });
 };
