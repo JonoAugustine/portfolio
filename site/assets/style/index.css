@@ -159,8 +159,8 @@ header.banner .head section.intro .brand {
 
 header.banner .head section.intro .tagline {
   font-size: 2em;
-  -webkit-animation-delay: 16s;
-          animation-delay: 16s;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
 }
 
 header.banner .head .container#badges {
