@@ -62,6 +62,36 @@ const Badge = (link, name) => {
     .css("animation-duration", `${Math.random() * 3 + 2}s`);
 };
 
+const Modal = (parent, autoClose, showTimeout) => {
+  const modal = E("div").addClass("modal center closed");
+  const icon = E("i")
+    .addClass("fas fa-times exit")
+    .click(() => {
+      modal.addClass("closed");
+      setTimeout(() => modal.remove(), showTimeout);
+    });
+  modal.append(icon);
+
+  parent.append(modal);
+
+  setTimeout(
+    () => {
+      modal.removeClass("closed");
+      if (autoClose) {
+        let inter = setInterval(() => {
+          if (modal.hasClass("closed")) {
+            modal.remove();
+            clearInterval(inter);
+          } else modal.addClass("closed");
+        }, 5000);
+      }
+    },
+    showTimeout ? showTimeout : 100
+  );
+
+  return modal;
+};
+
 /**
  * @param {Project} project
  */
@@ -129,17 +159,8 @@ const ProjectCard = project => {
   return base;
 };
 
-$("#cards").append(...projects.map(p => ProjectCard(p)));
+const cards = $("#cards");
 
 const badges = $("#badges");
-badges.append(Badge("https://github.com/JonoAugustine", "gitHub"));
-badges.append(Badge("https://gitlab.com/JonoAugustine", "gitLab"));
-badges.append(
-  Badge("https://www.linkedin.com/in/jonathan-augustine-14678b124/", "linkedin")
-);
 
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
-
-
-// TODO! Testing
-document.getElementById("btn_contact").click()
+const form = $("form");

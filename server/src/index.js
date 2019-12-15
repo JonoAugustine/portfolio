@@ -1,15 +1,3 @@
-/**
- * @param {string} propName
- * @param {RegExp} regex
- * @returns {boolean}
- */
-Object.prototype.validateString = function(propName, regex) {
-  return (
-    typeof this[propName] === "string" &&
-    regex.test(this[propName].replace(/\s+/gi, ""))
-  );
-};
-
 const express = require("express");
 const port = process.env.PORT ? process.env.PORT : 6920;
 const server = express();
@@ -32,20 +20,45 @@ const transporter = mailer.createTransport({
   }
 });
 
+server.use(function(req, res, next) {
+  // Website you wish to allow to connect
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  // Request methods you wish to allow
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+
+  // Request headers you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+
+  // Pass to next layer of middleware
+  next();
+});
+
 server.post("/", (req, res) => {
+  console.log(req.body);
+  /**
+   * @param {string} propName
+   * @param {RegExp} regex
+   * @returns {boolean}
+   */
+  Object.prototype.validateString = function(propName, regex) {
+    return typeof this[propName] === "string" && regex.test(this[propName]);
+  };
+
   if (!req.body.validateString("name", /.{2,}/gi)) {
-    return res.send({ message: "missing name" });
+    return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {
-    return res.send({ message: "missing subject" });
+    return res.status(400).send({ message: "missing subject" });
   } else if (!req.body.validateString("text", /.{5,}/gi)) {
-    return res.send({ message: "missing text" });
+    return res.status(400).send({ message: "missing text" });
   } else if (!req.body.validateString("email", /.+@.+\..+/gi)) {
-    return res.send({ message: "missing email" });
+    return res.status(400).send({ message: "missing email" });
   }
 
-  if (process.argv[2] == "local") {
-    return res.send({ message: "sent" });
-  }
+  if (process.argv[2] == "local") return res.send({ message: "sent" });
 
   const mailOptions = {
     from: email,
@@ -57,10 +70,10 @@ server.post("/", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send({ message: "failed" });
+      res.status(500).send({ message: "failed" });
     } else {
       console.log("Email sent", info);
-      res.send({ message: "sent" });
+      res.status(200);
     }
   });
 });

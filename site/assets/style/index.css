@@ -42,7 +42,8 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   color: #eaebed;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+ "Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -108,6 +109,7 @@ img.invert {
 
 header.banner {
   height: 100%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,16 +141,9 @@ header.banner .head section.intro {
   padding: 10px;
 }
 
-header.banner .head section.intro * {
-  -webkit-animation: float 2s infinite forwards ease-in-out;
-          animation: float 2s infinite forwards ease-in-out;
-}
-
 header.banner .head section.intro .brand {
   color: #eaebed;
   font-size: 4rem;
-  -webkit-animation-delay: 17s;
-          animation-delay: 17s;
 }
 
 @media (min-width: 1024px) {
@@ -159,8 +154,6 @@ header.banner .head section.intro .brand {
 
 header.banner .head section.intro .tagline {
   font-size: 2em;
-  -webkit-animation-delay: 12s;
-          animation-delay: 12s;
 }
 
 header.banner .head .container#badges {
@@ -405,8 +398,22 @@ div.page div#cards div.card.open div.extra img {
   border-radius: 15px;
 }
 
-#contact > form {
+#contact {
   width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+#contact input:focus,
+#contact select:focus,
+#contact textarea:focus,
+#contact button:focus {
+  outline: none;
+}
+
+#contact > form {
+  margin: 0 auto;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -417,10 +424,13 @@ div.page div#cards div.card.open div.extra img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 @media (min-width: 1024px) {
   #contact > form {
+    max-width: 50%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -432,12 +442,13 @@ div.page div#cards div.card.open div.extra img {
 
 #contact > form .title {
   width: 100%;
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
 }
 
 #contact > form div.input-group {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,6 +456,10 @@ div.page div#cards div.card.open div.extra img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#contact > form div.input-group.full-width {
+  max-width: 95% !important;
 }
 
 @media (min-width: 1024px) {
@@ -469,15 +484,64 @@ div.page div#cards div.card.open div.extra img {
   color: #eaebed;
 }
 
-#contact > form div.input-group input:active {
+#contact > form div.input-group input:focus,
+#contact > form div.input-group textarea:focus {
   border-color: #008dd5;
 }
 
-#contact > form div.input-group input[type="textarea"] {
+#contact > form div.input-group textarea {
   resize: vertical;
 }
 
 #contact > form button {
   margin: 10px auto;
+}
+
+.modal {
+  width: 80%;
+  max-width: 400px;
+  position: absolute;
+  z-index: 99999;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgba(40, 150, 90, 0.9);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.modal.closed {
+  top: 9999 !important;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.modal.accent {
+  background-color: rgba(0, 141, 213, 0.8);
+}
+
+.modal.danger {
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+.modal.danger .exit:hover {
+  color: white;
+}
+
+.modal .exit {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.modal .exit:hover {
+  color: red;
 }
 /*# sourceMappingURL=index.css.map */
