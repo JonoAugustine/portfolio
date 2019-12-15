@@ -213,20 +213,11 @@ header.banner {
 }
 
 nav.navbar {
-  padding: $padding * 1;
+  padding: $padding 0;
   width: 100%;
 
   background-color: lighten(color(base), 10%);
   border-bottom: 2px solid color(primary);
-
-  &.sticky {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    border-top: 0;
-  }
 
   > div {
     flex-direction: column;
