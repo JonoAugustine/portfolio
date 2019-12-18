@@ -1,9 +1,9 @@
-# [Portfolio of Jonathan Augustine](https://jonoaugustine.github.io/portfolio/index.html)
+# [Portfolio of Jonathan Augustine](https://jonoaugustine.com)
 
 This repo contains the source for
-[my portfolio](https://jonoaugustine.github.io/portfolio/) to showcase my
+[my portfolio](https://jonoaugustine.com) to showcase my
 competence in full stack software development and language flexibility.
-Each [release](https://github.com/JonoAugustine/portfolio/releases/tag/0.1.0)
+Each [release](https://github.com/JonoAugustine/portfolio/releases/tag/0.4.0)
 presents a stage in the development and improvement of the source code.
 
 ## Current Version 0.4.0
