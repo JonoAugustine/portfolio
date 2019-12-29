@@ -66,6 +66,17 @@ const projects = [
     "ouch.gif"
   ),
   new Project(
+    "Weebot",
+    null,
+    "https://gitlab.com/JonoAugustine/Weebot",
+    `
+    Weebot is a chat and utility bot for the popular social platform, Discord. Weebot was build using
+    Kotlin and Strife (above), and is currently using GitLab CI/CD to deploy to a linode server. Weebot's
+    original implementation was made in Java and had many useful features like note pads, card games, and a text-based responsive
+    voice-mail. Currently I am working to port all of the functionality over to Kotlin and Strife, while also open-sourcing the repository.
+    `
+  ),
+  new Project(
     "Evolution Emulator",
     null,
     "https://github.com/JonoAugustine/Evolution-Emulator",
@@ -138,12 +149,7 @@ const submit = () => {
       .addClass("danger")
       .append("Make you message count");
   } else {
-    sendEmail(
-      formValues.email,
-      formValues.name,
-      formValues.subject,
-      formValues.text
-    );
+    sendEmail(formValues.email, formValues.name, formValues.subject, formValues.text);
     Modal(form, false, 1000).append("See You Soon");
   }
 };
