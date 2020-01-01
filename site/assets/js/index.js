@@ -70,10 +70,11 @@ const projects = [
     null,
     "https://gitlab.com/JonoAugustine/Weebot",
     `
-    Weebot is a chat and utility bot for the popular social platform, Discord. Weebot was build using
-    Kotlin and Strife (above), and is currently using GitLab CI/CD to deploy to a linode server. Weebot's
-    original implementation was made in Java and had many useful features like note pads, card games, and a text-based responsive
-    voice-mail. Currently I am working to port all of the functionality over to Kotlin and Strife, while also open-sourcing the repository.
+    Weebot is a chat and utility bot for the popular social platform, Discord. Built using
+    Kotlin and Strife (above), it is currently using GitLab CI/CD to deploy to a linode server. Weebot's
+    1.0 version was made using Java and had many useful features like notes, games, and a text-based 
+    voice-mail. Currently I am working to port all of the functionality over to Kotlin and Strife, 
+    while open-sourcing the repository.
     `
   ),
   new Project(
@@ -108,6 +109,18 @@ badges.append(
 );
 
 badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
+
+$(".about-me .text").text(`
+  I like solving problems. When I find a problem I know I can solve, I
+  strive to create a solution that everyone not only CAN use, but that
+  everyone will WANT to use. I grew up surrounded by engineers and artists,
+  giving me insights into both worlds. I know their philosophies, where they
+  diverge and where they come together. I use these understandings to improve
+  the quality of my creations. I work just as hard discussing white-space
+  and design balance as I do constructing and perfecting unit tests. I know
+  there is always more to learn, more skills to gain, more languages and tools
+  to master, and I am always seeking out new answers to problems.
+`);
 
 /**
  *

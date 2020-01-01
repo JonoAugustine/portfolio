@@ -30,9 +30,13 @@
   }
 }
 
-* {
+*,
+*::after,
+*::before {
   scroll-behavior: smooth;
   scrollbar-width: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -42,8 +46,7 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   color: #eaebed;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
- "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -55,23 +58,23 @@ body {
   position: relative;
 }
 
-div.container {
+.container {
   width: 95%;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-div.container.fluid {
+.container.fluid {
   max-width: 100%;
 }
 
-div.container.center {
+.container.center {
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
-div.row {
+.row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,6 +278,53 @@ nav.navbar > div > * {
   }
 }
 
+div.page .about-me {
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #161616;
+  -webkit-box-shadow: 0 0.5rem 0.4rem #2a6041;
+          box-shadow: 0 0.5rem 0.4rem #2a6041;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: left;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  div.page .about-me {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  div.page .about-me h1,
+  div.page .about-me h2 {
+    text-align: center;
+  }
+  div.page .about-me h1 {
+    margin-top: 0;
+    line-height: 3rem;
+  }
+  div.page .about-me p {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin: 0 1rem;
+    font-size: larger;
+  }
+}
+
+div.page .about-me p {
+  line-height: 1.6rem;
+}
+
 div.page div#cards {
   scrollbar-width: none;
 }
@@ -384,6 +434,13 @@ div.page div#cards div.card div.extra {
 
 div.page div#cards div.card.open {
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  div.page div#cards div.card.open {
+    max-width: 80%;
+    max-height: 50%;
+  }
 }
 
 div.page div#cards div.card.open div.extra {
