@@ -1,0 +1,478 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
+@import url("./normalize.css");
+
+$colors: (
+  primary: rgba(40, 150, 90, 1),
+  accent: rgba(0, 141, 213, 1),
+  primary-dark: rgba(42, 96, 65, 1),
+  base: rgba(17, 17, 17, 1),
+  text-: rgba(234, 235, 237, 1)
+);
+
+@function color($color-name, $alpha: 1) {
+  @return rgba(map-get($colors, $color-name), $alpha);
+}
+
+$radius: 15px;
+$margin: 10px;
+$padding: 10px;
+
+$tablet: 768px;
+$desktop: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(-40%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  color: color(text-);
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+
+body {
+  background-color: color(base);
+}
+
+#root {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+div.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+div.container.fluid {
+  max-width: 100%;
+}
+
+div.container.center {
+  text-align: center;
+  align-content: center;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+button {
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid color(primary);
+  color: color(text-);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+  border-color: lighten($color: color(primary), $amount: 10%);
+}
+
+img.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+header.banner {
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("./images/banner.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include tablet() {
+    text-align: center;
+  }
+
+  .head {
+    position: relative;
+    height: 100%;
+    background-color: rgba(color(base), 0.3);
+
+    section.intro {
+      height: 50%;
+      margin: 10% auto 0 auto;
+      padding: $padding;
+
+      .brand {
+        color: color(text-);
+        font-size: 4rem;
+
+        @include desktop() {
+          font-size: 7rem;
+        }
+      }
+
+      .tagline {
+        font-size: 2em;
+      }
+    }
+
+    .container#badges {
+      max-width: 600px;
+
+      flex-direction: column;
+      align-content: flex-end;
+
+      @include tablet() {
+        flex-direction: row;
+      }
+
+      .badge {
+        cursor: pointer;
+        margin: $margin 0 $margin auto;
+
+        border: 1px solid transparent;
+        transform: translateY(-10%);
+        transition: all 1s;
+        animation: float 2s ease-in-out infinite;
+
+        @include tablet() {
+          flex-direction: row;
+          margin: 0 auto;
+          width: unset;
+          align-self: flex-end;
+        }
+
+        &:hover {
+          border-color: color(accent);
+          transform: translateY(-10%);
+          transition: all 1s;
+          animation: float 2s ease-in-out infinite;
+          animation-delay: 0.1s;
+        }
+      }
+    }
+
+    button.scroller {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      width: 50%;
+      max-width: 150px;
+      border-color: color(text-);
+      background-color: rgba(color(primary), 0.4);
+
+      animation: float 2s ease-in-out infinite;
+      transition: 0.5s;
+
+      &:hover {
+        border-color: color(accent);
+      }
+    }
+  }
+}
+
+nav.navbar {
+  padding: $padding 0;
+  width: 100%;
+
+  background-color: lighten(color(base), 10%);
+  border-bottom: 2px solid color(primary);
+
+  > div {
+    flex-direction: column;
+    align-content: center;
+    max-width: 500px !important;
+    text-align: center;
+
+    > * {
+      margin: $margin auto;
+    }
+
+    @include tablet() {
+      flex-direction: row;
+
+      > * {
+        margin: auto;
+      }
+    }
+  }
+}
+
+div.page {
+  div#cards {
+    scrollbar-width: none;
+    div.card {
+      background-color: lighten(color(base), 3%);
+      margin: $margin;
+      padding: $padding;
+      max-width: 300px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid transparent;
+
+      border-radius: $radius;
+      box-shadow: 5px 5px 3px lighten($color: color(base), $amount: 10%);
+
+      &:hover {
+        border: 1px solid color(accent);
+        box-shadow: 10px 10px 5px rgba(color(primary), 0.2);
+        transition: all 0.3s ease-in;
+      }
+
+      &.no-info {
+        cursor: auto;
+
+        &:hover {
+          border: 1px solid red;
+          box-shadow: 10px 10px 5px rgba(red, 0.2);
+        }
+      }
+
+      @include tablet() {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 5px;
+
+        display: grid;
+        grid-template-columns: 150px auto;
+        grid-template-areas: "thumbnail content";
+
+        text-align: left;
+      }
+
+      @include desktop() {
+        width: 45%;
+      }
+
+      img.thumbnail {
+        max-width: 150px !important;
+        border-radius: $radius;
+
+        @include tablet() {
+          float: left;
+          margin: auto $margin * 2 auto 0;
+
+          grid-area: thumbnail;
+        }
+      }
+
+      h1.placeholder {
+        font-size: 10rem;
+        margin: auto;
+      }
+
+      div.content {
+        @include tablet() {
+          grid-area: content;
+        }
+
+        h1 {
+          margin: $margin auto;
+          width: auto;
+        }
+
+        div.links {
+          @include tablet() {
+            justify-content: flex-start;
+          }
+          button {
+            margin: 0;
+            margin-right: $margin;
+            padding: $padding / 2;
+
+            text-align: left;
+
+            &:hover {
+              color: lighten(color(accent), 10%);
+            }
+          }
+        }
+      }
+
+      div.extra {
+        display: none;
+      }
+
+      &.open {
+        width: 100%;
+
+        div.extra {
+          width: 100%;
+          display: unset;
+          grid-column-start: span 2;
+
+          img {
+            width: 100%;
+            border-radius: $radius;
+          }
+        }
+      }
+    }
+  }
+}
+
+#contact {
+  width: 100%;
+  position: relative;
+
+  margin-top: $margin;
+
+  // remove outline
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  > form {
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    @include desktop() {
+      max-width: 50%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      width: 100%;
+      margin: $margin auto;
+      text-align: center;
+    }
+
+    div.input-group {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+
+      &.full-width {
+        max-width: 95% !important;
+      }
+
+      @include desktop() {
+        max-width: 45%;
+      }
+
+      label {
+        text-align: left;
+        margin-bottom: $margin / 2;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        margin: $margin auto;
+        padding: $padding;
+
+        border: 1px solid color(primary-dark);
+        border-radius: $radius / 2;
+        background-color: transparent;
+        color: color("text-");
+        &:focus {
+          border-color: color(accent);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+
+    button {
+      margin: $margin auto;
+    }
+  }
+}
+
+.modal {
+  width: 80%;
+  max-width: 400px;
+  position: absolute;
+  z-index: 99999;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  padding: $padding;
+  border-radius: $radius;
+  color: white;
+  background-color: color(primary, 0.9);
+  transition: all 2s ease-in-out;
+
+  &.closed {
+    top: 9999% !important;
+    transition: all 2s ease-in-out;
+  }
+
+  &.accent {
+    background-color: color(accent, 0.8);
+  }
+
+  &.danger {
+    background-color: rgba(red, 0.9);
+
+    .exit:hover {
+      color: white;
+    }
+  }
+
+  .exit {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
