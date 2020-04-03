@@ -240,6 +240,9 @@ nav.navbar {
 }
 
 div.page {
+  display: grid;
+  grid-template-columns: repeat();
+
   div#cards {
     scrollbar-width: none;
     div.card {
