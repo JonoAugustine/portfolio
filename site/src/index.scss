@@ -51,25 +51,31 @@ $desktop: 1024px;
 }
 
 html,
-body {
+body,
+#root {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
   scrollbar-width: none;
 
-  color: color(text-);
+  color: color(text-) !important;
 
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 body {
   background-color: color(base);
+  overflow-y: hidden;
 }
 
 #root {
   margin-bottom: 20px;
   position: relative;
+}
+
+#app {
+  height: 100%;
 }
 
 div.container {
@@ -239,11 +245,11 @@ nav.navbar {
   }
 }
 
-div.page {
+.page {
   display: grid;
   grid-template-columns: repeat();
 
-  div#cards {
+  .cards {
     scrollbar-width: none;
     div.card {
       background-color: lighten(color(base), 3%);

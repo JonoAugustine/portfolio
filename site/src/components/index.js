@@ -1,6 +1,5 @@
 import Badge from "./Badge";
 import Modal from "./Modal";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
+import ProjectCard from "./ProjectCard";
 
-export { Badge, Modal, Banner, Navbar };
+export { Badge, Modal, ProjectCard };
