@@ -20,16 +20,15 @@ const projects = [
   ),
   new Project(
     "Off The Menu",
-    "https://JonoAugustine.github.io/off-the-menu",
-    "https://github.com/JonoAugustine/off-the-menu",
+    "https://otm-online.firebaseapp.com",
+    "https://gitlab.com/off-the-menu/site",
     `
     A web app aiming to make eating out simpler for allergy sufferers and picky eaters.
     It provides the ability to search items on restaurant menus to determine if they contain
     potential allergens which the user defines. 
     `,
     "otm_logo.png",
-    true,
-    "otm.gif"
+    true
   ),
   new Project(
     "Team Magma PRO",
@@ -83,12 +82,12 @@ const projects = [
     the Borda is able to remove much of the overwhelming aspect of comparing and
     several choices at once.
     `
-  )
+  ),
 ];
 
-const random = arr => arr[Math.floor(Math.random() * arr.length)];
+const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-cards.append(...projects.map(p => ProjectCard(p)));
+cards.append(...projects.map((p) => ProjectCard(p)));
 
 badges.append(Badge("https://github.com/JonoAugustine", "gitHub"));
 badges.append(Badge("https://gitlab.com/JonoAugustine", "gitLab"));
@@ -111,7 +110,7 @@ const sendEmail = (email, name, subject, text) => {
     email,
     name,
     subject,
-    text
+    text,
   });
 };
 
@@ -122,21 +121,15 @@ const submit = () => {
   });
 
   if (!/.+@.+\..+/gi.test(formValues.email)) {
-    Modal(form, true)
-      .addClass("danger")
-      .append("Please use a valid email");
+    Modal(form, true).addClass("danger").append("Please use a valid email");
   } else if (!/.{2,}\s+.{2,}/gi.test(formValues.name)) {
-    Modal(form, true)
-      .addClass("danger")
-      .append("Please use your full name");
+    Modal(form, true).addClass("danger").append("Please use your full name");
   } else if (!/.{3,}/gi.test(formValues.subject)) {
     Modal(form, true)
       .addClass("danger")
       .append("Please use a descriptive subject");
   } else if (!/.{5}/gi.test(formValues.text)) {
-    Modal(form, true)
-      .addClass("danger")
-      .append("Make you message count");
+    Modal(form, true).addClass("danger").append("Make you message count");
   } else {
     sendEmail(
       formValues.email,
