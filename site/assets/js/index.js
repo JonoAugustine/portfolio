@@ -31,16 +31,12 @@ const projects = [
     true
   ),
   new Project(
-    "Team Magma PRO",
-    "https://teammagmapro.web.app",
-    "https://gitlab.com/JonoAugustine/teammagma",
+    "BlueTheRobot",
+    "https://jonoaugustine.gitlab.io/bluetherobot/",
+    null,
     `
-      This project aims to simplify & organize the selling, buying, 
-      & trading process of Pokemon Revolution Online by providing
-      users with a clean and intuitive web app to find the items 
-      and pokemon they need.
-    `,
-    "psyduck_purple.png"
+    The business website for Twitch Streamer & YouTuber BlueTheRobot.
+    `
   ),
   new Project(
     "Aquatic Mastery",
@@ -75,13 +71,25 @@ const projects = [
   new Project(
     "ScoreBorda",
     null,
-    "https://github.com/JonoAugustine/ScoreBorda",
+    "https://gitlab.com/JonoAugustine/ScoreBorda",
     `
     A system which utilizes the simplicity of binary choices to score and rank 
     "Features" and "Candidates". By presenting only two options in each comparison,
     the Borda is able to remove much of the overwhelming aspect of comparing and
     several choices at once.
     `
+  ),
+  new Project(
+    "Team Magma PRO",
+    "https://teammagmapro.web.app",
+    "https://gitlab.com/JonoAugustine/teammagma",
+    `
+      This project aims to simplify & organize the selling, buying, 
+      & trading process of Pokemon Revolution Online by providing
+      users with a clean and intuitive web app to find the items 
+      and pokemon they need.
+    `,
+    "psyduck_purple.png"
   ),
 ];
 
