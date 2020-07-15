@@ -12,6 +12,7 @@ presents a stage in the development and improvement of the source code.
 - Gitlab Pages hosting
 - Gitlab CI/CD deploying to Heroku
 - NodeJS + NodeMailer + ExpressJS server
+  - Jest used for unit tests
 
 ## License
 

@@ -1,5 +1,12 @@
 image: node:12.13.0
 
+run-test:
+  stage: test
+  script:
+    - cd ./server
+    - npm install
+    - npm test
+
 pages:
   stage: deploy
   script:
@@ -21,4 +28,3 @@ server:
     - dpl --provider=heroku --app=salty-garden-80295 --api-key=$HEROKU_API_KEY
   only:
     - master
-

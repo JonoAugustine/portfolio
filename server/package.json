@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "local": "node ./src/index.js local",
-    "test": "jest --watch ./spec/",
+    "test": "jest ./spec/",
     "start": "node ./src/index.js",
     "publish": "cd .. && git subtree push --prefix server heroku master && heroku logs -t"
   },
