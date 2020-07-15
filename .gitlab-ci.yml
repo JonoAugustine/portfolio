@@ -1,10 +1,5 @@
 image: node:12.13.0
 
-before_script:
-    - apt-get update -qy
-    - apt-get install -y ruby-dev
-    - gem install dpl
-
 pages:
   stage: deploy
   script:
@@ -19,6 +14,9 @@ server:
   stage: deploy
   image: ruby:latest
   script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
     - cd ./server
     - dpl --provider=heroku --app=salty-garden-80295 --api-key=$HEROKU_API_KEY
   only:
