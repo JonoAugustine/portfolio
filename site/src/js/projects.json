@@ -1,0 +1,21 @@
+/*
+  Project: {
+    name: string,
+    live: url,
+    source: url,
+    description: string,
+    imageSrc: path,
+    invert: bool,
+    screenshotSrc: path
+  }
+*/
+
+[
+  {
+    "name": "Strife",
+    "live": null,
+    "source": "https://gitlab.com/serebit/strife",
+    "description": "An idiomatic Kotlin implementation of the Discord API.",
+    "imageSrc": "/images/strife-logo.png"
+  }
+]
