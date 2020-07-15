@@ -4,7 +4,9 @@
   "description": "Porfolio of Jono Augustine",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "dev": "parcel serve ./src/index.html -d .dev",
+    "build": "parcel build ./src/index.html -d ../public --public-url ."
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,6 @@ cache:
   paths:
     - node_modules/
 
-
 before_script:
   - npm install
 
@@ -14,7 +13,6 @@ pages:
     - rm -rf public
     - cd ./site
     - CI=false npm run build
-    - mv ./build ../public
   artifacts:
     paths:
       - public

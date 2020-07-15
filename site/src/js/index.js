@@ -1,4 +1,5 @@
-import "../projects.json";
+import "./components";
+import "./projects.json";
 
 class Project {
   constructor(name, live, source, description, imageName, invert, screenshot) {
