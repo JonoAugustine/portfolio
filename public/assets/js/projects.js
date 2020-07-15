@@ -12,13 +12,6 @@ class Project {
 
 const projects = [
   new Project(
-    "Strife",
-    null,
-    "https://gitlab.com/serebit/strife",
-    "An idiomatic Kotlin implementation of the Discord API.",
-    "strife-logo.png"
-  ),
-  new Project(
     "Off The Menu",
     "https://otm-online.firebaseapp.com",
     "https://gitlab.com/off-the-menu/site",
@@ -37,6 +30,13 @@ const projects = [
     `
     The business website for Twitch Streamer & YouTuber BlueTheRobot.
     `
+  ),
+  new Project(
+    "Strife",
+    null,
+    "https://gitlab.com/serebit/strife",
+    "An idiomatic Kotlin implementation of the Discord API for use with custom bots.",
+    "strife-logo.png"
   ),
   new Project(
     "Aquatic Mastery",
