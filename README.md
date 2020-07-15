@@ -3,8 +3,7 @@
 This repo contains the source for
 [my portfolio](https://jonoaugustine.com) to showcase my
 competence in full stack software development and language flexibility.
-Each [release](https://github.com/JonoAugustine/portfolio/releases/tag/0.4.0)
-presents a stage in the development and improvement of the source code.
+Each release presents a stage in the development and improvement of the source code.
 
 ## Current Version 0.5.0
 
