@@ -35,7 +35,7 @@ const projects = [
     "https://jonoaugustine.gitlab.io/bluetherobot/",
     null,
     `
-    The business website for Twitch Streamer & YouTuber BlueTheRobot.
+    The official website for Twitch Streamer & YouTuber BlueTheRobot.
     `
   ),
   new Project(
