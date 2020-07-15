@@ -15,7 +15,7 @@ pages:
   only:
     - master
 
-production:
+server:
   stage: deploy
   image: ruby:latest
   script:
