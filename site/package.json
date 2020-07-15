@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "4.0.0",
+  "description": "Porfolio of Jono Augustine",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonoAugustine/portfolio.git"
+  },
+  "author": "JonoAugustine",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/JonoAugustine/portfolio/issues"
+  },
+  "homepage": "https://github.com/JonoAugustine/portfolio#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}

@@ -1,3 +1,5 @@
+import "../projects.json";
+
 class Project {
   constructor(name, live, source, description, imageName, invert, screenshot) {
     this.name = name;
@@ -113,7 +115,6 @@ badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
  * @returns {Promise<*>}
  */
 const sendEmail = (email, name, subject, text) => {
-  console.log({ email, name, subject, text });
   return $.post("https://salty-garden-80295.herokuapp.com/", {
     email,
     name,
