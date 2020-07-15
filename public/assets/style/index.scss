@@ -7,7 +7,7 @@ $colors: (
   accent: rgba(0, 141, 213, 1),
   primary-dark: rgba(42, 96, 65, 1),
   base: rgba(17, 17, 17, 1),
-  text-: rgba(234, 235, 237, 1)
+  text-: rgba(234, 235, 237, 1),
 );
 
 @function color($color-name, $alpha: 1) {
@@ -18,8 +18,16 @@ $radius: 15px;
 $margin: 10px;
 $padding: 10px;
 
-$tablet: 768px;
+$phone-s: 375px;
+$tablet: 600px;
 $desktop: 1024px;
+$desktop-4k: 2560px;
+
+@mixin phone-s {
+  @media (max-width: #{$phone-s - 1}) {
+    @content;
+  }
+}
 
 @mixin tablet {
   @media (min-width: #{$tablet}) {
@@ -29,6 +37,12 @@ $desktop: 1024px;
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-4k {
+  @media (min-width: #{$desktop-4k}) {
     @content;
   }
 }
@@ -72,22 +86,22 @@ body {
   position: relative;
 }
 
-div.container {
+.container {
   width: 95%;
   margin-left: auto !important;
   margin-right: auto !important;
+
+  &.fluid {
+    max-width: 100%;
+  }
+
+  &.center {
+    text-align: center;
+    align-content: center;
+  }
 }
 
-div.container.fluid {
-  max-width: 100%;
-}
-
-div.container.center {
-  text-align: center;
-  align-content: center;
-}
-
-div.row {
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -144,6 +158,10 @@ header.banner {
         color: color(text-);
         font-size: 4rem;
 
+        @include tablet() {
+          font-size: 5rem;
+        }
+
         @include desktop() {
           font-size: 7rem;
         }
@@ -159,6 +177,10 @@ header.banner {
 
       flex-direction: column;
       align-content: flex-end;
+
+      @include phone-s() {
+        display: none;
+      }
 
       @include tablet() {
         flex-direction: row;
@@ -242,6 +264,7 @@ nav.navbar {
 div.page {
   div#cards {
     scrollbar-width: none;
+
     div.card {
       background-color: lighten(color(base), 3%);
       margin: $margin;
@@ -283,6 +306,10 @@ div.page {
 
       @include desktop() {
         width: 45%;
+      }
+
+      @include desktop-4k() {
+        width: 30%;
       }
 
       img.thumbnail {
