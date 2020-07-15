@@ -2,17 +2,17 @@ const axios = require("axios").default;
 
 //const uri = "http://localhost:6920";
 const uri = "https://salty-garden-80295.herokuapp.com/";
-const request = data => axios.post(uri, data);
+const request = (data) => axios.post(uri, data);
 
 const mock = {
-  valid: function() {
+  valid: function () {
     return {
       name: "name name",
       email: "email@email.email",
       subject: "subject",
-      text: "text text text"
+      text: "text text text",
     };
-  }
+  },
 };
 
 describe("Server Request Validation", () => {

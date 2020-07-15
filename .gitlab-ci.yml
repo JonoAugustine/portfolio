@@ -1,12 +1,5 @@
 image: node:12.13.0
 
-run-test:
-  stage: test
-  script:
-    - cd ./server
-    - npm install
-    - npm test
-
 pages:
   stage: deploy
   script:
