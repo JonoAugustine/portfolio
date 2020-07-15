@@ -9,7 +9,7 @@ presents a stage in the development and improvement of the source code.
 ## Current Version 0.4.0
 
 - Animate.css + Sass for styling
-- Firebase site hosting
+- Gitlab Pages hosting
 - NodeJS + NodeMailer + ExpressJS hosted on Heroku
 
 ## License
