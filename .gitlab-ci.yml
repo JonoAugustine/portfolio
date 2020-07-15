@@ -17,3 +17,14 @@ production:
     - dpl --provider=heroku --app=salty-garden-80295 --api-key=$HEROKU_API_KEY
   only:
     - master
+
+pages:
+  type: deploy
+  stage: production
+  script:
+    - echo "waiting..."
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
