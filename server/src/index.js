@@ -11,18 +11,13 @@ const transporter = mailer.createTransport({
   host: "mail.hover.com",
   secureConnection: true,
   port: 465,
-  auth: {
-    user: email,
-    pass: pass
-  },
-  tls: {
-    secureProtocol: "TLSv1_method"
-  }
+  auth: { user: email, pass: pass },
+  tls: { secureProtocol: "TLSv1_method" },
 });
 
-server.use(function(req, res, next) {
+server.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "jonoaugustine.com");
 
   // Request methods you wish to allow
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
@@ -38,13 +33,12 @@ server.use(function(req, res, next) {
 });
 
 server.post("/", (req, res) => {
-  console.log(req.body);
   /**
    * @param {string} propName
    * @param {RegExp} regex
    * @returns {boolean}
    */
-  Object.prototype.validateString = function(propName, regex) {
+  Object.prototype.validateString = (propName, regex) => {
     return typeof this[propName] === "string" && regex.test(this[propName]);
   };
 
@@ -64,7 +58,7 @@ server.post("/", (req, res) => {
     from: email,
     to: "swordmaster9@gmail.com",
     subject: `${req.body.name}:${req.body.subject}`,
-    text: `${req.body.name}:\n${req.body.text}`
+    text: `${req.body.name}:\n${req.body.text}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
