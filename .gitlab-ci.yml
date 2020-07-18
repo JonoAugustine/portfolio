@@ -1,19 +1,19 @@
 image: node:12.13.0
 
-compile_resume:
-  stage: build
-  image: timnn/texlive # use a Docker image for LaTeX from https://hub.docker.com/
-  script:
-    # build the pdf
-    - ls -la
-    - pdflatex ./public/resume/JonoAugustineResume.tex
-    # copy to images
-    - mv ./public/resume/JonoAugustineResume.pdf ./public/images
-  artifacts:
-    paths:
-      - ./public/images/JonoAugustineResume.pdf
-  only:
-    - master
+# compile_resume:
+#   stage: build
+#   image: timnn/texlive # use a Docker image for LaTeX from https://hub.docker.com/
+#   script:
+#     # build the pdf
+#     - ls -la
+#     - pdflatex ./public/resume/JonoAugustineResume.tex
+#     # copy to images
+#     - mv ./public/resume/JonoAugustineResume.pdf ./public/images
+#   artifacts:
+#     paths:
+#       - ./public/images/JonoAugustineResume.pdf
+#   only:
+#     - master
 
 pages:
   stage: deploy
