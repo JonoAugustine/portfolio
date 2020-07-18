@@ -13,6 +13,10 @@ Each release presents a stage in the development and improvement of the source c
 - NodeJS + NodeMailer + ExpressJS server
   - Jest used for unit tests
 
+## Roadmap
+
+- Convert to parcel build
+
 ## License
 
 This repository is licensed under the
