@@ -1,2 +1,7 @@
 index.css.map
 node_modules
+*.aux
+*.fls
+*.fdb_latexmk
+*.log
+*.gz
