@@ -8,7 +8,7 @@ badges.append(
   Badge("https://www.linkedin.com/in/jonathan-augustine-14678b124/", "linkedin")
 );
 
-badges.append(Badge("./assets/images/JonoAugustineResume.pdf", "resume"));
+badges.append(Badge("./images/JonoAugustineResume.pdf", "resume"));
 
 /**
  *

@@ -4,9 +4,9 @@ class Project {
     this.live = live;
     this.source = source;
     this.description = description;
-    this.imageSrc = imageName ? "./assets/images/" + imageName : null;
+    this.imageSrc = imageName ? "./images/" + imageName : null;
     this.invert = invert;
-    this.screenshotSrc = screenshot ? "./assets/images/" + screenshot : null;
+    this.screenshotSrc = screenshot ? "./images/" + screenshot : null;
   }
 }
 
