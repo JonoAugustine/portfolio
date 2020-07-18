@@ -5,6 +5,7 @@ compile_resume:
   image: timnn/texlive # use a Docker image for LaTeX from https://hub.docker.com/
   script:
     # build the pdf
+    - ls -la
     - pdflatex ./public/resume/JonoAugustineResume.tex
     # copy to images
     - mv ./public/resume/JonoAugustineResume.pdf ./public/images
