@@ -1,15 +1,30 @@
 image: node:12.13.0
 
+compile_resume:
+  stage: build
+  image: timnn/texlive # use a Docker image for LaTeX from https://hub.docker.com/
+  script:
+    # build the pdf
+    - pdflatex ./public/resume/JonoAugustineResume.tex
+    # copy to images
+    - mv ./public/resume/JonoAugustineResume.pdf ./public/images
+  artifacts:
+    paths:
+      - ./public/images/JonoAugustineResume.pdf
+  only:
+    - master
+
 pages:
   stage: deploy
   script:
-    - echo "waiting..."
+    - echo "waiting..." # TODO change to parcel build scripts
   artifacts:
     paths:
       - public
   only:
     - master
 
+# deploy server
 server:
   stage: deploy
   image: ruby:latest
