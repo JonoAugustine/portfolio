@@ -52,7 +52,7 @@ $desktop-4k: 2560px;
     transform: translateY(-10%);
   }
   50% {
-    transform: translateY(-40%);
+    transform: translateY(-30%);
   }
   100% {
     transform: translateY(-10%);
@@ -194,6 +194,12 @@ header.banner {
         transform: translateY(-10%);
         transition: all 1s;
         animation: float 2s ease-in-out infinite;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: random(30) + 10 + s;
+          }
+        }
 
         @include tablet() {
           flex-direction: row;

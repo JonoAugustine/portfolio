@@ -1,7 +1,9 @@
 index.css.map
-node_modules
+/*/node_modules
+/site/.dev
 *.aux
 *.fls
 *.fdb_latexmk
 *.log
 *.gz
+/*/.cache

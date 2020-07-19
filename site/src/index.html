@@ -6,7 +6,7 @@
     <meta name="description" content='Portfolio of Jonathan "Jono" Augustine' />
     <title>Jono Augustine</title>
 
-    <link href="./style/index.css" rel="stylesheet" />
+    <link href="./style/index.scss" rel="stylesheet" />
   </head>
   <body>
     <div id="root">
@@ -16,7 +16,40 @@
             <h1 class="brand">Jono Augustine</h1>
             <h3 class="tagline">Creating solutions to unsolved problems</h3>
           </section>
-          <div id="badges" class="container fluid row"></div>
+          <div id="badges" class="container fluid row">
+            <a
+              class="badge"
+              href="https://github.com/JonoAugustine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/badge_gitHub.svg" alt="GitHub" />
+            </a>
+            <a
+              href="http://gitlab.com/JonoAugustine"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge"
+            >
+              <img src="./images/badge_gitLab.svg" alt="GitLab" />
+            </a>
+            <a
+              href="http://www.linkedin.com/in/jonathan-augustine-14678b124/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge"
+            >
+              <img src="./images/badge_linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a
+              href="./images/JonoAugustineResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge"
+            >
+              <img src="./images/badge_resume.svg" alt="Resume" />
+            </a>
+          </div>
           <button id="header_scroll" class="scroller">My Projects</button>
         </div>
       </header>
@@ -31,7 +64,7 @@
         <div class="container center fluid" id="page_content">
           <div id="cards" class="container center row fluid"></div>
           <section id="contact">
-            <form action="javascript:submit()">
+            <form id="email_form">
               <h2 class="title">Let's Make Something!</h2>
               <div class="input-group">
                 <label for="email">Email</label>
@@ -69,13 +102,10 @@
       </div>
     </div>
 
-    <script src="./js/jquery-3.4.1.min.js"></script>
     <script
       src="https://kit.fontawesome.com/b8caab6188.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/components.js"></script>
-    <script src="./js/projects.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
