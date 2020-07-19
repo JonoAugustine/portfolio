@@ -1,3 +1,5 @@
+import { random } from "./util";
+
 document.getElementById("header_scroll").onclick = () =>
   document.querySelector("nav").scrollIntoView();
 document.getElementById("btn_contact").onclick = () =>
@@ -54,24 +56,7 @@ const Img = (src, alt) => {
   return i;
 };
 
-/**
- *
- * @param {string} link
- * @param {string} name
- * @param {string} color
- * @param {string} logo
- * @returns {HTMLAnchorElement}
- */
-const Badge = (link, name) => {
-  const b = A(link);
-  b.appendChild(Img(`./images/badge_${name}.svg`, name));
-  b.className = "badge";
-  b.style.animationDelay = `${Math.random() * 10 + 10}s`;
-  b.style.animationDuration = `${Math.random() * 3 + 2}s`;
-  return b;
-};
-
-const Modal = (parent, autoClose, showTimeout) => {
+export const Modal = (parent, autoClose, showTimeout) => {
   const modal = E("div");
   modal.classList = "modal center closed";
 
@@ -108,34 +93,34 @@ const Modal = (parent, autoClose, showTimeout) => {
 /**
  * @param {Project} project
  */
-const ProjectCard = (project) => {
+export const ProjectCard = (project) => {
   let open = false;
 
   const base = E("div");
   base.className = `card animated slideIn${random(["Left", "Right", "Up"])}`;
 
-  base.appendChild(
-    typeof project.imageSrc === "string"
-      ? (() => {
-          const i = Img(project.imageSrc, project.name);
-          i.classList.add(`thumbnail ${project.invert ? "invert" : ""}`);
-        })()
-      : (() => {
-          const h = H(1, project.name[0]);
-          h.classList.add("placeholder");
-          base.appendChild(h);
-        })()
-  );
+  let thumbnail;
+  if (project.imageSrc) {
+    console.log(project.imageSrc);
+    thumbnail = Img(project.imageSrc, project.name);
+    thumbnail.classList.add("thumbnail");
+    if (project.invert) thumbnail.classList.add("invert");
+  } else {
+    thumbnail = H(1, project.name[0]);
+    thumbnail.classList.add("placeholder");
+  }
+
+  base.appendChild(thumbnail);
 
   // Details
   const container = E("div");
-  container.classList.add("content container");
+  container.classList.add("content", "container");
   base.append(container);
 
   container.appendChild(H(1, project.name));
 
   const view = E("div");
-  view.classList.add("row links");
+  view.classList.add("row", "links");
   container.append(view);
 
   if (project.live) {
@@ -167,25 +152,22 @@ const ProjectCard = (project) => {
   base.click(() => {
     if (project.screenshotSrc) {
       if (!open) {
-        $(".card.open").each(function () {
-          $(this).removeClass("open");
+        // Clear any open card
+        document.querySelectorAll(".card.open").forEach((e) => {
+          e.classList.remove(".open");
         });
+
+        // Toggle open class
         open = !open;
-        base.addClass("open");
+        base.classList.add("open");
         document.querySelector(".open").scrollIntoView();
       } else {
         open = !open;
-        base.removeClass("open");
-        //document.querySelector("header").scrollIntoView();
+        base.classList.remove("open");
+        // document.querySelector("header").scrollIntoView();
       }
     }
   });
 
   return base;
 };
-
-const cards = $("#cards");
-
-const badges = $("#badges");
-
-const form = $("form");

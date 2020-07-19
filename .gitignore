@@ -6,3 +6,4 @@ index.css.map
 *.fdb_latexmk
 *.log
 *.gz
+/*/.cache
