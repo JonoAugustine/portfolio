@@ -1,0 +1,16 @@
+{
+  "name": "site",
+  "version": "0.5.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel serve ./src/index.html -d .dev",
+    "build": "parcel build ./src/index.html -d ../public --public-url ."
+  },
+  "author": "JonoAugustine",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
+  }
+}
