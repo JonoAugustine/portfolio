@@ -7,6 +7,7 @@ Each release presents a stage in the development and improvement of the source c
 
 ## Current Version 0.5.0
 
+- Parcel bundler
 - Animate.css + Sass for styling
 - Gitlab Pages hosting
 - Gitlab CI/CD deploying to Heroku
