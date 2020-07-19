@@ -24,18 +24,20 @@ const sendEmail = (email, name, subject, text) => {
 document.getElementById("email_form").onsubmit = (e) => {
   e.preventDefault();
 
-  console.log(e.target);
-
-  const formValues = {};
-  // $.each(form.serializeArray(), (_, field) => {
-  //   formValues[field.name] = field.value;
-  // });
+  const formValues = {
+    email: e.target[0].value,
+    name: e.target[1].value,
+    subject: e.target[2].value,
+    text: e.target[3].value,
+  };
 
   const danger = (text) => {
-    const m = Modal(form, true);
+    const m = Modal(e.target, true);
     m.classList.add("danger");
-    m.appendChild(text);
+    m.append(text);
   };
+
+  console.log(formValues);
 
   if (!/.+@.+\..+/gi.test(formValues.email)) {
     danger("Please use a valid email");
@@ -52,6 +54,6 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.subject,
       formValues.text
     );
-    Modal(form, false, 1000).append("See You Soon");
+    Modal(e.target, false, 1000).append("See You Soon");
   }
 };

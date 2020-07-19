@@ -58,10 +58,10 @@ const Img = (src, alt) => {
 
 export const Modal = (parent, autoClose, showTimeout) => {
   const modal = E("div");
-  modal.classList = "modal center closed";
+  modal.classList.add("modal", "center", "closed");
 
   const icon = E("i");
-  icon.classList.add("fas fa-times exit");
+  icon.classList.add("fas", "fa-times", "exit");
 
   icon.onclick = () => {
     modal.classList.add("closed");
@@ -101,7 +101,6 @@ export const ProjectCard = (project) => {
 
   let thumbnail;
   if (project.imageSrc) {
-    console.log(project.imageSrc);
     thumbnail = Img(project.imageSrc, project.name);
     thumbnail.classList.add("thumbnail");
     if (project.invert) thumbnail.classList.add("invert");
