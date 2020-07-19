@@ -281,7 +281,7 @@ div.page {
       border: 1px solid transparent;
 
       border-radius: $radius;
-      box-shadow: 5px 5px 3px lighten($color: color(base), $amount: 10%);
+      box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
 
       &:hover {
         border: 1px solid color(accent);
