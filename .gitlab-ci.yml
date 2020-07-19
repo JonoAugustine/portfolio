@@ -21,7 +21,9 @@ pages:
     - echo "waiting..." # TODO change to parcel build scripts
   artifacts:
     paths:
-      - public
+      - cd ./site
+      - npm install
+      - npm run build
   only:
     - master
 
