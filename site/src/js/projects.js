@@ -39,8 +39,8 @@ export default [
     null,
     "A YouTube channel centered around sharing my experiences as an aquarist and showing others how to achieve success in their own aquariums.",
     require("../images/logo.jpg"),
-    false,
-    require("../images/ampro_yt.png")
+    false
+    //require("../images/ampro_yt.png")
   ),
   new Project(
     "Ouch",
@@ -51,8 +51,8 @@ export default [
     In an Existence you can chat to each other and perform fun commands.
     `,
     require("../images/ouch.png"),
-    false,
-    require("../images/ouch.gif")
+    false
+    //require("../images/ouch.gif")
   ),
   new Project(
     "Evolution Emulator",

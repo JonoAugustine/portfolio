@@ -277,7 +277,7 @@ div.page {
       padding: $padding;
       max-width: 300px;
       overflow: hidden;
-      cursor: pointer;
+      //cursor: pointer;
       border: 1px solid transparent;
 
       border-radius: $radius;
@@ -289,14 +289,14 @@ div.page {
         transition: all 0.3s ease-in;
       }
 
-      &.no-info {
-        cursor: auto;
+      //&.no-info {
+      //  cursor: auto;
 
-        &:hover {
-          border: 1px solid red;
-          box-shadow: 10px 10px 5px rgba(red, 0.2);
-        }
-      }
+      //  &:hover {
+      //    border: 1px solid red;
+      //    box-shadow: 10px 10px 5px rgba(red, 0.2);
+      //  }
+      //}
 
       @include tablet() {
         width: 100%;
