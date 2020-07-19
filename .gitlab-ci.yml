@@ -18,12 +18,12 @@ image: node:12.13.0
 pages:
   stage: deploy
   script:
-    - echo "waiting..." # TODO change to parcel build scripts
+    - cd ./site
+    - npm install
+    - npm run build
   artifacts:
     paths:
-      - cd ./site
-      - npm install
-      - npm run build
+      - public
   only:
     - master
 
