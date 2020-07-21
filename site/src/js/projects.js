@@ -21,9 +21,9 @@ export default [
   ),
   new Project(
     "BlueTheRobot",
-    "https://jonoaugustine.gitlab.io/bluetherobot/",
+    "https://bluetherobot.com",
     null,
-    "The business website for Twitch Streamer & YouTuber BlueTheRobot.",
+    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
     require("../images/BTR_patch.png")
   ),
   new Project(
