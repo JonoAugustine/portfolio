@@ -116,11 +116,13 @@ button {
   color: color(text-);
   background-color: transparent;
   cursor: pointer;
-}
 
-button:hover {
-  cursor: pointer;
-  border-color: lighten($color: color(primary), $amount: 10%);
+  transition: color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    color: color(accent);
+    border-color: lighten($color: color(primary), $amount: 10%);
+  }
 }
 
 img.invert {
@@ -244,9 +246,6 @@ nav.navbar {
   padding: $padding 0;
   width: 100%;
 
-  background-color: lighten(color(base), 10%);
-  border-bottom: 2px solid color(primary);
-
   > div {
     flex-direction: column;
     align-content: center;
@@ -272,7 +271,7 @@ div.page {
     scrollbar-width: none;
 
     div.card {
-      background-color: lighten(color(base), 3%);
+      background-color: lighten(color(base), 2%);
       margin: $margin;
       padding: $padding;
       max-width: 300px;
@@ -284,12 +283,13 @@ div.page {
       //box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
 
       transition: border 0.3s ease, box-shadow 0.35s ease,
-        background-color 0.3s ease;
+        background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         //border: 1px solid color(accent);
-        background-color: lighten(color(base), 4%);
-        box-shadow: 0.15rem 0.45rem 0.4rem rgba(color(primary), 0.2);
+        background-color: lighten(color(base), 3%);
+        box-shadow: -0.15rem 0.45rem 0.4rem rgba(color(primary), 0.2);
+        transform: translate(1%, -1%);
       }
 
       // Temp removed
