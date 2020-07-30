@@ -277,18 +277,22 @@ div.page {
       padding: $padding;
       max-width: 300px;
       overflow: hidden;
-      //cursor: pointer;
+      cursor: default;
       border: 1px solid transparent;
 
       border-radius: $radius;
-      box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
+      //box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
+
+      transition: border 0.3s ease, box-shadow 0.35s ease,
+        background-color 0.3s ease;
 
       &:hover {
-        border: 1px solid color(accent);
-        box-shadow: 10px 10px 5px rgba(color(primary), 0.2);
-        transition: all 0.3s ease-in;
+        //border: 1px solid color(accent);
+        background-color: lighten(color(base), 4%);
+        box-shadow: 0.15rem 0.45rem 0.4rem rgba(color(primary), 0.2);
       }
 
+      // Temp removed
       //&.no-info {
       //  cursor: auto;
 
@@ -349,12 +353,17 @@ div.page {
           @include tablet() {
             justify-content: flex-start;
           }
+
           button {
             margin: 0;
             margin-right: $margin;
             padding: $padding / 2;
-
             text-align: left;
+
+            border: 1px solid transparent;
+            border-bottom: 1px solid color(primary);
+
+            transition: color 0.3s ease;
 
             &:hover {
               color: lighten(color(accent), 10%);
