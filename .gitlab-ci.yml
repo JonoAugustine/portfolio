@@ -1,5 +1,8 @@
 image: node:12.13.0
 
+variables:
+  PAHSE: PRODUCTION
+
 # compile_resume:
 #   stage: build
 #   image: timnn/texlive # use a Docker image for LaTeX from https://hub.docker.com/

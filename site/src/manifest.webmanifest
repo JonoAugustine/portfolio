@@ -1,0 +1,21 @@
+{
+  "name": "Jono Augustine",
+  "shot_name": "Jono",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#333333",
+  "theme_color": "#28965a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ]
+}

@@ -12,6 +12,11 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "@olafalo/parcel-plugin-workbox": "^1.4.2"
+  },
+  "dependencies": {},
+  "workbox": {
+    "globPatterns": ["**/*.{css,html,gif,js,jpg,png,svg,webp,pdf}"]
   }
 }

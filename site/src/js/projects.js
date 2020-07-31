@@ -24,7 +24,7 @@ export default [
     "https://bluetherobot.com",
     null,
     "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
-    require("../images/BTR_patch.png")
+    require("../images/bluetherobot.png")
   ),
   new Project(
     "Strife",
