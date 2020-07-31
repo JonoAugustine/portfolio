@@ -1,0 +1,24 @@
+// Container elements
+
+.container {
+  width: 95%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  &.fluid {
+    max-width: 100%;
+  }
+
+  &.center {
+    text-align: center;
+    align-content: center;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}

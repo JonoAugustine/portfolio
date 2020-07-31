@@ -1,0 +1,23 @@
+nav.navbar {
+  padding: $padding 0;
+  width: 100%;
+
+  > div {
+    flex-direction: column;
+    align-content: center;
+    max-width: 500px !important;
+    text-align: center;
+
+    > * {
+      margin: $margin auto;
+    }
+
+    @include tablet() {
+      flex-direction: row;
+
+      > * {
+        margin: auto;
+      }
+    }
+  }
+}

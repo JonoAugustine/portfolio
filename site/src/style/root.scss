@@ -1,0 +1,21 @@
+// Styling for root elements
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  background-color: color(base);
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  color: color(text-);
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#root {
+  margin-bottom: 20px;
+  position: relative;
+}

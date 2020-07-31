@@ -1,0 +1,121 @@
+div.card {
+  background-color: lighten(color(base), 5%);
+  margin: $margin;
+  padding: $padding;
+  max-width: 300px;
+  overflow: hidden;
+  cursor: default;
+  border: 1px solid transparent;
+
+  border-radius: $radius;
+  //box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
+
+  transition: border 0.3s ease, box-shadow 0.35s ease,
+    background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    //border: 1px solid color(accent);
+    background-color: lighten(color(base), 3%);
+    box-shadow: -0.15rem 0.45rem 0.4rem rgba(color(primary), 0.2);
+    transform: translate(1%, -1%);
+  }
+
+  // Temp removed
+  //&.no-info {
+  //  cursor: auto;
+
+  //  &:hover {
+  //    border: 1px solid red;
+  //    box-shadow: 10px 10px 5px rgba(red, 0.2);
+  //  }
+  //}
+
+  @include tablet() {
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 5px;
+
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-areas: "thumbnail content";
+
+    text-align: left;
+  }
+
+  @include desktop() {
+    width: 45%;
+  }
+
+  @include desktop-4k() {
+    width: 30%;
+  }
+
+  img.thumbnail {
+    max-width: 150px !important;
+    border-radius: $radius;
+
+    @include tablet() {
+      float: left;
+      margin: auto $margin * 2 auto 0;
+
+      grid-area: thumbnail;
+    }
+  }
+
+  h1.placeholder {
+    font-size: 10rem;
+    margin: auto;
+  }
+
+  div.content {
+    @include tablet() {
+      grid-area: content;
+    }
+
+    h1 {
+      margin: $margin auto;
+      width: auto;
+    }
+
+    div.links {
+      @include tablet() {
+        justify-content: flex-start;
+      }
+
+      button {
+        margin: 0;
+        margin-right: $margin;
+        padding: $padding / 2;
+        text-align: left;
+
+        border: 1px solid transparent;
+        border-bottom: 1px solid color(primary);
+
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: lighten(color(accent), 10%);
+        }
+      }
+    }
+  }
+
+  div.extra {
+    display: none;
+  }
+
+  &.open {
+    width: 100%;
+
+    div.extra {
+      width: 100%;
+      display: unset;
+      grid-column-start: span 2;
+
+      img {
+        width: 100%;
+        border-radius: $radius;
+      }
+    }
+  }
+}

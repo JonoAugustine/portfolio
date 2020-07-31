@@ -1,0 +1,17 @@
+// Base styling for buttons
+
+button {
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid color(primary);
+  color: color(text-);
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    color: color(accent);
+    border-color: lighten($color: color(primary), $amount: 10%);
+  }
+}

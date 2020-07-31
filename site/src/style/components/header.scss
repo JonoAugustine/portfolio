@@ -1,0 +1,111 @@
+header.banner {
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../images/banner.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include tablet() {
+    text-align: center;
+  }
+
+  .head {
+    position: relative;
+    height: 100%;
+    background-color: rgba(color(base), 0.3);
+
+    section.intro {
+      height: 50%;
+      margin: 10% auto 0 auto;
+      padding: $padding;
+
+      .brand {
+        color: color(text-);
+        font-size: 4rem;
+
+        @include tablet() {
+          font-size: 5rem;
+        }
+
+        @include desktop() {
+          font-size: 7rem;
+        }
+      }
+
+      .tagline {
+        font-size: 2em;
+      }
+    }
+
+    .container#badges {
+      max-width: 600px;
+
+      flex-direction: column;
+      align-content: flex-end;
+
+      @include phone-s() {
+        display: none;
+      }
+
+      @include tablet() {
+        flex-direction: row;
+      }
+
+      .badge {
+        cursor: pointer;
+        margin: $margin 0 $margin auto;
+
+        border: 1px solid transparent;
+        transform: translateY(-10%);
+        transition: all 1s;
+        animation: float 2s ease-in-out infinite;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: random(30) + 10 + s;
+          }
+        }
+
+        @include tablet() {
+          flex-direction: row;
+          margin: 0 auto;
+          width: unset;
+          align-self: flex-end;
+        }
+
+        &:hover {
+          border-color: color(accent);
+          transform: translateY(-10%);
+          transition: all 1s;
+          animation: float 2s ease-in-out infinite;
+          animation-delay: 0.1s;
+        }
+      }
+    }
+
+    button.scroller {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      width: 50%;
+      max-width: 150px;
+      border-color: color(text-);
+      background-color: rgba(color(primary), 0.4);
+
+      animation: float 2s ease-in-out infinite;
+      transition: 0.5s;
+
+      &:hover {
+        border-color: color(accent);
+      }
+    }
+  }
+}

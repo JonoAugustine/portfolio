@@ -1,0 +1,30 @@
+// Responsive breakpoints
+
+$phone-s: 375px;
+$tablet: 600px;
+$desktop: 1024px;
+$desktop-4k: 2560px;
+
+@mixin phone-s {
+  @media (max-width: #{$phone-s - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-4k {
+  @media (min-width: #{$desktop-4k}) {
+    @content;
+  }
+}

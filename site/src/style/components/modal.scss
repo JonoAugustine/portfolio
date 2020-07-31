@@ -1,0 +1,43 @@
+.modal {
+  width: fit-content;
+  position: absolute;
+  z-index: 99999;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 5rem 10rem;
+
+  padding: $padding;
+  border-radius: $radius;
+  color: white;
+  background-color: color(primary, 0.9);
+  transition: all 2s ease-in-out;
+
+  &.closed {
+    top: 9999% !important;
+    transition: all 2s ease-in-out;
+  }
+
+  &.accent {
+    background-color: color(accent, 0.8);
+  }
+
+  &.danger {
+    background-color: rgba(red, 0.9);
+
+    .exit:hover {
+      color: white;
+    }
+  }
+
+  .exit {
+    margin: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
