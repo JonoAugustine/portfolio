@@ -271,7 +271,7 @@ div.page {
     scrollbar-width: none;
 
     div.card {
-      background-color: lighten(color(base), 2%);
+      background-color: lighten(color(base), 5%);
       margin: $margin;
       padding: $padding;
       max-width: 300px;
@@ -474,8 +474,7 @@ div.page {
 }
 
 .modal {
-  width: 80%;
-  max-width: 400px;
+  width: fit-content;
   position: absolute;
   z-index: 99999;
   top: 50%;
@@ -483,6 +482,7 @@ div.page {
   left: 0;
   right: 0;
   margin: auto;
+  padding: 5rem 10rem;
 
   padding: $padding;
   border-radius: $radius;
@@ -508,9 +508,7 @@ div.page {
   }
 
   .exit {
-    position: absolute;
-    top: 5%;
-    right: 5%;
+    margin: 1rem;
     cursor: pointer;
 
     &:hover {
