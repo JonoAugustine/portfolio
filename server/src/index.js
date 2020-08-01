@@ -32,6 +32,8 @@ server.use(function (req, res, next) {
   next();
 });
 
+server.get("/", (_, res) => res.redirect("https://jonoaugustine.com"));
+
 server.post("/", (req, res) => {
   /**
    * @param {string} propName
