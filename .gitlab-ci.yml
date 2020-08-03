@@ -28,7 +28,10 @@ pages:
     paths:
       - public
   only:
-    - master
+    refs:
+      - master
+    changes:
+      - site/**/*
 
 # deploy server
 server:
@@ -41,4 +44,7 @@ server:
     - cd ./server
     - dpl --provider=heroku --app=salty-garden-80295 --api-key=$HEROKU_API_KEY
   only:
-    - master
+    refs:
+      - master
+    changes:
+      - server/**/*
