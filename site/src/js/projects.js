@@ -61,7 +61,7 @@ export default [
   ),
   new Project(
     "ScoreBorda",
-    null,
+    "https://jonoaugustine.gitlab.io/ScoreBorda/",
     "https://gitlab.com/JonoAugustine/ScoreBorda",
     `A system which utilizes the simplicity of binary choices to score and rank "Features" and "Candidates". By presenting only two options in each comparison, the Borda is able to remove much of the overwhelming aspect of comparing and several choices at once. `
   ),
