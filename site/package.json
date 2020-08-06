@@ -17,6 +17,8 @@
   },
   "dependencies": {},
   "workbox": {
-    "globPatterns": ["**/*.{css,html,gif,js,jpg,png,svg,webp,pdf}"]
+    "globPatterns": [
+      "**/*.{css,html,gif,js,jpg,png,svg,webp,pdf}"
+    ]
   }
 }

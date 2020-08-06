@@ -5,8 +5,6 @@ document.getElementById("header_scroll").onclick = () =>
 document.getElementById("btn_contact").onclick = () =>
   document.querySelector("form").scrollIntoView();
 
-const root = document.getElementById("#root");
-
 /**
  * Creates a new element of the given tag.
  * @param {string} tag Element tag
@@ -138,6 +136,19 @@ export const ProjectCard = (project) => {
   const description = E("p");
   description.innerText = project.description;
   container.appendChild(description);
+
+  // Tools Used section\
+  if (project.tools) {
+    const tools = E("p");
+    tools.innerText = `Tools: ${project.tools.reduce((sum, curr, i) => {
+      const last = i < project.tools.length;
+      const next = sum + (last ? ", " : "") + curr;
+      console.log(sum, curr, i, last, next);
+      return next;
+    })}`;
+    tools.classList.add("tools");
+    base.appendChild(tools);
+  }
 
   // Extra details & screenshots
   const extra = E("div");

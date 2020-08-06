@@ -1,5 +1,4 @@
 div.card {
-  background-color: lighten(color(base), 5%);
   margin: $margin;
   padding: $padding;
   max-width: 300px;
@@ -7,6 +6,7 @@ div.card {
   cursor: default;
   border: 1px solid transparent;
 
+  background-color: lighten(color(base), 5%);
   border-radius: $radius;
   //box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
 
@@ -72,6 +72,8 @@ div.card {
       grid-area: content;
     }
 
+    margin-bottom: 1rem;
+
     h1 {
       margin: $margin auto;
       width: auto;
@@ -98,6 +100,12 @@ div.card {
         }
       }
     }
+  }
+
+  .tools {
+    grid-area: content;
+    width: 95%;
+    margin: auto auto 0.5rem auto;
   }
 
   div.extra {
