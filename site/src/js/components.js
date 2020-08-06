@@ -141,10 +141,7 @@ export const ProjectCard = (project) => {
   if (project.tools) {
     const tools = E("p");
     tools.innerText = `Tools: ${project.tools.reduce((sum, curr, i) => {
-      const last = i < project.tools.length;
-      const next = sum + (last ? ", " : "") + curr;
-      console.log(sum, curr, i, last, next);
-      return next;
+      return sum + (i < project.tools.length ? ", " : "") + curr;
     })}`;
     tools.classList.add("tools");
     base.appendChild(tools);
@@ -174,7 +171,6 @@ export const ProjectCard = (project) => {
       } else {
         open = !open;
         base.classList.remove("open");
-        // document.querySelector("header").scrollIntoView();
       }
     }
   });

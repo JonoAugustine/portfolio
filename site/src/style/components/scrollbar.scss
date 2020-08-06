@@ -1,0 +1,19 @@
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vmin;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1vmin;
+  background: color(primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: color(accent);
+}
