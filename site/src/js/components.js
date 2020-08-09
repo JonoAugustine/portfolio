@@ -144,7 +144,7 @@ export const ProjectCard = (project) => {
       return sum + (i < project.tools.length ? ", " : "") + curr;
     })}`;
     tools.classList.add("tools");
-    base.appendChild(tools);
+    container.appendChild(tools);
   }
 
   // Extra details & screenshots
