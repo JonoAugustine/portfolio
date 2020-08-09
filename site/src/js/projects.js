@@ -50,16 +50,6 @@ export default [
     ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API"]
   ),
   new Project(
-    "Snek",
-    "https://jonoaugustine.gitlab.io/web-snake-game/",
-    "https://gitlab.com/JonoAugustine/web-snake-game",
-    "Browser-based Snake Game aimed at giving full controll over game settings to the player.",
-    require("../images/snek.gif"),
-    false,
-    null,
-    ["NodeJS", "ParcelJS", "SASS"]
-  ),
-  new Project(
     "Strife",
     null,
     "https://gitlab.com/serebit/strife",
@@ -77,7 +67,17 @@ export default [
     null,
     null,
     null,
-    ["NodeJS", "Paypal API"]
+    ["NodeJS", "Paypal API", "RollupJS"]
+  ),
+  new Project(
+    "Snek",
+    "https://jonoaugustine.gitlab.io/web-snake-game/",
+    "https://gitlab.com/JonoAugustine/web-snake-game",
+    "Browser-based Snake Game aimed at giving full controll over game settings to the player.",
+    require("../images/snek.gif"),
+    false,
+    null,
+    ["NodeJS", "ParcelJS", "SASS"]
   ),
   new Project(
     "Aquatic Mastery",
