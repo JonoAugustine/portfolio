@@ -47,7 +47,7 @@ export default [
     require("../images/bluetherobot.png"),
     false,
     null,
-    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API"]
+    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
   ),
   new Project(
     "Strife",
@@ -57,7 +57,7 @@ export default [
     require("../images/strife-logo.png"),
     false,
     null,
-    ["Discord API", "KTor"]
+    ["Discord API", "KTor", "Gitlab CI/CD"]
   ),
   new Project(
     "Paypal Invoice API",
@@ -70,6 +70,16 @@ export default [
     ["NodeJS", "Paypal API", "RollupJS"]
   ),
   new Project(
+    "Firebase Rules Generator",
+    null,
+    "https://gitlab.com/JonoAugustine/firebase-rule-generator",
+    "An NPM package which converts JSON DB schemas into Firebase Firestore Rules",
+    null,
+    null,
+    null,
+    ["NodeJS", "Firebase Rules", "RollupJS", "ParcelJS", "SASS", "Gitlab CI/CD"]
+  ),
+  new Project(
     "Snek",
     "https://jonoaugustine.gitlab.io/web-snake-game/",
     "https://gitlab.com/JonoAugustine/web-snake-game",
@@ -77,7 +87,7 @@ export default [
     require("../images/snek.gif"),
     false,
     null,
-    ["NodeJS", "ParcelJS", "SASS"]
+    ["NodeJS", "ParcelJS", "SASS", "Gitlab CI/CD"]
   ),
   new Project(
     "Aquatic Mastery",
@@ -112,7 +122,7 @@ export default [
     null,
     null,
     null,
-    ["ReactJS", "SASS", "CI/CD"]
+    ["ReactJS", "SASS", "Gitlab CI/CD"]
   ),
   new Project(
     "Team Magma PRO",
