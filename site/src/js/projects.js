@@ -70,6 +70,16 @@ export default [
     ["NodeJS", "Paypal API", "RollupJS"]
   ),
   new Project(
+    "Boil",
+    null,
+    "https://gitlab.com/boiljs/boil-cli",
+    "Configurable, Syncable, and Sharable boilerplate NPM project generator. Designed to reduce project creation hassel.",
+    null,
+    false,
+    null,
+    ["NodeJS", "Firestore", "RollupJS", "Mocha"]
+  ),
+  new Project(
     "Firebase Rules Generator",
     null,
     "https://gitlab.com/JonoAugustine/firebase-rule-generator",
