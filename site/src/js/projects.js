@@ -74,7 +74,7 @@ export default [
     null,
     "https://gitlab.com/boiljs/boil-cli",
     "Configurable, Syncable, and Sharable boilerplate NPM project generator. Designed to reduce project creation hassel.",
-    null,
+    require('../images/boiling_plates.png'),
     false,
     null,
     ["NodeJS", "Firestore", "RollupJS", "Mocha"]
