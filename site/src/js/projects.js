@@ -50,6 +50,23 @@ export default [
     ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
   ),
   new Project(
+    "Madame BunBun",
+    "https://edenbunbun.web.app/",
+    null,
+    "The official website for the Twitch streamer and commission artist, Madame BunBun. It uses Firebase and ReactJS to make a simple experience for BunBun and her commissioners and my own PayPal SDK to enable a simple invoicing process.",
+    require("../images/cornbob.png"),
+    false,
+    null,
+    [
+      "ReactJS",
+      "PayPal Invoice API",
+      "Firebase",
+      "SCSS",
+      "Gitlab CI/CD",
+      "Mocha",
+    ]
+  ),
+  new Project(
     "Strife",
     null,
     "https://gitlab.com/serebit/strife",
@@ -74,7 +91,7 @@ export default [
     null,
     "https://gitlab.com/boiljs/boil-cli",
     "Configurable, Syncable, and Sharable boilerplate NPM project generator. Designed to reduce project creation hassel.",
-    require('../images/boiling_plates.png'),
+    require("../images/boiling_plates.png"),
     false,
     null,
     ["NodeJS", "Firestore", "RollupJS", "Mocha"]
