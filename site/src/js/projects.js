@@ -21,35 +21,7 @@ class Project {
 }
 
 export default [
-  new Project(
-    "Off The Menu",
-    "https://otm-online.firebaseapp.com",
-    "https://gitlab.com/off-the-menu/site",
-    `A web app aiming to make eating out simpler for allergy sufferers and picky eaters. It provides the ability to search items on restaurant menus to determine if they contain potential allergens which the user defines.`,
-    require("../images/otm_logo.png"),
-    true,
-    null,
-    [
-      "React",
-      "NodeJS",
-      "MongoDB",
-      "Mongoose",
-      "Firebase",
-      "SASS",
-      "TailwindCSS",
-    ]
-  ),
-  new Project(
-    "BlueTheRobot",
-    "https://bluetherobot.com",
-    null,
-    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
-    require("../images/bluetherobot.png"),
-    false,
-    null,
-    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
-  ),
-  new Project(
+    new Project(
     "Madame BunBun",
     "https://edenbunbun.web.app/",
     null,
@@ -65,6 +37,16 @@ export default [
       "Gitlab CI/CD",
       "Mocha",
     ]
+  ),
+  new Project(
+    "BlueTheRobot",
+    "https://bluetherobot.com",
+    null,
+    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
+    require("../images/bluetherobot.png"),
+    false,
+    null,
+    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
   ),
   new Project(
     "Strife",
@@ -122,6 +104,24 @@ export default [
     null,
     "A YouTube channel centered around sharing my experiences as an aquarist and showing others how to achieve success in their own aquariums.",
     require("../images/logo.jpg")
+  ),
+    new Project(
+    "Off The Menu",
+    "https://otm-online.firebaseapp.com",
+    "https://gitlab.com/off-the-menu/site",
+    `A web app aiming to make eating out simpler for allergy sufferers and picky eaters. It provides the ability to search items on restaurant menus to determine if they contain potential allergens which the user defines.`,
+    require("../images/otm_logo.png"),
+    true,
+    null,
+    [
+      "React",
+      "NodeJS",
+      "MongoDB",
+      "Mongoose",
+      "Firebase",
+      "SASS",
+      "TailwindCSS",
+    ]
   ),
   new Project(
     "Ouch",
