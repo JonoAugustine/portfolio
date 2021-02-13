@@ -46,7 +46,7 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
     return typeof this[propName] === "string" && regex.test(this[propName]);
   };
 
-  if (!req.body.validateString("name", /.{2,}/gi)) {
+  if (!req.body.validateString("name", /.{2,}\s+.{2,}/gi)) {
     return res.status(400).send({ message: "missing name" });
   } else if (!req.body.validateString("subject", /.{3,}/gi)) {
     return res.status(400).send({ message: "missing subject" });

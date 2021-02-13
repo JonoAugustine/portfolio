@@ -36,7 +36,7 @@ document.getElementById("email_form").onsubmit = (e) => {
     danger("Please use your full name");
   } else if (!/.{3,}/gi.test(formValues.subject)) {
     danger("Please use a descriptive subject");
-  } else if (!/.{5}/gi.test(formValues.text)) {
+  } else if (!/.{5,}/gi.test(formValues.text)) {
     danger("Make you message count");
   } else {
     sendEmail(
@@ -45,8 +45,9 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.subject,
       formValues.text
     )
+      .then((result) => result.json())
       .then((result) => {
-        console.log(result.json());
+        console.log(result);
         Modal(e.target, false, 1000).append("See You Soon");
       })
       .catch(() =>
