@@ -32,8 +32,10 @@ server.use(function (req, res, next) {
   next();
 });
 
+/** Redirect GET to portfolio */
 server.get("/", (_, res) => res.redirect("https://jonoaugustine.com"));
 
+/** Take POST to send email */
 server.post("/", (req, res) => {
   /**
    * @param {string} propName

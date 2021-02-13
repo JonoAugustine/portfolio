@@ -8,9 +8,9 @@ import { Modal } from "./components";
  * @returns {Promise<*>}
  */
 const sendEmail = (email, name, subject, text) => {
-  console.log({ email, name, subject, text });
   return fetch({
     url: "https://salty-garden-80295.herokuapp.com/",
+    method: "POST",
     body: {
       email,
       name,
