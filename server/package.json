@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "local": "node ./src/index.js local",
+    "local": "nodemon ./src/index.js local",
     "test": "jest ./spec/",
     "start": "node ./src/index.js",
     "publish": "cd .. && git subtree push --prefix server heroku master && heroku logs -t"
@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemailer": "^6.4.2"
   },

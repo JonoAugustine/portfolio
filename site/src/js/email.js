@@ -7,22 +7,21 @@ import { Modal } from "./components";
  * @param {*} text
  * @returns {Promise<*>}
  */
-const sendEmail = (email, name, subject, text) => {
-  return fetch("https://salty-garden-80295.herokuapp.com/", {
+const sendEmail = (email, name, subject, text) =>
+  fetch("https://salty-garden-80295.herokuapp.com/", {
     method: "POST",
-    body: { email, name, subject, text },
+    body: JSON.stringify({ email, name, subject, text }),
   });
-};
 
 // Set submit action
 document.getElementById("email_form").onsubmit = (e) => {
   e.preventDefault();
 
   const formValues = {
-    email: "main@jonoaugustine.com", //  e.target[0].value
-    name: "Jono AUgustine", //  e.target[1].value
-    subject: "Subject LIne", //  e.target[2].value
-    text: "this is the message of the text", //  e.target[3].value
+    email: e.target[0].value,
+    name: e.target[1].value,
+    subject: e.target[2].value,
+    text: e.target[3].value,
   };
 
   const danger = (text) => {
@@ -47,7 +46,7 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.text
     )
       .then((result) => {
-        console.log(result);
+        console.log(result.json());
         Modal(e.target, false, 1000).append("See You Soon");
       })
       .catch(() =>

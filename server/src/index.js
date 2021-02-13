@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const port = process.env.PORT ? process.env.PORT : 6920;
 const server = express();
 server.use(express.json());
@@ -35,7 +36,7 @@ server.use(function (_, res, next) {
 server.get("/", (_, res) => res.redirect("https://jonoaugustine.com"));
 
 /** Take POST to send email */
-server.post("/", (req, res) => {
+server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
   /**
    * @param {string} propName
    * @param {RegExp} regex
