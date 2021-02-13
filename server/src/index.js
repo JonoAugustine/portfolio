@@ -15,14 +15,13 @@ const transporter = mailer.createTransport({
   tls: { secureProtocol: "TLSv1_method" },
 });
 
-server.use(function (req, res, next) {
-  // Website you wish to allow to connect
+server.use(function (_, res, next) {
+  // only allow my site
   res.setHeader("Access-Control-Allow-Origin", "jonoaugustine.com");
 
-  // Request methods you wish to allow
+  // allow GET and POST
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
 
-  // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
     "X-Requested-With,content-type"

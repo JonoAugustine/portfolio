@@ -8,15 +8,9 @@ import { Modal } from "./components";
  * @returns {Promise<*>}
  */
 const sendEmail = (email, name, subject, text) => {
-  return fetch({
-    url: "https://salty-garden-80295.herokuapp.com/",
+  return fetch("https://salty-garden-80295.herokuapp.com/", {
     method: "POST",
-    body: {
-      email,
-      name,
-      subject,
-      text,
-    },
+    body: { email, name, subject, text },
   });
 };
 
@@ -25,10 +19,10 @@ document.getElementById("email_form").onsubmit = (e) => {
   e.preventDefault();
 
   const formValues = {
-    email: e.target[0].value,
-    name: e.target[1].value,
-    subject: e.target[2].value,
-    text: e.target[3].value,
+    email: "main@jonoaugustine.com", //  e.target[0].value
+    name: "Jono AUgustine", //  e.target[1].value
+    subject: "Subject LIne", //  e.target[2].value
+    text: "this is the message of the text", //  e.target[3].value
   };
 
   const danger = (text) => {
@@ -36,8 +30,6 @@ document.getElementById("email_form").onsubmit = (e) => {
     m.classList.add("danger");
     m.append(text);
   };
-
-  console.log(formValues);
 
   if (!/.+@.+\..+/gi.test(formValues.email)) {
     danger("Please use a valid email");
@@ -53,7 +45,15 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.name,
       formValues.subject,
       formValues.text
-    );
-    Modal(e.target, false, 1000).append("See You Soon");
+    )
+      .then((result) => {
+        console.log(result);
+        Modal(e.target, false, 1000).append("See You Soon");
+      })
+      .catch(() =>
+        danger(
+          "An error Occurred. Please try again later. Feel free to open an issue."
+        )
+      );
   }
 };
