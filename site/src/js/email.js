@@ -13,7 +13,9 @@ const sendEmail = (email, name, subject, text) =>
     body: JSON.stringify({ email, name, subject, text }),
   });
 
-// Set submit action
+/**
+ * Set submit action
+ */
 document.getElementById("email_form").onsubmit = (e) => {
   e.preventDefault();
 
@@ -45,15 +47,15 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.subject,
       formValues.text
     )
-      .then((result) => result.json())
       .then((result) => {
-        console.log(result);
+        console.log(result.code);
         Modal(e.target, false, 1000).append("See You Soon");
       })
       .catch(() =>
         danger(
           "An error Occurred. Please try again later. Feel free to open an issue."
         )
-      );
+      )
+      .finally(() => e.target.reset());
   }
 };

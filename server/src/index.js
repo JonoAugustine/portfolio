@@ -63,10 +63,10 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.status(500).send({ message: "failed" });
+      return res.status(500).send({ message: "failed" });
     } else {
       console.log("Email sent", info);
-      res.status(200);
+      return res.status(200).send("Email sent");
     }
   });
 });
