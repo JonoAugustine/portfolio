@@ -57,8 +57,8 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
   const mailOptions = {
     from: senderEmail,
     to: "swordmaster9@gmail.com",
-    subject: `${name}:${subject}`,
-    text: `${name}:\n${text}`,
+    subject: `${PORTFOLIO}:${subject}`,
+    text: `"${name}" sent the following email through our portfolio:\n\n${text}`,
   };
 
   console.log("Attempting to send message", mailOptions, req.body);
