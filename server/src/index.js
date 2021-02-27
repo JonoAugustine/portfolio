@@ -60,6 +60,8 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
     text: `${req.body.name}:\n${req.body.text}`,
   };
 
+  console.log("Attempting to send message", mailOptions, req.body);
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
