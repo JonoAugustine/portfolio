@@ -16,7 +16,7 @@ Each release presents a stage in the development and improvement of the source c
 
 ## Roadmap
 
-- Convert to parcel build
+- ~~Convert to parcel build~~
 
 ## License
 

@@ -47,8 +47,7 @@ document.getElementById("email_form").onsubmit = (e) => {
       formValues.subject,
       formValues.text
     )
-      .then((result) => {
-        console.log(result.code);
+      .then(() => {
         Modal(e.target, false, 1000).append("See You Soon");
         e.target.reset();
       })
