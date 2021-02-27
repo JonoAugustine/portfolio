@@ -1,4 +1,5 @@
 import "./email";
+import "./konami";
 import projects from "./projects";
 import { ProjectCard } from "./components";
 
