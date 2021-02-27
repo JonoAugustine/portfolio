@@ -50,12 +50,12 @@ document.getElementById("email_form").onsubmit = (e) => {
       .then((result) => {
         console.log(result.code);
         Modal(e.target, false, 1000).append("See You Soon");
+        e.target.reset();
       })
       .catch(() =>
         danger(
           "An error Occurred. Please try again later. Feel free to open an issue."
         )
-      )
-      .finally(() => e.target.reset());
+      );
   }
 };
