@@ -37,22 +37,17 @@ server.get("/", (_, res) => res.redirect("https://jonoaugustine.com"));
 
 /** Take POST to send email */
 server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
-  /**
-   * @param {string} propName
-   * @param {RegExp} regex
-   * @returns {boolean}
-   */
-  Object.prototype.validateString = (propName, regex) => {
-    return typeof this[propName] === "string" && regex.test(this[propName]);
+  const invalidString = (string, regex) => {
+    return typeof string === "string" && regex.test(string);
   };
 
-  if (!req.body.validateString("name", /.{2,}\s+.{2,}/gi)) {
+  if (invalidString(req.body.name, /.{2,}\s+.{2,}/gi)) {
     return res.status(400).send({ message: "missing name" });
-  } else if (!req.body.validateString("subject", /.{3,}/gi)) {
+  } else if (invalidString(req.body.subject, /.{3,}/gi)) {
     return res.status(400).send({ message: "missing subject" });
-  } else if (!req.body.validateString("text", /.{5,}/gi)) {
+  } else if (invalidString(req.body.text, /.{5,}/gi)) {
     return res.status(400).send({ message: "missing text" });
-  } else if (!req.body.validateString("email", /.+@.+\..+/gi)) {
+  } else if (invalidString(req.body.email, /.+@.+\..+/gi)) {
     return res.status(400).send({ message: "missing email" });
   }
 
