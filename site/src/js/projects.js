@@ -21,23 +21,6 @@ class Project {
 }
 
 export default [
-    new Project(
-    "Madame BunBun",
-    "https://edenbunbun.web.app/",
-    null,
-    "The official website for the Twitch streamer and commission artist, Madame BunBun. It uses Firebase and ReactJS to make a simple experience for BunBun and her commissioners and my own PayPal SDK to enable a simple invoicing process.",
-    require("../images/cornbob.png"),
-    false,
-    null,
-    [
-      "ReactJS",
-      "PayPal Invoice API",
-      "Firebase",
-      "SCSS",
-      "Gitlab CI/CD",
-      "Mocha",
-    ]
-  ),
   new Project(
     "BlueTheRobot",
     "https://bluetherobot.com",
@@ -67,6 +50,23 @@ export default [
     null,
     null,
     ["NodeJS", "Paypal API", "RollupJS"]
+  ),
+      new Project(
+    "Madame BunBun",
+    "https://edenbunbun.web.app/",
+    null,
+    "The official website for the Twitch streamer and commission artist, Madame BunBun. It uses Firebase and ReactJS to make a simple experience for BunBun and her commissioners and my own PayPal SDK to enable a simple invoicing process.",
+    require("../images/cornbob.png"),
+    false,
+    null,
+    [
+      "ReactJS",
+      "PayPal Invoice API",
+      "Firebase",
+      "SCSS",
+      "Gitlab CI/CD",
+      "Mocha",
+    ]
   ),
   new Project(
     "Boil",
