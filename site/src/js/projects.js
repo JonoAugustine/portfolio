@@ -9,28 +9,18 @@ class Project {
     screenshot,
     tools
   ) {
-    this.name = name;
-    this.live = live;
-    this.source = source;
-    this.description = description;
-    this.imageSrc = imageName;
-    this.invert = invert;
-    this.screenshotSrc = screenshot;
-    this.tools = tools;
+    this.name = name
+    this.live = live
+    this.source = source
+    this.description = description
+    this.imageSrc = imageName
+    this.invert = invert
+    this.screenshotSrc = screenshot
+    this.tools = tools
   }
 }
 
 export default [
-  new Project(
-    "BlueTheRobot",
-    "https://bluetherobot.com",
-    null,
-    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
-    require("../images/bluetherobot.png"),
-    false,
-    null,
-    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
-  ),
   new Project(
     "Strife",
     null,
@@ -42,6 +32,15 @@ export default [
     ["Discord API", "KTor", "Gitlab CI/CD"]
   ),
   new Project(
+    "Augustine Education Servies",
+    "https://augustine.education",
+    null,
+    "Augustine Educational Services advises, educates, and counsels students and families regarding educational choices. This project provides a landing page for AES with a modern design.",
+    false,
+    null,
+    ["ParcelJS", "SCSS", "Gitlab CI/CD"]
+  ),
+  new Project(
     "Paypal Invoice API",
     null,
     "https://gitlab.com/JonoAugustine/paypal-invoices",
@@ -51,7 +50,17 @@ export default [
     null,
     ["NodeJS", "Paypal API", "RollupJS"]
   ),
-      new Project(
+  new Project(
+    "BlueTheRobot",
+    "https://bluetherobot.com",
+    null,
+    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
+    require("../images/bluetherobot.png"),
+    false,
+    null,
+    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
+  ),
+  new Project(
     "Madame BunBun",
     "https://edenbunbun.web.app/",
     null,
@@ -105,7 +114,7 @@ export default [
     "A YouTube channel centered around sharing my experiences as an aquarist and showing others how to achieve success in their own aquariums.",
     require("../images/logo.jpg")
   ),
-    new Project(
+  new Project(
     "Off The Menu",
     "https://otm-online.firebaseapp.com",
     "https://gitlab.com/off-the-menu/site",
@@ -161,4 +170,4 @@ export default [
     null,
     ["ReactJS", "Firebase"]
   ),
-];
+]
