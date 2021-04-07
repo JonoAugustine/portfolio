@@ -22,6 +22,16 @@ class Project {
 
 export default [
   new Project(
+    "Boil",
+    null,
+    "https://gitlab.com/boiljs/boil-cli",
+    "Configurable, Syncable, and Sharable boilerplate NodeJS project generator. Designed to reduce project creation hassel with a semantic CLI. Includes file-structure and package.json bootstrapping.",
+    require("../images/boiling_plates.png"),
+    false,
+    null,
+    ["NodeJS", "FaunaDB", "RollupJS", "Mocha", "Gitlab CI/CD", "Semantic Versioning", "Yarn"]
+  ),
+  new Project(
     "Strife",
     null,
     "https://gitlab.com/serebit/strife",
@@ -76,16 +86,6 @@ export default [
       "Gitlab CI/CD",
       "Mocha",
     ]
-  ),
-  new Project(
-    "Boil",
-    null,
-    "https://gitlab.com/boiljs/boil-cli",
-    "Configurable, Syncable, and Sharable boilerplate NPM project generator. Designed to reduce project creation hassel.",
-    require("../images/boiling_plates.png"),
-    false,
-    null,
-    ["NodeJS", "Firestore", "RollupJS", "Mocha"]
   ),
   new Project(
     "Firebase Rules Generator",
