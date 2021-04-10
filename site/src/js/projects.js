@@ -134,7 +134,7 @@ export default [
   ),
   new Project(
     "Ouch",
-    "https://anthnyd.github.io/Ouch/",
+    "https://imanthny.github.io/Ouch/",
     "https://github.com/anthnyd/Ouch",
     `A web app built like a simulation where you and your friends can exist in an Existence together. In an Existence you can chat to each other and perform fun commands.`,
     require("../images/ouch.png"),
