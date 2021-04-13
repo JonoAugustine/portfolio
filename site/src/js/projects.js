@@ -54,11 +54,11 @@ export default [
     "Paypal Invoice API",
     null,
     "https://gitlab.com/JonoAugustine/paypal-invoices",
-    "An api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs.",
+    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has react >400 downloads",
     null,
     null,
     null,
-    ["NodeJS", "Paypal API", "RollupJS"]
+    ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
   ),
   new Project(
     "BlueTheRobot",
