@@ -52,9 +52,9 @@ export default [
   ),
   new Project(
     "Paypal Invoice API",
-    null,
+    "https://www.npmjs.com/package/paypal-invoices",
     "https://gitlab.com/JonoAugustine/paypal-invoices",
-    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has react >400 downloads",
+    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has reached over 400 downloads",
     null,
     null,
     null,
