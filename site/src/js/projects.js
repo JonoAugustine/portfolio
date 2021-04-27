@@ -90,7 +90,7 @@ export default [
   new Project(
     "Firebase Rules Generator",
     null,
-    "https://gitlab.com/JonoAugustine/firebase-rule-generator",
+    "https://gitlab.com/JonoAugustine/frug",
     "An NPM package which converts JSON DB schemas into Firebase Firestore Rules",
     null,
     null,
