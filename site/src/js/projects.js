@@ -42,6 +42,16 @@ export default [
     ["Discord API", "KTor", "Gitlab CI/CD"]
   ),
   new Project(
+    "Firebase Rules Generator",
+    null,
+    "https://gitlab.com/JonoAugustine/frug",
+    "A CLI tool which converts readable DB schemas into Firebase Firestore Rules.",
+    null,
+    null,
+    null,
+    ["Typescript", "Firebase Rules", "Semantic-Release", "Gitlab CI/CD", "Mocha/Chai", "eslint"]
+  ),
+  new Project(
     "Augustine Education Servies",
     "https://augustine.education",
     null,
@@ -61,16 +71,6 @@ export default [
     ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
   ),
   new Project(
-    "BlueTheRobot",
-    "https://bluetherobot.com",
-    null,
-    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
-    require("../images/bluetherobot.png"),
-    false,
-    null,
-    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
-  ),
-  new Project(
     "Madame BunBun",
     "https://edenbunbun.web.app/",
     null,
@@ -88,16 +88,6 @@ export default [
     ]
   ),
   new Project(
-    "Firebase Rules Generator",
-    null,
-    "https://gitlab.com/JonoAugustine/frug",
-    "An NPM package which converts JSON DB schemas into Firebase Firestore Rules",
-    null,
-    null,
-    null,
-    ["NodeJS", "Firebase Rules", "RollupJS", "ParcelJS", "SASS", "Gitlab CI/CD"]
-  ),
-  new Project(
     "Snek",
     "https://jonoaugustine.gitlab.io/web-snake-game/",
     "https://gitlab.com/JonoAugustine/web-snake-game",
@@ -113,6 +103,16 @@ export default [
     null,
     "A YouTube channel centered around sharing my experiences as an aquarist and showing others how to achieve success in their own aquariums.",
     require("../images/logo.jpg")
+  ),
+  new Project(
+    "BlueTheRobot",
+    "https://bluetherobot.com",
+    null,
+    "The official website for Twitch Streamer & YouTuber BlueTheRobot.",
+    require("../images/bluetherobot.png"),
+    false,
+    null,
+    ["NodeJS", "ParcelJS", "YouTube API", "TwitchTV API", "Gitlab CI/CD"]
   ),
   new Project(
     "Off The Menu",
