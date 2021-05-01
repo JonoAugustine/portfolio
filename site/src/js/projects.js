@@ -42,8 +42,18 @@ export default [
     ["Discord API", "KTor", "Gitlab CI/CD"]
   ),
   new Project(
-    "Firebase Rules Generator",
+    "Paypal Invoice API",
+    "https://www.npmjs.com/package/paypal-invoices",
+    "https://gitlab.com/JonoAugustine/paypal-invoices",
+    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has reached over 400 downloads",
     null,
+    null,
+    null,
+    ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
+  ),
+  new Project(
+    "Firebase Rules Generator",
+    "https://www.npmjs.com/package/frug",
     "https://gitlab.com/JonoAugustine/frug",
     "A CLI tool which converts readable DB schemas into Firebase Firestore Rules.",
     null,
@@ -59,16 +69,6 @@ export default [
     false,
     null,
     ["ParcelJS", "SCSS", "Gitlab CI/CD"]
-  ),
-  new Project(
-    "Paypal Invoice API",
-    "https://www.npmjs.com/package/paypal-invoices",
-    "https://gitlab.com/JonoAugustine/paypal-invoices",
-    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has reached over 400 downloads",
-    null,
-    null,
-    null,
-    ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
   ),
   new Project(
     "Madame BunBun",
