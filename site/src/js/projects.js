@@ -62,6 +62,12 @@ export default [
     ["Typescript", "Firebase Rules", "Semantic-Release", "Gitlab CI/CD", "Mocha/Chai", "eslint"]
   ),
   new Project(
+    "Age of Revisionism",
+    "https://ageofrevisionism.com/",
+    "https://gitlab.com/JonoAugustine/age-of-revisionism",
+    "A web-app which generates modificiation files for Age of Empires 2: Definitive Edition."
+  ),
+  new Project(
     "Augustine Education Servies",
     "https://augustine.education",
     null,
