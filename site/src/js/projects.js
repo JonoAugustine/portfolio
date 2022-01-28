@@ -65,7 +65,11 @@ export default [
     "Age of Revisionism",
     "https://ageofrevisionism.com/",
     "https://gitlab.com/JonoAugustine/age-of-revisionism",
-    "A web-app which generates modificiation files for Age of Empires 2: Definitive Edition."
+    "A web-app which generates modificiation files for Age of Empires 2: Definitive Edition.",
+    require("../images/boiling_plates.png"),
+    false,
+    null,
+    ["Svelte", "RollupJS", "Gitlab CI/CD", "Typescript"]
   ),
   new Project(
     "Augustine Education Servies",
