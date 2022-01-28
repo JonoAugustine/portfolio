@@ -66,7 +66,7 @@ export default [
     "https://ageofrevisionism.com/",
     "https://gitlab.com/JonoAugustine/age-of-revisionism",
     "A web-app which generates modificiation files for Age of Empires 2: Definitive Edition.",
-    require("../images/boiling_plates.png"),
+    require("../images/aor.png"),
     false,
     null,
     ["Svelte", "RollupJS", "Gitlab CI/CD", "Typescript"]
