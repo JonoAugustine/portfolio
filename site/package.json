@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "parcel serve ./src/index.html -d .dev",
+    "dev": "parcel serve ./src/index.html ./src/page/*.html -d .dev",
     "build": "parcel build ./src/index.html -d ../public --public-url ."
   },
   "author": "JonoAugustine",
