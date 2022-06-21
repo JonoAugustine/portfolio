@@ -40,7 +40,7 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
   }
 
   const { name, subject, text, email } = req.body
-  console.log(`incoming request: ${req.path}`, req.body, req.params, req.query)
+  console.log(`incoming request: ${req.path}`, req.body)
 
   if (invalidString(name, /.{2,}\s+.{2,}/i)) {
     return res.status(400).send({ message: "missing name" })
@@ -50,16 +50,20 @@ server.post("/", cors({ origin: "https://jonoaugustine.com" }), (req, res) => {
     return res.status(400).send({ message: "missing text" })
   } else if (invalidString(email, /.+@.+\..+/i)) {
     return res.status(400).send({ message: "missing email" })
+  } else if (!(name && subject && text && email)) {
+    return res.status(500).send({ message: "internal error" })
   }
 
   const mailOptions = {
     from: senderEmail,
     to: "swordmaster9@gmail.com",
-    subject: `PORTFOLIO:${subject}`,
+    subject: `PORTFOLIO: ${subject}`,
     text: `"${name}" sent the following email through our portfolio:\n\n${text}`,
   }
 
-  console.log("Attempting to send message", mailOptions, req.body)
+  console.log("Attempting to send message")
+  console.log("options:", mailOptions)
+  console.log("from: ", req.body)
 
   if (process.argv[2] == "local") return res.send({ message: "sent" })
 
