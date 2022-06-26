@@ -8,3 +8,4 @@ index.css.map
 *.gz
 /*/.cache
 /public/
+.idea
