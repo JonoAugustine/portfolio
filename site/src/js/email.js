@@ -1,4 +1,4 @@
-import { Modal } from "./components"
+import {Modal} from "./components"
 
 /**
  *
@@ -10,7 +10,8 @@ import { Modal } from "./components"
 const sendEmail = (email, name, subject, text) =>
   fetch("https://salty-garden-80295.herokuapp.com/", {
     method: "POST",
-    body: JSON.stringify({ email, name, subject, text }),
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({email, name, subject, text}),
   })
 
 /**
