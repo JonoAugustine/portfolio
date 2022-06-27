@@ -1,7 +1,7 @@
 image: node:12.13.0
 
 variables:
-  PAHSE: PRODUCTION
+  PHASE: PRODUCTION
 
 # compile_resume:
 #   stage: build
@@ -32,19 +32,3 @@ pages:
       - master
     changes:
       - site/**/*
-
-# deploy server
-server:
-  stage: deploy
-  image: ruby:latest
-  script:
-    - apt-get update -qy
-    - apt-get install -y ruby-dev
-    - gem install dpl
-    - cd ./server
-    - dpl --provider=heroku --app=salty-garden-80295 --api-key=$HEROKU_API_KEY
-  only:
-    refs:
-      - master
-    changes:
-      - server/**/*

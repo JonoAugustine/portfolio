@@ -4,7 +4,7 @@ let seq = [];
 const check = () => {
   if (seq.length !== ref.length) return false;
   for (let i = 0; i < seq.length; i++) {
-    if (seq[i] != ref[i]) return false;
+    if (seq[i] !== ref[i]) return false;
   }
   return true;
 };
