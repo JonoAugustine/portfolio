@@ -2,8 +2,6 @@ import { random } from "./util";
 
 document.getElementById("header_scroll").onclick = () =>
   document.querySelector("nav").scrollIntoView();
-document.getElementById("btn_contact").onclick = () =>
-  document.querySelector("form").scrollIntoView();
 
 /**
  * Creates a new element of the given tag.
