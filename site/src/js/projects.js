@@ -62,6 +62,16 @@ export default [
     ["Typescript", "Firebase Rules", "Semantic-Release", "Gitlab CI/CD", "Mocha/Chai", "eslint"]
   ),
   new Project(
+    "Yuki the Youtube Chat Bot",
+    "https://youtube.com/",
+    "https://github.com/pinkilo/yuki-bot",
+    "A Youtube-live chatbot made from scratch using typescript, websockets, and canvas animation",
+    require("../images/fox_orange_attack.gif"),
+    false,
+    null,
+    ["Typescript", "RollupJS", "BabelJS", "Websockets", "canvas animation"]
+  ),
+  new Project(
     "Age of Revisionism",
     "https://ageofrevisionism.com/",
     "https://gitlab.com/JonoAugustine/age-of-revisionism",
