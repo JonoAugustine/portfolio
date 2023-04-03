@@ -63,7 +63,7 @@ export default [
   ),
   new Project(
     "Yuki the Youtube Chat Bot",
-    "https://youtube.com/",
+    "https://youtube.com/playlist?list=PLcHj3H-ImhdYOgOy5cxfKSUnOO_65E5Qx",
     "https://github.com/pinkilo/yuki-bot",
     "A Youtube-live chatbot made from scratch using typescript, websockets, and canvas animation",
     require("../images/fox_orange_attack.gif"),
