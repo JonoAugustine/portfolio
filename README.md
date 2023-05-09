@@ -2,20 +2,13 @@
 
 This repo contains the source for
 [my portfolio](https://jonoaugustine.com) to showcase my
-competence in full stack software development and language flexibility.
+competence in full stack software development.
 
 ## Current Version 1.0.0
 
 - Parcel bundler
 - Animate.css + Sass for styling
 - Gitlab Pages hosting
-- Gitlab CI/CD deploying to Heroku
-- NodeJS + NodeMailer + ExpressJS server
-  - Jest used for unit tests
-
-## Roadmap
-
-- ~~Convert to parcel build~~
 
 ## License
 

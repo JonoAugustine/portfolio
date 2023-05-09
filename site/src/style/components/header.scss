@@ -19,6 +19,7 @@ header.banner {
     background-color: rgba(color(base), 0.3);
 
     section.intro {
+      position: relative;
       height: 50%;
       margin: 10% auto 0 auto;
       padding: $padding;
@@ -105,6 +106,14 @@ header.banner {
       &:hover {
         border-color: color(accent);
       }
+    }
+
+    span.konami {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+
+      font-size: 0.7rem;
     }
   }
 }

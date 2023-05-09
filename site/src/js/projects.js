@@ -25,41 +25,31 @@ export default [
     "Boil",
     null,
     "https://gitlab.com/boiljs/boil-cli",
-    "Configurable, Syncable, and Sharable boilerplate NodeJS project generator. Designed to reduce project creation hassel with a semantic CLI. Includes file-structure and package.json bootstrapping.",
+    "Configurable, Sync-able, and Sharable boilerplate NodeJS project generator. Designed to reduce project creation hassle with a semantic CLI. Includes file-structure and package.json bootstrapping.",
     require("../images/boiling_plates.png"),
     false,
     null,
     ["NodeJS", "FaunaDB", "RollupJS", "Mocha", "Gitlab CI/CD", "Semantic Versioning", "Yarn"]
   ),
   new Project(
-    "Strife",
+    "YukiBot (library)",
     null,
-    "https://gitlab.com/serebit/strife",
-    "An idiomatic Kotlin implementation of the Discord API for use with custom bots.",
-    require("../images/strife-logo.png"),
+    "https://github.com/pinkilo/yukibotJS",
+    "A easy-to-use typescript library for building YouTube Live broadcast chatbots.",
+    null,
     false,
     null,
-    ["Discord API", "KTor", "Gitlab CI/CD"]
+    ["NodeJS", "FaunaDB", "RollupJS", "Mocha", "Gitlab CI/CD", "Semantic Versioning", "Yarn"]
   ),
   new Project(
     "Paypal Invoice API",
     "https://www.npmjs.com/package/paypal-invoices",
     "https://gitlab.com/JonoAugustine/paypal-invoices",
-    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works for 100% API and test coverage and is has reached over 400 downloads",
+    "A JS api wrapper for paypal 2.0 invoices which was lacking from official Paypal SDKs. The project works towards 100% API coverage.",
     null,
     null,
     null,
     ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
-  ),
-  new Project(
-    "Firebase Rules Generator",
-    "https://www.npmjs.com/package/frug",
-    "https://gitlab.com/JonoAugustine/frug",
-    "A CLI tool which converts readable DB schemas into Firebase Firestore Rules.",
-    null,
-    null,
-    null,
-    ["Typescript", "Firebase Rules", "Semantic-Release", "Gitlab CI/CD", "Mocha/Chai", "eslint"]
   ),
   new Project(
     "Yuki the Youtube Chat Bot",
@@ -72,23 +62,34 @@ export default [
     ["Typescript", "RollupJS", "BabelJS", "Websockets", "canvas animation"]
   ),
   new Project(
+    "Strife",
+    null,
+    "https://gitlab.com/serebit/strife",
+    "An idiomatic Kotlin implementation of the Discord API for use with custom bots.",
+    require("../images/strife-logo.png"),
+    false,
+    null,
+    ["Discord API", "KTor", "Gitlab CI/CD"]
+  ),
+  new Project(
     "Age of Revisionism",
     "https://ageofrevisionism.com/",
     "https://gitlab.com/JonoAugustine/age-of-revisionism",
-    "A web-app which generates modificiation files for Age of Empires 2: Definitive Edition.",
+    "A web-app which generates modification files for Age of Empires 2: Definitive Edition.",
     require("../images/aor.png"),
     false,
     null,
     ["Svelte", "RollupJS", "Gitlab CI/CD", "Typescript"]
   ),
   new Project(
-    "Augustine Education Servies",
-    "https://augustine.education",
+    "Firebase Rules Generator",
+    "https://www.npmjs.com/package/frug",
+    "https://gitlab.com/JonoAugustine/frug",
+    "A CLI tool which converts readable DB schemas into Firebase Firestore Rules.",
     null,
-    "Augustine Educational Services advises, educates, and counsels students and families regarding educational choices. This project provides a landing page for AES with a modern design.",
-    false,
     null,
-    ["ParcelJS", "SCSS", "Gitlab CI/CD"]
+    null,
+    ["Typescript", "Firebase Rules", "Semantic-Release", "Gitlab CI/CD", "Mocha/Chai", "eslint"]
   ),
   new Project(
     "Aquatic Mastery",
@@ -114,5 +115,14 @@ export default [
     false,
     null,
     ["NodeJS", "ParcelJS", "SASS", "Gitlab CI/CD"]
-  )
+  ),
+  new Project(
+    "Augustine Education Services",
+    "https://augustine.education",
+    null,
+    "Augustine Educational Services advises, educates, and counsels students and families regarding educational choices. This project provides a landing page for AES with a modern design.",
+    false,
+    null,
+    ["ParcelJS", "SCSS", "Gitlab CI/CD"]
+  ),
 ]
