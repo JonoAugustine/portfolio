@@ -32,9 +32,9 @@ export default [
     ["NodeJS", "FaunaDB", "RollupJS", "Mocha", "Gitlab CI/CD", "Semantic Versioning", "Yarn"]
   ),
   new Project(
-    "YukiBot (library)",
+    "YukiBot",
     null,
-    "https://github.com/pinkilo/yukibotJS",
+    "https://github.com/pinkilo/yukibot",
     "A easy-to-use typescript library for building YouTube Live broadcast chatbots.",
     null,
     false,
@@ -52,9 +52,9 @@ export default [
     ["NodeJS", "Paypal API", "RollupJS", "Semantic Release"]
   ),
   new Project(
-    "Yuki the Youtube Chat Bot",
+    "Vulpa the Youtube Chat Bot",
     "https://youtube.com/playlist?list=PLcHj3H-ImhdYOgOy5cxfKSUnOO_65E5Qx",
-    "https://github.com/pinkilo/yuki-bot",
+    "https://github.com/pinkilo/Vulpa",
     "A Youtube-live chatbot made from scratch using typescript, websockets, and canvas animation",
     require("../images/fox_orange_attack.gif"),
     false,
