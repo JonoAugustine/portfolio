@@ -1,3 +1,9 @@
+@use "sass:math";
+
+div.card.pinkilo:hover {
+  box-shadow: -0.15rem 0.45rem 0.4rem rgba(color(pinkilo), 0.2) !important;
+}
+
 div.card {
   margin: $margin;
   padding: $padding;
@@ -87,7 +93,7 @@ div.card {
       button {
         margin: 0;
         margin-right: $margin;
-        padding: $padding / 2;
+        padding: math.div($padding, 2);
         text-align: left;
 
         border: 1px solid transparent;

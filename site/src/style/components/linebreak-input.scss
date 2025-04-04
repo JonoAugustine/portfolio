@@ -1,10 +1,12 @@
+@use "sass:math";
+
 div.linebreak-input {
   $label-size: 1rem;
 
   width: 95%;
 
   position: relative;
-  margin: ($label-size / 2) auto;
+  margin: math.div($label-size, 2) auto;
 
   @include desktop() {
     max-width: 45%;
@@ -17,7 +19,7 @@ div.linebreak-input {
   label {
     position: absolute;
     left: 10%;
-    transform: translateY(-($label-size / 2));
+    transform: translateY(math.div($label-size, -2));
     font-size: $label-size;
     color: color(text-);
     background-color: color(base);
