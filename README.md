@@ -4,7 +4,7 @@ This repo contains the source for
 [my portfolio](https://jonoaugustine.com) to showcase my
 competence in full stack software development.
 
-## Current Version 1.0.0
+## Current Version 2.0.0
 
 - Parcel bundler
 - Animate.css + Sass for styling
@@ -15,4 +15,4 @@ competence in full stack software development.
 This repository is licensed under the
 [GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)
 
-Copyright (C) 2020 Jonathan Augustine.
+Copyright (C) 2025 Jonathan Augustine.
