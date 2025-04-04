@@ -1,4 +1,4 @@
-image: node:12.13.0
+image: node:20.18.0
 
 variables:
   PHASE: PRODUCTION
