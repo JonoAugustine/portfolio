@@ -71,6 +71,14 @@ const projects: Project[] = [
     invert: true,
   },
   {
+    name: "ScoreBorda",
+    live: "https://score-borda.vercel.app",
+    source: "https://github.com/JonoAugustine/ScoreBorda",
+    description: "The ultimate decision making tool for the troubled mind",
+    imageSrc: new URL("../images/scoreborda.png", import.meta.url),
+    invert: false,
+  },
+  {
     name: "Aquatic Mastery",
     live: "https://youtube.com/aquaticmaster",
     description:
