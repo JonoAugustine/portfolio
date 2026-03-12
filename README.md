@@ -4,6 +4,8 @@ This repo contains the source for
 [my portfolio](https://jonoaugustine.com) to showcase my
 competence in full stack software development.
 
+jonoaugustine.github.io.
+
 ## Current Version 2.0.0
 
 - Parcel bundler
