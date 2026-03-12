@@ -4,7 +4,7 @@ This repo contains the source for
 [my portfolio](https://jonoaugustine.com) to showcase my
 competence in full stack software development and language flexibility.
 
-## Current Version 1.0.0
+## Current Version
 
 - Parcel bundler
 - Animate.css + Sass for styling
