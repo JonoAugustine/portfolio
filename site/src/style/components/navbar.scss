@@ -1,3 +1,6 @@
+@use '../variables/breakpoints' as *;
+@use '../variables/basic' as *;
+
 nav.navbar {
   padding: $padding 0;
   width: 100%;

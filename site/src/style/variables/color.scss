@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // Color pallet map and function
 
 $colors: (
@@ -10,5 +12,5 @@ $colors: (
 );
 
 @function color($color-name, $alpha: 1) {
-  @return rgba(map-get($colors, $color-name), $alpha);
+  @return rgba(map.get($colors, $color-name), $alpha);
 }

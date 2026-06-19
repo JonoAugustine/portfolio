@@ -5,7 +5,7 @@ type Project = {
   description: string
   imageSrc?: URL
   invert?: boolean
-  screenshotSrc?: string
+  screenshotSrc?: URL
   tools?: string[]
 }
 

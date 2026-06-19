@@ -1,4 +1,8 @@
 @use "sass:math";
+@use 'sass:color';
+@use '../variables/color' as *;
+@use '../variables/breakpoints' as *;
+@use '../variables/basic' as *;
 
 div.card.pinkilo:hover {
   box-shadow: -0.15rem 0.45rem 0.4rem rgba(color(pinkilo), 0.2) !important;
@@ -12,7 +16,7 @@ div.card {
   cursor: default;
   border: 1px solid transparent;
 
-  background-color: lighten(color(base), 5%);
+  background-color: color.adjust(color(base), $lightness: 5%);
   border-radius: $radius;
   //box-shadow: 0.1rem 0.4rem 0.3rem lighten($color: color(base), $amount: 8%);
 
@@ -21,7 +25,7 @@ div.card {
 
   &:hover {
     //border: 1px solid color(accent);
-    background-color: lighten(color(base), 3%);
+    background-color: color.adjust(color(base), $lightness: 3%);
     box-shadow: -0.15rem 0.45rem 0.4rem rgba(color(primary), 0.2);
     transform: translate(1%, -1%);
   }
@@ -102,7 +106,7 @@ div.card {
         transition: color 0.3s ease;
 
         &:hover {
-          color: lighten(color(accent), 10%);
+          color: color.adjust(color(accent), $lightness: 10%);
         }
       }
     }

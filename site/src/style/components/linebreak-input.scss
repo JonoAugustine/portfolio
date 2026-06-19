@@ -1,4 +1,6 @@
 @use "sass:math";
+@use '../variables/color' as *;
+@use '../variables/breakpoints' as *;
 
 div.linebreak-input {
   $label-size: 1rem;

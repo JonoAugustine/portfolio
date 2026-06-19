@@ -1,31 +1,28 @@
-// Import libraries
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
+// Variables
+@use "./variables/color.scss";
+@use "./variables/breakpoints.scss";
+@use "./variables/basic.scss";
+
+// Root styling
+@use "./root.scss";
+@use "./components/scrollbar.scss";
+
+// Animations
+@use "./animations.scss";
+
+// Layout
+@use "./layout/container.scss";
+
+// Native elements
+@use "./natives/button.scss";
+@use "./natives/image.scss";
+
+// Components
+@use "./components/header.scss";
+@use "./components/navbar.scss";
+@use "./components/modal.scss";
+@use "./components/contact-form.scss";
+@use "./components/card.scss";
+@use "./components/linebreak-input.scss";
+
 @import "./normalize.css";
-
-// Import Vairables
-@import "./variables/color.scss";
-@import "./variables/breakpoints.scss";
-@import "./variables/basic.scss";
-
-// Import root styling
-@import "./root.scss";
-@import "./components/scrollbar.scss";
-
-// Import animations
-@import "./animations.scss";
-
-// Import Layout styling
-@import "./layout/container.scss";
-
-// Import native element styling
-@import "./natives/button.scss";
-@import "./natives/image.scss";
-
-// Import component stylings
-@import "./components/header.scss";
-@import "./components/navbar.scss";
-@import "./components/modal.scss";
-@import "./components/contact-form.scss";
-@import "./components/card.scss";
-@import "./components/linebreak-input.scss";

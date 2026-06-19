@@ -1,7 +1,7 @@
 import { random } from "./util";
 
-document.getElementById("header_scroll").onclick = () =>
-  document.querySelector("nav").scrollIntoView();
+document.getElementById("header_scroll").addEventListener("click", () =>
+  document.querySelector("nav").scrollIntoView());
 
 /**
  * Creates a new element of the given tag.
@@ -36,7 +36,7 @@ const A = (link) => {
 const Button = (link, text) => {
   const e = E("button");
   e.innerText = text;
-  e.onclick = () => window.open(link, "_blank");
+  e.addEventListener("click", () => window.open(link, "_blank"));
   return e;
 };
 
@@ -59,10 +59,10 @@ export const Modal = (parent, autoClose, showTimeout) => {
   const icon = E("i");
   icon.classList.add("fas", "fa-times", "exit");
 
-  icon.onclick = () => {
+  icon.addEventListener("click", () => {
     modal.classList.add("closed");
     setTimeout(() => modal.remove(), showTimeout);
-  };
+  });
 
   modal.appendChild(icon);
 
@@ -90,8 +90,6 @@ export const Modal = (parent, autoClose, showTimeout) => {
  * @param {Project} project
  */
 export const ProjectCard = (project) => {
-  let open = false;
-
   const base = E("div");
   base.className = `card animated slideIn${random(["Left", "Right", "Up"])}`;
 
@@ -154,20 +152,15 @@ export const ProjectCard = (project) => {
     extra.appendChild(Img(project.screenshotSrc, "screenshot"));
   }
 
-  base.click(() => {
+  base.addEventListener("click", () => {
     if (project.screenshotSrc) {
-      if (!open) {
-        // Clear any open card
+      if (!base.classList.contains("open")) {
         document.querySelectorAll(".card.open").forEach((e) => {
-          e.classList.remove(".open");
+          e.classList.remove("open");
         });
-
-        // Toggle open class
-        open = !open;
         base.classList.add("open");
-        document.querySelector(".open").scrollIntoView();
+        base.scrollIntoView();
       } else {
-        open = !open;
         base.classList.remove("open");
       }
     }

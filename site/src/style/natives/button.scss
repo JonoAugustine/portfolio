@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use '../variables/color' as *;
+
 // Base styling for buttons
 
 button {
@@ -12,6 +15,6 @@ button {
 
   &:hover {
     color: color(accent);
-    border-color: lighten($color: color(primary), $amount: 10%);
+    border-color: color.adjust(color(primary), $lightness: 10%);
   }
 }
