@@ -1,7 +1,7 @@
-@use 'sass:math';
-@use '../variables/color' as *;
-@use '../variables/breakpoints' as *;
-@use '../variables/basic' as *;
+@use "sass:math";
+@use "../variables/color" as *;
+@use "../variables/breakpoints" as *;
+@use "../variables/basic" as *;
 
 header.banner {
   height: 100%;
@@ -48,10 +48,11 @@ header.banner {
     }
 
     .container#badges {
-      max-width: 600px;
-
+      max-width: 90%;
       flex-direction: column;
-      align-content: flex-end;
+      justify-content: space-evenly;
+
+      place-content: unset;
 
       @include phone-s() {
         display: none;
@@ -59,11 +60,16 @@ header.banner {
 
       @include tablet() {
         flex-direction: row;
+        align-items: center;
       }
 
       .badge {
         cursor: pointer;
         margin: $margin 0 $margin auto;
+
+        @include tablet() {
+          margin: $margin auto;
+        }
 
         border: 1px solid transparent;
         transform: translateY(-10%);
@@ -74,13 +80,6 @@ header.banner {
           &:nth-child(#{$i}) {
             animation-delay: math.random(30) + 10 + s;
           }
-        }
-
-        @include tablet() {
-          flex-direction: row;
-          margin: 0 auto;
-          width: unset;
-          align-self: flex-end;
         }
 
         &:hover {
