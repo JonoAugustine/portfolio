@@ -1,20 +1,33 @@
 # [Portfolio of Jonathan Augustine](https://jonoaugustine.com)
 
-This repo contains the source for
-[my portfolio](https://jonoaugustine.com) to showcase my
-competence in full stack software development.
+Source for [jonoaugustine.com](https://jonoaugustine.com),
+showcasing my competence in full-stack software development.
+I occassionally update this with new projects or refactors
+for fun.
 
-[jonoaugustine.github.com/portfolio](jonoaugustine.github.com/portfolio)
-
-## Current Version 2.0.0
+## Stack
 
 - Parcel bundler
-- Animate.css + Sass for styling
-- Gitlab Pages hosting
+- Sass for styling
+- Animate.css for animations
+- GitHub Pages hosting
+
+## Development
+
+```sh
+pnpm install
+pnpm dev
+```
+
+## Build
+
+```sh
+pnpm build
+```
 
 ## License
 
-This repository is licensed under the
-[GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)
+Licensed under the
+[GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0).
 
-Copyright (C) 2025 Jonathan Augustine.
+Copyright (C) 2026 Jonathan Augustine.
