@@ -49,6 +49,8 @@ const Img = (src, alt) => {
   const i = E("img");
   i.setAttribute("src", src);
   i.setAttribute("alt", alt);
+  i.setAttribute("loading", "lazy");
+  i.setAttribute("decoding", "async");
   return i;
 };
 
