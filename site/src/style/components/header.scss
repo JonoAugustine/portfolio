@@ -1,4 +1,3 @@
-@use "sass:math";
 @use "../variables/color" as *;
 @use "../variables/breakpoints" as *;
 @use "../variables/basic" as *;
@@ -44,48 +43,6 @@ header.banner {
 
       .tagline {
         font-size: 2em;
-      }
-    }
-
-    .container#badges {
-      max-width: 90%;
-      flex-direction: column;
-      justify-content: space-evenly;
-
-      place-content: unset;
-
-      @include phone-s() {
-        display: none;
-      }
-
-      @include tablet() {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .badge {
-        cursor: pointer;
-        margin: $margin 0 $margin auto;
-
-        @include tablet() {
-          margin: $margin auto;
-        }
-
-        border: 1px solid transparent;
-        transform: translateY(-10%);
-        transition: border-color 1s;
-        animation: float 2s ease-in-out infinite;
-        will-change: transform;
-
-        @for $i from 1 through 4 {
-          &:nth-child(#{$i}) {
-            animation-delay: math.random(30) + 10 + s;
-          }
-        }
-
-        &:hover {
-          border-color: color(accent);
-        }
       }
     }
 
