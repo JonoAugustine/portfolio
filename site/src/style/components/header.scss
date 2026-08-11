@@ -73,8 +73,9 @@ header.banner {
 
         border: 1px solid transparent;
         transform: translateY(-10%);
-        transition: all 1s;
+        transition: border-color 1s;
         animation: float 2s ease-in-out infinite;
+        will-change: transform;
 
         @for $i from 1 through 4 {
           &:nth-child(#{$i}) {
@@ -84,10 +85,6 @@ header.banner {
 
         &:hover {
           border-color: color(accent);
-          transform: translateY(-10%);
-          transition: all 1s;
-          animation: float 2s ease-in-out infinite;
-          animation-delay: 0.1s;
         }
       }
     }
@@ -106,6 +103,7 @@ header.banner {
 
       animation: float 2s ease-in-out infinite;
       transition: 0.5s;
+      will-change: transform;
 
       &:hover {
         border-color: color(accent);
