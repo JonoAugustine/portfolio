@@ -30,16 +30,6 @@ div.card {
     transform: translate(1%, -1%);
   }
 
-  // Temp removed
-  //&.no-info {
-  //  cursor: auto;
-
-  //  &:hover {
-  //    border: 1px solid red;
-  //    box-shadow: 10px 10px 5px rgba(red, 0.2);
-  //  }
-  //}
-
   @include tablet() {
     width: 100%;
     max-width: 100%;
@@ -115,24 +105,5 @@ div.card {
   .tools {
     grid-area: content;
     margin: auto;
-  }
-
-  div.extra {
-    display: none;
-  }
-
-  &.open {
-    width: 100%;
-
-    div.extra {
-      width: 100%;
-      display: unset;
-      grid-column-start: span 2;
-
-      img {
-        width: 100%;
-        border-radius: $radius;
-      }
-    }
   }
 }

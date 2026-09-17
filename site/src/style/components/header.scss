@@ -3,7 +3,7 @@
 @use "../variables/basic" as *;
 
 header.banner {
-  height: 100%;
+  height: 100vh;
   position: relative;
 
   display: flex;

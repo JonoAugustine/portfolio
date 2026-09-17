@@ -1,13 +1,8 @@
 const ref = ["u", "d", "u", "d", "l", "r", "l", "r", "b", "a"];
 let seq = [];
 
-const check = () => {
-  if (seq.length !== ref.length) return false;
-  for (let i = 0; i < seq.length; i++) {
-    if (seq[i] !== ref[i]) return false;
-  }
-  return true;
-};
+const check = () =>
+  seq.length === ref.length && seq.every((key, i) => key === ref[i]);
 
 const load = () => {
   window.open("https://jonoaugustine.gitlab.io/web-snake-game/", "_blank");
@@ -43,5 +38,6 @@ window.addEventListener("keydown", (e) => {
       seq = [];
       return;
   }
+  seq = seq.slice(-ref.length);
   if (check()) load();
 });

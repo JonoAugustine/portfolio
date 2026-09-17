@@ -5,7 +5,6 @@ type Project = {
   description: string
   imageSrc?: URL
   invert?: boolean
-  screenshotSrc?: URL
   tools?: string[]
 }
 
@@ -149,7 +148,7 @@ const projects: Project[] = [
   {
     name: "This Portfolio",
     live: "https://jonoaugustine.com",
-    source: "https://gitlab.com/JonoAugustine/portfolio",
+    source: "https://github.com/JonoAugustine/portfolio",
     description: "This very portfolio",
     tools: ["Typescript", "ParcelJS", "SCSS", "Gitlab CI/CD"],
   },

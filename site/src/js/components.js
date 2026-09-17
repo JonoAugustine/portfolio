@@ -1,8 +1,5 @@
 import { random } from "./util";
 
-document.getElementById("header_scroll").addEventListener("click", () =>
-  document.querySelector("nav").scrollIntoView());
-
 /**
  * Creates a new element of the given tag.
  * @param {string} tag Element tag
@@ -19,18 +16,6 @@ const H = (size, text) => {
   const e = E(`h${size}`);
   e.innerText = text;
   return e;
-};
-
-/**
- *
- * @param {string} link
- * @param  {...any} children
- */
-const A = (link) => {
-  const a = E("a");
-  a.setAttribute("href", link);
-  a.setAttribute("target", "_blank");
-  return a;
 };
 
 const Button = (link, text) => {
@@ -54,38 +39,11 @@ const Img = (src, alt) => {
   return i;
 };
 
-export const Modal = (parent, autoClose, showTimeout) => {
-  const modal = E("div");
-  modal.classList.add("modal", "center", "closed");
-
-  const icon = E("i");
-  icon.classList.add("fas", "fa-times", "exit");
-
-  icon.addEventListener("click", () => {
-    modal.classList.add("closed");
-    setTimeout(() => modal.remove(), showTimeout);
-  });
-
-  modal.appendChild(icon);
-
-  parent.appendChild(modal);
-
-  setTimeout(
-    () => {
-      modal.classList.remove("closed");
-      if (autoClose) {
-        let inter = setInterval(() => {
-          if (modal.classList.contains("closed")) {
-            modal.remove();
-            clearInterval(inter);
-          } else modal.classList.add("closed");
-        }, 5000);
-      }
-    },
-    showTimeout ? showTimeout : 100
-  );
-
-  return modal;
+/** Wires the hero's scroll-to-projects button. */
+export const initHeaderScroll = () => {
+  document
+    .getElementById("header_scroll")
+    .addEventListener("click", () => document.querySelector("nav").scrollIntoView());
 };
 
 /**
@@ -126,47 +84,18 @@ export const ProjectCard = (project) => {
     view.appendChild(Button(project.source, "View Source"));
   }
 
-  if (!project.screenshotSrc) {
-    base.classList.add("no-info");
-  }
-
   // Description
   const description = E("p");
   description.innerText = project.description;
   container.appendChild(description);
 
-  // Tools Used section\
+  // Tools Used section
   if (project.tools) {
     const tools = E("p");
-    tools.innerText = `Tools: ${project.tools.reduce((sum, curr, i) => {
-      return sum + (i < project.tools.length ? ", " : "") + curr;
-    })}`;
+    tools.innerText = `Tools: ${project.tools.join(", ")}`;
     tools.classList.add("tools");
     container.appendChild(tools);
   }
-
-  // Extra details & screenshots
-  const extra = E("div");
-  extra.classList.add("extra");
-  base.appendChild(extra);
-
-  if (project.screenshotSrc) {
-    extra.appendChild(Img(project.screenshotSrc, "screenshot"));
-  }
-
-  base.addEventListener("click", () => {
-    if (project.screenshotSrc) {
-      if (!base.classList.contains("open")) {
-        document.querySelectorAll(".card.open").forEach((e) => {
-          e.classList.remove("open");
-        });
-        base.classList.add("open");
-        base.scrollIntoView();
-      } else {
-        base.classList.remove("open");
-      }
-    }
-  });
 
   return base;
 };
